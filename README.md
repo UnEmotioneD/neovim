@@ -11,7 +11,7 @@
 
 - [플러그인 설명](#플러그인-설명)
 
-  - [LSP](#lsp)
+  - [LSP](#lsp-language-server-protocol)
   - [Plugins](#plugins)
 
 - [다른 nvim config 또는 distro](#다른-nvim-config-또는-distro)
