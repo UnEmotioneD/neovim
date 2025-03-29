@@ -31,18 +31,25 @@
 - 해당 Distro의 페키지 매니저로 `nvim`을 설치한다
   - Kali: `sudo apt install nvim`
 
----
+### Source 로 부터 Build
+
+- 패키지 메니저로 설치 했을때 최신 버젼이 아닐 수 있음
+
+<details>
+  <summary>확장하기</summary>
+
+</details>
 
 ### 필요한 의존 프로그램
 
 - git
-- nerd-fonts(아이콘)
-- fzf
-- ripgrep
+- nerd fonts (아이콘)
+- fzf (Telescope 기능에 필요)
+- ripgrep (Telescope live_grep 기능에 필요)
 - lazygit
-- node.js (lsp 설치)
-- pnpm(live-server 설치)
-- yarn(markdown-preview 설치)
+- node.js (LSP 설치)
+- pnpm (live-server 설치)
+- yarn (markdown-preview 설치)
 - tree-sitter-cli
 
 ---
@@ -65,20 +72,7 @@ cargo install --locked tree-sitter-cli
 
 - `Kali` 리눅스
 
-```sh
-sudo apt install fontconfig
-cd ~
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-mkdir -p .local/share/fonts
-unzip Meslo.zip -d .local/share/fonts
-cd .local/share/fonts
-rm *Windows*
-cd ~
-rm Meslo.zip
-fc-cache -fv
-```
-
-- nodejs, npm 설치
+- nodejs, npm(node.js 설치하면 자동으로 설치됨) 설치
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
