@@ -39,8 +39,6 @@ map('n', '<leader>tp', ':tabp<CR>', { desc = '[t]ab [p]revious tab' })
 
 map('n', '<leader>cs', ':setlocal spell! spell?<CR>', { desc = '[c]heck [s]pell toggle' })
 
-map('n', '<leader>dm', ':delm!<CR>', { desc = '[d]elete all [m]arks' })
-
 -- Disable conflicting keybinds with tmux
 map('', '<C-n>', '<Nop>', { noremap = true, silent = true })
 map('', '<C-p>', '<Nop>', { noremap = true, silent = true })

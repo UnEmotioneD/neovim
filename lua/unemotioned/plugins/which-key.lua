@@ -12,9 +12,7 @@ return {
     },
     spec = {
       { '<leader>e', group = '[E]xplorer' },
-      { '<leader>d', group = '[D]elete' },
       { '<leader>f', group = '[F]ind' },
-      -- { '<leader>g', group = 'Chat [G]pt' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>l', group = '[L]ive server' },
       { '<leader>m', group = '[M]arkdown' },
