@@ -186,6 +186,7 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 - [nvim-treesitter](#nvim-treesitter)
 - [oil](#oil)
 - [plenary](#plenary)
+- [render-markdown](#render-markdown)
 - [tabout](#tabout)
 - [telescope](#telescope)
 - [todo-comments](#todo-comments)
@@ -315,6 +316,10 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 #### plenary
 
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+
+#### render-markdown
+
+- [render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 
 #### tabout
 
