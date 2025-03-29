@@ -9,7 +9,7 @@
 
 - [파일 구조](#파일-구조)
 
-- [플러그인 설명](#플러그인-설명)
+- [나의 Neovim 설명](#나의-neovim-설명)
 
   - [LSP](#lsp-language-server-protocol)
   - [Plugins](#plugins)
@@ -30,20 +30,19 @@
 
 - 해당 Distro의 페키지 매니저로 `nvim`을 설치한다
   - Kali: `sudo apt install nvim`
-  - Arch: `sudo pacman -S nvim`
 
 ---
 
 ### 필요한 의존 프로그램
 
 - git
-- nerd-fonts
+- nerd-fonts(아이콘)
 - fzf
+- ripgrep
 - lazygit
-- node.js
-- pnpm
-- yarn
-- cargo
+- node.js (lsp 설치)
+- pnpm(live-server 설치)
+- yarn(markdown-preview 설치)
 - tree-sitter-cli
 
 ---
@@ -67,13 +66,41 @@ cargo install --locked tree-sitter-cli
 - `Kali` 리눅스
 
 ```sh
-sudo apt install git fzf lazygit nodejs npm pnpm yarn
+sudo apt install fontconfig
+cd ~
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+mkdir -p .local/share/fonts
+unzip Meslo.zip -d .local/share/fonts
+cd .local/share/fonts
+rm *Windows*
+cd ~
+rm Meslo.zip
+fc-cache -fv
 ```
 
-- `Arch` 리눅스
+- nodejs, npm 설치
 
 ```sh
-sudo pacman -S git ttf-meslo-nerd fzf lazygit nodejs npm pnpm yarn
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+- pnpm 설치
+
+```sh
+sudo npm install -g pnpm
+```
+
+- `pnpm`을 사용할 수 있도록 설정
+
+```sh
+pnpm setup
+```
+
+- `pnpm` 설정이 `~/.bashrc` 또는 `~/.zshrc`에 적용 되었고 새로고침을 해준다
+
+```sh
+source ~/.zshrc
 ```
 
 ---
@@ -98,6 +125,12 @@ mv nvim nvim.bak
 rm -rf ~/.local/share/nvim
 rm -rf ~/.local/state/nvim
 rm -rf ~/.cache/nvim
+```
+
+- 기존 nvim 경로가 없다면 생성해준다
+
+```sh
+mkdir -p ~/.config/nvim
 ```
 
 - 현재 리포에 있는 파일들을 `~/.config/nvim`경로 밑으로 클론
@@ -156,7 +189,7 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 ---
 
-## 나의 Neovim 설정 설명
+## 나의 Neovim 설명
 
 ### Options
 
@@ -515,4 +548,4 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 ---
 
-##### Happy Ricing 🎉
+#### Happy Ricing 🎉
