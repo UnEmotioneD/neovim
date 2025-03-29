@@ -20,6 +20,8 @@
 ### 니오빔 설치
 
 - Distro의 페키지 매니저로 `nvim` 설치한다
+  - Kali: `sudo apt install nvim`
+  - Arch: `sudo pacman -S nvim`
 
 ---
 
@@ -33,17 +35,16 @@
 - cargo
 - treesitter-cli
 - lazygit
-- fcitx5
 
 ---
 
-- For Kali linux
+- `Kali` 리눅스
 
 ```sh
 sudo apt install
 ```
 
-- For Arch linux
+- `Arch` 리눅스
 
 ```sh
 sudo pacman -S
@@ -59,8 +60,7 @@ sudo pacman -S
 cd ~/.config
 ```
 
-- 이미 있는 설정 파일 백업
-- `mv(move)`로 이름 변경
+- 이미 있는 설정 파일을 `mv(move)`로 이름 변경 하여 백업
 
 ```sh
 mv nvim nvim.bak
@@ -86,7 +86,7 @@ git clone https://github.com/UnEmotioneD/neovim.git ~/.config/nvim
 nvim
 ```
 
-- 기본 설정 니오빔 시작
+- 아무런 설정 없는 니오빔 시작
 
 ```sh
 nvim --clean
@@ -129,6 +129,8 @@ nvim
 └── lazy-lock.json
 ```
 
+---
+
 ## 플러그인 설명
 
 ### LSP
@@ -137,6 +139,126 @@ nvim
 
 ### Plugins
 
+- [alpha](#alpha)
+- [auto-session](#auto-session)
+- [bigfile](#bigfile)
+- [comment](#comment)
+- [conform](#conform)
+- [dressing](#dressing)
+- [flash](#flash)
+- [gitsigns](#gitsigns)
+- [harpoon](#harpoon)
+- [lazygit](#lazygit)
+- [live-server](#live-server)
+- [lualine](#lualine)
+- [markdown-preview](#markdown-preview)
+- [marks](#marks)
+- [mini-icon](#mini-icon)
+- [no-neck-pain](#no-neck-pain)
+- [nvim-autoparis](#nvim-autoparis)
+- [nvim-cmp](#nvim-cmp)
+- [nvim-colorizer](#nvim-colorizer)
+- [nvim-hlslens](#nvim-hlslens)
+- [nvim-lint](#nvim-lint)
+- [nvim-surround](#nvim-surround)
+- [nvim-tree](#nvim-tree)
+- [nvim-treesitter](#nvim-treesitter)
+- [oil](#oil)
+- [plenary](#plenary)
+- [tabout](#tabout)
+- [telescope](#telescope)
+- [todo-comments](#todo-comments)
+- [tokyonight](#tokyonight)
+- [trouble](#trouble)
+- [undotree](#undotree)
+- [vim-maximizer](#vim-maximizer)
+- [vim-tmux-navigator](#vim-tmux-navigator)
+- [which-key](#which-key)
+
 ---
 
-#### Happy hacking 🎉
+#### alpha
+
+- [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
+
+- `nvim` 명령어로 시작했을때 커스텀한 화면을 보여줌
+
+- 다음 사이트에서 `header` 에서 보여줄 ASCII 아트를 바꿀 수 있음
+
+  - [patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=netblock)
+
+- `button`에서 보여주는 키를 입력하면 원래 키맵과 다르게 명령어를 실행 할 수 있다
+
+- `:Alpha` 명령어를 사용해서 현재 창에서 보여줄 수도 있다
+
+#### auto-session
+
+#### bigfile
+
+#### comment
+
+#### conform
+
+#### dressing
+
+#### flash
+
+#### gitsigns
+
+#### harpoon
+
+#### lazygit
+
+#### live-server
+
+#### lualine
+
+#### markdown-preview
+
+#### marks
+
+#### mini-icon
+
+#### no-neck-pain
+
+#### nvim-autoparis
+
+#### nvim-cmp
+
+#### nvim-colorizer
+
+#### nvim-hlslens
+
+#### nvim-lint
+
+#### nvim-surround
+
+#### nvim-tree
+
+#### nvim-treesitter
+
+#### oil
+
+#### plenary
+
+#### tabout
+
+#### telescope
+
+#### todo-comments
+
+#### tokyonight
+
+#### trouble
+
+#### undotree
+
+#### vim-maximizer
+
+#### vim-tmux-navigator
+
+#### which-key
+
+---
+
+##### Happy hacking 🎉
