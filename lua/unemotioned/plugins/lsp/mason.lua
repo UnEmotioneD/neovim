@@ -27,9 +27,10 @@ return {
         'cssls',
         'ts_ls',
         'emmet_ls',
-        'ruff',
+        'ruff', -- python LSP
         'clangd',
-        'taplo', -- .toml LSP
+        'taplo', -- toml LSP
+        'marksman', -- markdown LSP
       },
       automatic_installation = true,
     })
@@ -41,6 +42,7 @@ return {
         'eslint_d',
         'cpplint',
         'clang-format',
+        'markdownlint',
       },
     })
   end,

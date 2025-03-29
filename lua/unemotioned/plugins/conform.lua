@@ -8,12 +8,12 @@ return {
       css = { 'prettier' },
       javascript = { 'prettier' },
       javascriptreact = { 'prettier' },
-      markdown = { 'prettier' },
       json = { 'prettier' },
       yaml = { 'prettier' },
       toml = { 'taplo' },
       c = { 'clang-format' },
       cpp = { 'clang-format' },
+      markdown = { 'prettier' },
     },
     format_on_save = {
       lsp_fallback = true,
