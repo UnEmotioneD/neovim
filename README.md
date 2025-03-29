@@ -38,6 +38,54 @@
 <details>
   <summary>확장하기</summary>
 
+#### 설치
+
+- 의존 프로그램 설치
+
+```sh
+sudo apt update
+sudo apt install ninja-build gettext cmake unzip curl build-essential git
+```
+
+- 소스 코드를 클론할 경로 생성
+
+```sh
+mkdir Repository && cd Repository
+```
+
+- Neovim 리포 클론
+
+```sh
+git clone https://github.com/neovim/neovim.git
+cd neovim
+```
+
+- 안정적인 버젼 체크아웃
+
+```sh
+git checkout stable
+```
+
+- Build: `Ninja` 를 이용해서 빌드한다
+
+```sh
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+```
+
+- 그리고 설치
+
+```sh
+sudo make install
+```
+
+- 정상적으로 설치 됬는지 버젼을 확인
+
+```sh
+nvim -v
+```
+
+#### 삭제
+
 </details>
 
 ### 필요한 의존 프로그램
