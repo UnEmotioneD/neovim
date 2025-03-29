@@ -261,8 +261,6 @@ alias dvim="NVIM_APPNAME=daniel nvim"
   - lua_ls
   - stylua
 
-  ***
-
 - HTML, CSS, JavaScript
 
   - html
@@ -272,34 +270,24 @@ alias dvim="NVIM_APPNAME=daniel nvim"
   - prettier
   - eslint_d
 
-  ***
-
 - C, C++
 
   - clangd
   - cpplint
   - clang-format
 
-  ***
-
 - Python
 
   - ruff
-
-  ***
 
 - Markdown
 
   - marksman
   - markdownlint
 
-  ***
-
 - Toml
 
   - taplo
-
-  ***
 
 - 철자
 
@@ -319,6 +307,7 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 - [comment](#comment)
 - [conform](#conform)
 - [dressing](#dressing)
+- [fidget](#fidget)
 - [flash](#flash)
 - [gitsigns](#gitsigns)
 - [harpoon](#harpoon)
@@ -393,6 +382,12 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 - [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim)
 
 - 향상된 UI
+
+#### fidget
+
+- [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
+
+- 해당 buffer에 LSP 상태를 오른쪽 아래에서 보여줌
 
 #### flash
 
