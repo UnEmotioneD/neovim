@@ -20,9 +20,9 @@
 
 ## 참고한 유튜브 영상
 
-- [드림코딩](https://www.youtube.com/watch?v=cY0JxzENBJg&t=39s&pp=ygUNdmltIOyCrOyaqeuylQ%3D%3D)
-- [Josean Martinez](https://www.youtube.com/watch?v=6pAG3BHurdM&pp=ygULam9zZWFuIG52aW0%3D)
-- [TJ DeVries](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&pp=ygUHdGogbnZpbQ%3D%3D)
+- [드림코딩](https://www.youtube.com/watch?v=cY0JxzENBJg&t=39s&pp=ygUNdmltIOyCrOyaqeuylQ%3D%3D) - Vim-motion 사용법
+- [Josean Martinez](https://www.youtube.com/watch?v=6pAG3BHurdM&pp=ygULam9zZWFuIG52aW0%3D) - 현재 리포의 베이스가된 영상
+- [TJ DeVries](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&pp=ygUHdGogbnZpbQ%3D%3D) - KickStart 설명
 
 ## 설치전 작업
 
@@ -102,21 +102,7 @@ nvim -v
 
 ---
 
-- `Rust` 설치하기
-  - [rust-lang](https://www.rust-lang.org/tools/install)
-
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-- `Cargo`를 이용해서 `tree-sitter-cli` 설치
-  - [tree-sitter/tree-sitter](https://github.com/tree-sitter/tree-sitter)
-
-```sh
-cargo install --locked tree-sitter-cli
-```
-
----
+#### Dependencies 설치
 
 - `Kali` 리눅스
 
@@ -143,6 +129,24 @@ pnpm setup
 
 ```sh
 source ~/.zshrc
+```
+
+---
+
+#### Tree-sitter-cli tool 설치
+
+- `Rust` 설치하기
+  - [rust-lang](https://www.rust-lang.org/tools/install)
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+- `Cargo`를 이용해서 `tree-sitter-cli` 설치
+  - [tree-sitter/tree-sitter](https://github.com/tree-sitter/tree-sitter)
+
+```sh
+cargo install --locked tree-sitter-cli
 ```
 
 ---
