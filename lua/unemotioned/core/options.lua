@@ -67,15 +67,11 @@ vim.o.sessionoptions = table.concat({
   'localoptions',
 }, ',')
 
--- Highlight on Yank
+-- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
-  group = vim.api.nvim_create_augroup('HighlightYank', {}),
-  pattern = '*',
+  group = vim.api.nvim_create_augroup('HighlightYank', { clear = true }),
   callback = function()
-    vim.hl.on_yank({
-      higroup = 'IncSearch',
-      timeout = 300,
-    })
+    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 300 })
   end,
 })
 
