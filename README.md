@@ -156,13 +156,83 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 ---
 
-## 플러그인 설명
+## 나의 Neovim 설정 설명
 
-### LSP
+### Options
+
+---
+
+### Keymaps
+
+---
+
+### LSP (Language Server Protocol)
+
+---
+
+#### LSP 란?
+
+- 에디터를 `Language Server`와 연결해 줘서 자동완성, syntax-highlighting, 에러 파악
+  등의 기능을 제공한다
+
+---
+
+- Lua
+
+  - lua_ls
+  - stylua
+
+  ***
+
+- HTML, CSS, JavaScript
+
+  - html
+  - cssls
+  - ts_ls
+  - emmet_ls
+  - prettier
+  - eslint_d
+
+  ***
+
+- C, C++
+
+  - clangd
+  - cpplint
+  - clang-format
+
+  ***
+
+- Python
+
+  - ruff
+
+  ***
+
+- Markdown
+
+  - marksman
+  - markdownlint
+
+  ***
+
+- Toml
+
+  - taplo
+
+  ***
+
+- 철자
+
+  - typos_lsp
 
 ---
 
 ### Plugins
+
+#### Lazy 플러그인 매니저
+
+---
 
 - [alpha](#alpha)
 - [auto-session](#auto-session)
@@ -423,7 +493,7 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
-- 팝업창으로 사용가능한 키맵을 보여준다
+- 팝업창으로 사용가능한 키맵들을 보여준다
 
 ---
 
