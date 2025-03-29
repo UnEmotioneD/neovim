@@ -110,8 +110,12 @@ return {
           editsNearCursor = true,
         },
       },
-      -- offsetEncoding = 'utf-16', -- for c, cpp (it will show error when opening toml file)
     }
+
+    -- fix warning: multiple different client offset_encodings detected for buffer (c, cpp file)
+    local clangd_capabilities = vim.tbl_deep_extend('force', {}, capabilities, {
+      offsetEncoding = { 'utf-16' },
+    })
 
     -- Set up Mason LSP config handlers with centralized on_attach and capabilities
     mason_lspconfig.setup_handlers({
@@ -155,6 +159,13 @@ return {
           on_attach = on_attach,
           capabilities = capabilities,
           filetypes = { 'html', 'css', 'javascriptreact' },
+        })
+      end,
+      ['clangd'] = function()
+        lspconfig.clangd.setup({
+          on_attach = on_attach,
+          capabilities = clangd_capabilities,
+          filetypes = { 'c', 'cpp' },
         })
       end,
     })
