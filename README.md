@@ -7,11 +7,16 @@
   - [현재 리포 같이 쓰기](#현재-리포를-기본-설정과-같이-쓰기)
 - [파일 구조](#파일-구조)
 - [플러그인 설명](#플러그인-설명)
+
   - [LSP](#lsp)
   - [Plugins](#plugins)
 
+- [다른 nvim config 또는 distro]()
+- [다른 eidtor 또는 IDE에서 vim-motion 사용하기]()
+
 ## 참고한 유튜브 영상
 
+- [드림코딩](https://www.youtube.com/watch?v=cY0JxzENBJg&t=39s&pp=ygUNdmltIOyCrOyaqeuylQ%3D%3D)
 - [Josean Martinez](https://www.youtube.com/watch?v=6pAG3BHurdM&pp=ygULam9zZWFuIG52aW0%3D)
 - [TJ DeVries](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&pp=ygUHdGogbnZpbQ%3D%3D)
 
@@ -19,7 +24,7 @@
 
 ### 니오빔 설치
 
-- Distro의 페키지 매니저로 `nvim` 설치한다
+- 해당 Distro의 페키지 매니저로 `nvim`을 설치한다
   - Kali: `sudo apt install nvim`
   - Arch: `sudo pacman -S nvim`
 
@@ -28,26 +33,43 @@
 ### 필요한 의존 프로그램
 
 - git
-- nerd fonts
+- nerd-fonts
+- fzf
+- lazygit
 - node.js
 - pnpm
 - yarn
 - cargo
-- treesitter-cli
-- lazygit
+- tree-sitter-cli
+
+---
+
+- `Rust` 설치하기
+  - [rust-lang](https://www.rust-lang.org/tools/install)
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+- `Cargo`를 이용해서 `tree-sitter-cli` 설치
+  - [tree-sitter/tree-sitter](https://github.com/tree-sitter/tree-sitter)
+
+```sh
+cargo install --locked tree-sitter-cli
+```
 
 ---
 
 - `Kali` 리눅스
 
 ```sh
-sudo apt install
+sudo apt install git fzf lazygit nodejs npm pnpm yarn
 ```
 
 - `Arch` 리눅스
 
 ```sh
-sudo pacman -S
+sudo pacman -S git ttf-meslo-nerd fzf lazygit nodejs npm pnpm yarn
 ```
 
 ---
@@ -96,9 +118,7 @@ nvim --clean
 
 ### 현재 리포를 기본 설정과 같이 쓰기
 
-- 예시) 클론을 `~/.config/daniel` 경로에 했다면
-
-- 다음 명령어를 사용해서 다른 설정의 `nvim` 사용 가능
+- ex) 클론을 `~/.config/daniel` 경로에 했다면 다음 명령어를 사용해서 다른 설정의 `nvim` 사용 가능
 
 ```sh
 NVIM_APPNAME=daniel nvim
@@ -115,18 +135,19 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 ## 파일 구조
 
 ```sh
-nvim
-├── ftplugin
-├── lua
-│   └── unemotioned
-│       ├── core
-│       ├── plugins
-│       │   └── lsp
-│       └── lazy.lua
-├── spell
-├── typos
-├── init.lua
-└── lazy-lock.json
+~/.config
+   └── nvim
+       ├── ftplugin
+       ├── lua
+       │   └── unemotioned
+       │       ├── core
+       │       ├── plugins
+       │       │   └── lsp
+       │       └── lazy.lua
+       ├── spell
+       ├── typos
+       ├── init.lua
+       └── lazy-lock.json
 ```
 
 ---
@@ -177,6 +198,10 @@ nvim
 
 ---
 
+<details>
+    <summary>플러그인 설명 보기</summary>
+    <p>
+
 #### alpha
 
 - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
@@ -193,72 +218,161 @@ nvim
 
 #### auto-session
 
+- [rmagatti/auto-session](https://github.com/rmagatti/auto-session)
+
 #### bigfile
+
+- [LunarVim/bigfile.nvim](https://github.com/LunarVim/bigfile.nvim)
 
 #### comment
 
+- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
+
 #### conform
+
+- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
 #### dressing
 
+- [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim)
+
 #### flash
+
+- [folke/flash.nvim](https://github.com/folke/flash.nvim)
 
 #### gitsigns
 
+- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+
 #### harpoon
+
+- [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 
 #### lazygit
 
+- [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+
 #### live-server
+
+- [barrett-ruth/live-server.nvim](https://github.com/barrett-ruth/live-server.nvim)
 
 #### lualine
 
+- [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+
 #### markdown-preview
+
+- [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 
 #### marks
 
+- [chentoast/marks.nvim](https://github.com/chentoast/marks.nvim)
+
 #### mini-icon
+
+- [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
 
 #### no-neck-pain
 
+- [shortcuts/no-neck-pain.nvim](https://github.com/shortcuts/no-neck-pain.nvim)
+
 #### nvim-autoparis
+
+- [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
 #### nvim-cmp
 
+- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+
 #### nvim-colorizer
+
+- [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 
 #### nvim-hlslens
 
+- [kevinhwang91/nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
+
 #### nvim-lint
+
+- [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
 
 #### nvim-surround
 
+- [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
+
 #### nvim-tree
+
+- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 
 #### nvim-treesitter
 
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
 #### oil
+
+- [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
 
 #### plenary
 
+- [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+
 #### tabout
+
+- [abecodes/tabout.nvim](https://github.com/abecodes/tabout.nvim)
 
 #### telescope
 
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
 #### todo-comments
+
+- [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
 #### tokyonight
 
+- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+
 #### trouble
+
+- [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 
 #### undotree
 
+- [mbbill/undotree](https://github.com/mbbill/undotree)
+
 #### vim-maximizer
+
+- [szw/vim-maximizer](https://github.com/szw/vim-maximizer)
 
 #### vim-tmux-navigator
 
+- [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+
 #### which-key
+
+- [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+
+</p>
+</details>
 
 ---
 
-##### Happy hacking 🎉
+### 다른 nvim config 또는 distro
+
+- [kickstart](https://github.com/nvim-lua/kickstart.nvim)
+- [AstroNvim](https://astronvim.com/)
+- [LazyVim](https://www.lazyvim.org/)
+- [NvChad](https://nvchad.com/)
+
+---
+
+### 다른 eidtor 또는 IDE에서 vim-motion 사용하기
+
+- visual studio:
+- visual studio code: `Vim` 또는 `VSCode Neovim`
+- eclipse: `Vrapper`, `ScrollOffset`, `Relative Line Number Ruler`
+- jetbrains IDE: `IdeaVim`
+
+---
+
+##### Happy Ricing 🎉
