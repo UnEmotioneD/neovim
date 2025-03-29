@@ -16,8 +16,8 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { import = 'josean.plugins' },
-  { import = 'josean.plugins.lsp' },
+  { import = 'unemotioned.plugins' },
+  { import = 'unemotioned.plugins.lsp' },
 }, {
   rocks = {
     enabled = false,
