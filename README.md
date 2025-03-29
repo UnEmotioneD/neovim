@@ -114,7 +114,7 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 ## 파일 구조
 
-```css
+```sh
 nvim
 ├── ftplugin
 ├── lua
