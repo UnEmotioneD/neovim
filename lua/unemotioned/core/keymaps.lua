@@ -56,12 +56,6 @@ map('n', 'Q', '<Nop>', { noremap = true, silent = true })
 map('n', '<leader>wr', ':SessionRestore<CR>', { desc = 'Session [s]ave' })
 map('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Session [r]estore' })
 
--- ChatGPT
--- map('n', '<leader>go', ':ChatGPT<CR>', { desc = '[g]pt [o]pen' })
--- map('n', '<leader>ge', ':ChatGPTEditWithInstruction<CR>', { desc = '[g]pt [e]dit with instruction' })
--- map('n', '<leader>gg', ':ChatGPTRun grammar_correction<CR>', { desc = '[g]pt Correct [g]rammer' })
--- map('n', '<leader>gf', ':ChatGPTRun fix_bugs<CR>', { desc = '[g]pt [f]ix bugs' })
-
 -- Conform
 map({ 'n', 'v' }, '<leader>p', function()
   require('conform').format()
