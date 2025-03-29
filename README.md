@@ -1,18 +1,22 @@
 # Neovim 설정
 
 - [설치전 작업](#설치전-작업)
+
   - [니오빔 설치](#니오빔-설치)
   - [필요한 의존 프로그램](#필요한-의존-프로그램)
   - [리포 클론](#리포지토리-클론)
   - [현재 리포 같이 쓰기](#현재-리포를-기본-설정과-같이-쓰기)
+
 - [파일 구조](#파일-구조)
+
 - [플러그인 설명](#플러그인-설명)
 
   - [LSP](#lsp)
   - [Plugins](#plugins)
 
-- [다른 nvim config 또는 distro]()
-- [다른 eidtor 또는 IDE에서 vim-motion 사용하기]()
+- [다른 nvim config 또는 distro](#다른-nvim-config-또는-distro)
+
+- [다른 에디터 또는 IDE에서 vim-motion 사용하기](#다른-에디터-또는-ide에서-vim-motion-사용하기)
 
 ## 참고한 유튜브 영상
 
@@ -199,21 +203,15 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 ---
 
-<details>
-    <summary>플러그인 설명 보기</summary>
-    <p>
-
 #### alpha
 
 - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
 - `nvim` 명령어로 시작했을때 커스텀한 화면을 보여줌
 
-- 다음 사이트에서 `header` 에서 보여줄 ASCII 아트를 바꿀 수 있음
+- [`patorjk.com`](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=netblock)에서 `header`에 보여줄 ASCII Art를 바꿀 수 있음
 
-  - [patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=netblock)
-
-- `button`에서 보여주는 키를 입력하면 원래 키맵과 다르게 명령어를 실행 할 수 있다
+- `button`에서 보여주는 키를 `Alpha` 창에서 입력하면 원래 키맵과 다르게 기능을 실행 할 수 있다
 
 - `:Alpha` 명령어를 사용해서 현재 창에서 보여줄 수도 있다
 
@@ -221,148 +219,215 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 - [rmagatti/auto-session](https://github.com/rmagatti/auto-session)
 
+- 해당 경로의 열려있는 파일, 창 등을 자동으로 저장하고 복원 할 수 있다
+
 #### bigfile
 
 - [LunarVim/bigfile.nvim](https://github.com/LunarVim/bigfile.nvim)
+
+- 파일이 특정 크기 이상일때 일부 기능들을 꺼준다
 
 #### comment
 
 - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
+- 향상된 주석 기능
+
 #### conform
 
-- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
+- [stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)
+
+- 향상된 포멧(띄어쓰기, 들여쓰기, 줄바꾸기) 기능
 
 #### dressing
 
 - [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim)
 
+- 향상된 UI
+
 #### flash
 
 - [folke/flash.nvim](https://github.com/folke/flash.nvim)
+
+- 향상된 화면 내에서의 커서 이동
 
 #### gitsigns
 
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
+- Buffer에서의 git 상태를 gutter(line-number 옆)에서 보여준다
+
 #### harpoon
 
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
+
+- 향상된 파일간 이동
 
 #### lazygit
 
 - [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 
+- Neovim 화면에서 LazyGit을 불러옴
+
 #### live-server
 
 - [barrett-ruth/live-server.nvim](https://github.com/barrett-ruth/live-server.nvim)
+
+- `npm` 페키지 `live-server`를 사용해서 html, css, javascript 파일 미리보기
 
 #### lualine
 
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 
+- Status bar
+
 #### markdown-preview
 
 - [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+
+- Markdown 파일 미리보기 기능 제공
 
 #### marks
 
 - [chentoast/marks.nvim](https://github.com/chentoast/marks.nvim)
 
+- Gutter(line-number 옆)에 마크를 보여줌
+
 #### mini-icon
 
 - [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
+
+- Nvim에서 보여줄 아이콘 제공
 
 #### no-neck-pain
 
 - [shortcuts/no-neck-pain.nvim](https://github.com/shortcuts/no-neck-pain.nvim)
 
+- Buffer 중앙 정렬 기능
+
 #### nvim-autoparis
 
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+
+- 여는 따옴표, 괄호 등을 자동으로 닫아줌
 
 #### nvim-cmp
 
 - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
+- 자동 완성 엔진
+
 #### nvim-colorizer
 
 - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
+
+- Virtual-text를 만들어서 색깔을 보여줌
 
 #### nvim-hlslens
 
 - [kevinhwang91/nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
 
+- Buffer 내에서 검색 결과를 보여줄때 더 많은 기능을 제공
+
 #### nvim-lint
 
 - [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+- Lint: 코드의 경고, 에러 등을 보여줌
 
 #### nvim-surround
 
 - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
 
+- 문자 쌍 또는 HTML 태그를 추가/삭제/변경 기능
+
 #### nvim-tree
 
 - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+
+- Neovim에서 VSCode 같은 파일 탐색기를 제공
 
 #### nvim-treesitter
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
+- 향상된 syntax-highlight 기능
+
 #### oil
 
 - [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
+
+- 파일 시스템을 일반 Neovim buffer 처럼 변집 할 수 있는 기능
 
 #### plenary
 
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
+- Neovim 플러그인을 개발하는데 필수적인 function들을 제공하는 라이브러리
+
 #### render-markdown
 
 - [render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+
+- 향상된 markdown 파일 보여주는 기능
 
 #### tabout
 
 - [abecodes/tabout.nvim](https://github.com/abecodes/tabout.nvim)
 
+- Tab 키를 이용해서 점, 따옴표, 괄호 등을 뛰어 넘을 수 있는 기능 제공
+
 #### telescope
 
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
+- Neovim 내에서 파일, 문자 등을 검색 할 수 있는 기능 제공
 
 #### todo-comments
 
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
+- 주석으로 되어 있는 TODO, NOTE 등의 단어들을 강조
+
 #### tokyonight
 
 - [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+
+- A color scheme
 
 #### trouble
 
 - [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 
+- 코드 진단, `telescope` 검색 결과 등을 보여주는 리스트
+
 #### undotree
 
 - [mbbill/undotree](https://github.com/mbbill/undotree)
+
+- 뒤로가기 기록을 나무 형식으로 보여주는 기능
 
 #### vim-maximizer
 
 - [szw/vim-maximizer](https://github.com/szw/vim-maximizer)
 
+- 창을 분할 했을때 최대화/복구 하는 기능 제공
+
 #### vim-tmux-navigator
 
 - [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+
+- TMUX와 Neovim의 window 또는 pane들을 편하게 이동할 수 있는 기능 제공
 
 #### which-key
 
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
-</p>
-</details>
+- 팝업창으로 사용가능한 키맵을 보여준다
 
 ---
 
-### 다른 nvim config 또는 distro
+### 다른 Nvim config 또는 distro
 
 - [kickstart](https://github.com/nvim-lua/kickstart.nvim)
 - [AstroNvim](https://astronvim.com/)
@@ -371,12 +436,12 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 ---
 
-### 다른 eidtor 또는 IDE에서 vim-motion 사용하기
+### 다른 에디터 또는 IDE에서 vim-motion 사용하기
 
-- visual studio:
-- visual studio code: `Vim` 또는 `VSCode Neovim`
-- eclipse: `Vrapper`, `ScrollOffset`, `Relative Line Number Ruler`
-- jetbrains IDE: `IdeaVim`
+- Visual Studio: [`VsVim`](https://marketplace.visualstudio.com/items?itemName=JaredParMSFT.VsVim)
+- Visual Studio Code: [`Vim`](https://github.com/VSCodeVim/Vim) 또는 [`VSCode Neovim`](https://github.com/vscode-neovim/vscode-neovim)
+- Eclipse IDE: [`Vrapper`](https://vrapper.sourceforge.net/home/), `ScrollOffset`, `Relative Line Number Ruler`
+- JetBrains IDE: [`IdeaVim`](https://plugins.jetbrains.com/plugin/164-ideavim)
 
 ---
 
