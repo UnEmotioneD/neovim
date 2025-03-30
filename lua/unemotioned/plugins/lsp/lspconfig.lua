@@ -49,6 +49,7 @@ return {
     local on_attach = function(ev)
       local opts = { buffer = ev.buf, silent = true }
       local mappings = {
+        -- stylua: ignore start
         { mode = 'n', lhs = 'gR', rhs = ':Telescope lsp_references<CR>', desc = 'Show LSP references' },
         { mode = 'n', lhs = 'gD', rhs = vim.lsp.buf.declaration, desc = 'Go to declaration' },
         { mode = 'n', lhs = 'gd', rhs = ':Telescope lsp_definitions<CR>', desc = 'Show LSP definitions' },
@@ -58,10 +59,11 @@ return {
         { mode = 'n', lhs = '<leader>rn', rhs = vim.lsp.buf.rename, desc = 'Smart rename' },
         { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = 'Show buffer diagnostics' },
         { mode = 'n', lhs = '<leader>d', rhs = vim.diagnostic.open_float, desc = 'Show line diagnostics' },
-        { mode = 'n', lhs = '[d', rhs = vim.diagnostic.goto_prev, desc = 'Go to previous diagnostic' },
-        { mode = 'n', lhs = ']d', rhs = vim.diagnostic.goto_next, desc = 'Go to next diagnostic' },
+        { mode = 'n', lhs = '[d', rhs = function() vim.diagnostic.jump({ count = -1 }) end, desc = 'Go to previous diagnostic', },
+        { mode = 'n', lhs = ']d', rhs = function() vim.diagnostic.jump({ count = 1 }) end, desc = 'Go to next diagnostic', },
         { mode = 'n', lhs = 'K', rhs = vim.lsp.buf.hover, desc = 'Show documentation for cursor' },
         { mode = 'n', lhs = '<leader>rs', rhs = ':LspRestart<Cr>', desc = 'Restart LSP' },
+        -- stylua: ignore end
       }
 
       for _, map in ipairs(mappings) do
