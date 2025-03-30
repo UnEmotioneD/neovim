@@ -615,6 +615,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - Eclipse IDE: [`Vrapper`](https://vrapper.sourceforge.net/home/), `ScrollOffset`, `Relative Line Number Ruler`
 - JetBrains IDE: [`IdeaVim`](https://plugins.jetbrains.com/plugin/164-ideavim)
 
+- [Vimium](https://github.com/philc/vimium): Chrome, FireFox, Edge에서 vim-motion을 이용해서 웹 브라우징
+- [Vimari](https://github.com/televator-apps/vimari#vimari-modes): safari에서...
+
 ---
 
 #### Happy Ricing 🎉
