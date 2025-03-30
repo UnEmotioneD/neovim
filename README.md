@@ -18,6 +18,15 @@
 
 - [다른 에디터 또는 IDE에서 vim-motion 사용하기](#다른-에디터-또는-ide에서-vim-motion-사용하기)
 
+---
+
+## TODOs
+
+- [ ] 칼리 리눅스에서 nerd-font 아이콘이 정상 동작 하도록 하기
+- [ ] 자바 개발 관련 플러그인과 설정 방법 문서화 하기
+
+---
+
 ## 참고한 유튜브 영상
 
 - [드림코딩](https://www.youtube.com/watch?v=cY0JxzENBJg&t=39s&pp=ygUNdmltIOyCrOyaqeuylQ%3D%3D) - Vim-motion 사용법
@@ -31,7 +40,7 @@
 - 해당 Distro의 페키지 매니저로 `nvim`을 설치한다
   - Kali: `sudo apt install nvim`
 
-### Source 로 부터 Build
+### Source로 부터 Build
 
 - 패키지 메니저로 설치 했을때 최신 버젼이 아닐 수 있음
 
@@ -84,23 +93,20 @@ sudo make install
 nvim -v
 ```
 
-#### 삭제
-
 </details>
 
 ---
 
 ### 필요한 의존 프로그램
 
-- git
-- nerd fonts (아이콘)
-- fzf (Telescope 기능에 필요)
-- ripgrep (Telescope live_grep 기능에 필요)
-- lazygit
-- node.js (LSP 설치)
-- pnpm (live-server 설치)
-- yarn (markdown-preview 설치)
-- tree-sitter-cli
+- `git`: github에서 clone 할때 필요
+- `nerd fonts`: 아이콘
+- `fzf`: Telescope 기능에 필요
+- `ripgrep`: Telescope live_grep 기능에 필요
+- `node.js`: LSP 설치
+- `pnpm`: live-server 설치
+- `yarn`: markdown-preview 설치
+- `lazygit`: git TUI(Terminal User Interface) tool
 
 ---
 
@@ -108,17 +114,20 @@ nvim -v
 
 - `Kali` 리눅스
 
-- nodejs, npm(node.js 설치하면 자동으로 설치됨) 설치
-
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs
+sudo apt install git ripgrep fzf
 ```
 
-- pnpm 설치
+- nodejs, npm 설치
 
 ```sh
-sudo npm install -g pnpm
+sudo apt install nodejs npm
+```
+
+- pnpm, yarn, tree-sitter-cli 설치
+
+```sh
+sudo npm install -g pnpm yarn
 ```
 
 - `pnpm`을 사용할 수 있도록 설정
@@ -133,22 +142,21 @@ pnpm setup
 source ~/.zshrc
 ```
 
----
+- LazyGit 설치
 
-#### Tree-sitter-cli tool 설치
-
-- `Rust` 설치하기
-  - [rust-lang](https://www.rust-lang.org/tools/install)
+  - [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
 
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit -D -t /usr/local/bin/
 ```
 
-- `Cargo`를 이용해서 `tree-sitter-cli` 설치
-  - [tree-sitter/tree-sitter](https://github.com/tree-sitter/tree-sitter)
+- 설치 확인
 
 ```sh
-cargo install --locked tree-sitter-cli
+lazygit -v
 ```
 
 ---
@@ -198,6 +206,10 @@ nvim
 ```sh
 nvim --clean
 ```
+
+- 이 리포를 클론 하고서 따로 관리하고 싶다면 `nvim` 경로 밑에 있는 `.git/` 폴더를 삭제 하면 된다
+- Neovim 플러그인들의 버젼을 git을 이용해서 관리하고 싶다면(플러그인들도 가끔 고장
+  나기 때문에) `.gitignore` 안에 있는 `**/lazy-lock.json` 파일을 삭제 하면 된다
 
 ---
 
