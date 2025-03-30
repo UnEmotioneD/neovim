@@ -5,10 +5,11 @@ opt.relativenumber = true
 opt.number = true
 opt.signcolumn = 'yes'
 opt.wrap = false
+opt.cursorline = true
 opt.scrolloff = 5
 opt.termguicolors = true
 opt.background = 'dark'
-opt.cursorline = true
+opt.fillchars = { eob = ' ' }
 
 -- Tabs & Indentation
 local indent = 2
