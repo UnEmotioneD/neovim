@@ -411,6 +411,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 포멧(띄어쓰기, 들여쓰기, 줄 바꾸기) 기능
 
+  - SAPCE p : 포멧
+
 #### dressing
 
 - [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim)
@@ -429,6 +431,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 화면 내에서의 커서 이동
 
+  - SPACE SPACE f 누르고서 찾고자 하는 단어 입력하다보면
+    단어 옆에 뜨는 알파벳을 누르면 이동된다
+
 #### gitsigns
 
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
@@ -441,11 +446,20 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 파일 간 이동
 
+  - ALT + u : 현재 파일을 harpoon에 저장
+  - ALT + i : harpoon 팝업창을 띄우고 파일로 이동 또는 리스트 편집 가능
+  - ALT + h : harpoon 리스트의 첫번째 파일로 이동
+  - ALT + j : 두번쨰 ...
+  - ALT + k : ...
+  - ALT + l : ...
+
 #### lazygit
 
 - [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 
 - Neovim 화면에서 LazyGit을 불러옴
+
+  - SPACE h g
 
 #### live-server
 
@@ -453,17 +467,26 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `npm` 패키지 `live-server`를 사용해서 html, css, javascript 파일 미리 보기
 
+  - SAPCE l o : 시작
+  - SAPCE l c : 종료
+  - SAPCE l t : 토글
+
 #### lualine
 
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 
-- Status bar
+- 상태바
+  - vim 의 모드(normal, insert, viaul ...)
+  - git 상태 (branch ...)
+  - 파일 이름, 상태, 크기, 위치 등
 
 #### markdown-preview
 
 - [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 
 - Markdown 파일 미리보기 기능 제공
+
+  - SPACE m p : localhost를 사용해서 미리보기를 브라우저에 띄운다
 
 #### marks
 
@@ -483,11 +506,13 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Buffer 중앙 정렬 기능
 
+  - SPACE n p
+
 #### nvim-autoparis
 
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
-- 여는 따옴표, 괄호 등을 자동으로 닫아줌
+- 여는 따옴표, 괄호, HTML 태그 등을 자동으로 닫아줌
 
 #### nvim-cmp
 
@@ -525,6 +550,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Neovim에서 VSCode 같은 파일 탐색기를 제공
 
+  - SPACE e e : nvimtree 토글
+  - SPACE e f : 현재 파일을 nvimtree에서 연다
+
 #### nvim-treesitter
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
@@ -536,6 +564,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
 
 - 파일 시스템을 일반 Neovim buffer 처럼 편집 할 수 있는 기능
+
+  - underscore(-)를 눌러서 현재 위치의 부모 경로를 연다
 
 #### plenary
 
@@ -549,6 +579,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 markdown 파일 보여주는 기능
 
+- SPACE m r : 파일에 신기한 효과 추가
+
 #### tabout
 
 - [abecodes/tabout.nvim](https://github.com/abecodes/tabout.nvim)
@@ -561,11 +593,18 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Neovim 내에서 파일, 문자 등을 검색할 수 있는 기능 제공
 
+  - SPACE f f : 파일 찾기
+  - SPACE f w : CWD에서 문자열 찾기
+  - SPACE f s : CWD에서 심볼 찾기
+
 #### todo-comments
 
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
-- 주석으로 되어 있는 TODO, NOTE 등의 단어들을 강조
+- 주석으로 되어 있는 TODO:, NOTE: 등의 단어들을 강조
+
+  <!-- WARNING: -->
+  <!-- BUG: -->
 
 #### trouble
 
@@ -579,11 +618,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 뒤로 가기 기록을 나무 형식으로 보여주는 기능
 
+  - SPACE u : undotree 창을 연다
+
 #### vim-maximizer
 
 - [szw/vim-maximizer](https://github.com/szw/vim-maximizer)
 
 - 창을 분할 했을때 최대화/복구하는 기능 제공
+
+  - SPACE s m : 초점 맞춰져 있는 창을 최대화/복원
 
 #### vim-tmux-navigator
 
@@ -591,11 +634,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - TMUX와 Neovim의 window 또는 pane들을 편하게 이동할 수 있는 기능 제공
 
+  - Control + h, j, k, l 키를 눌러서 이동
+
 #### which-key
 
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
 - 팝업창으로 사용 가능한 키맵들을 보여준다
+
+  - SPACE 키를 한번 누르고 기다려도 된다
 
 ---
 
