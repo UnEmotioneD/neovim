@@ -3,7 +3,7 @@ local opt = vim.opt_local
 opt.wrap = true
 opt.linebreak = true
 
-opt.textwidth = 80
+opt.textwidth = 79
 opt.formatoptions:append('t') -- Automatically wrap text using textwidth
 
 -- Fold headers
