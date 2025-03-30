@@ -1,6 +1,6 @@
 # Neovim 설정
 
-- [설치전 작업](#설치전-작업)
+- [설치 전 작업](#설치-전-작업)
 
   - [니오빔 설치](#니오빔-설치)
   - [필요한 의존 프로그램](#필요한-의존-프로그램)
@@ -22,7 +22,7 @@
 
 ## TODO
 
-- [ ] 칼리 리눅스에서 nerd-font 아이콘이 정상 동작 하도록 하기
+- [ ] 칼리 리눅스에서 nerd-font 아이콘이 정상 동작하도록 하기
 - [ ] 자바 개발 관련 플러그인과 설정 방법 문서화 하기
 
 ---
@@ -30,19 +30,19 @@
 ## 참고한 유튜브 영상
 
 - [드림코딩](https://www.youtube.com/watch?v=cY0JxzENBJg&t=39s&pp=ygUNdmltIOyCrOyaqeuylQ%3D%3D) - Vim-motion 사용법
-- [Josean Martinez](https://www.youtube.com/watch?v=6pAG3BHurdM&pp=ygULam9zZWFuIG52aW0%3D) - 현재 리포의 베이스가된 영상
+- [Josean Martinez](https://www.youtube.com/watch?v=6pAG3BHurdM&pp=ygULam9zZWFuIG52aW0%3D) - 현재 리포의 베이스가 된 영상
 - [TJ DeVries](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&pp=ygUHdGogbnZpbQ%3D%3D) - KickStart.nvim 설명
 
-## 설치전 작업
+## 설치 전 작업
 
 ### 니오빔 설치
 
-- 해당 Distro의 페키지 매니저로 `nvim`을 설치한다
+- 해당 Distro의 패키지 매니저로 `nvim`을 설치한다
   - Kali: `sudo apt install nvim`
 
 ### Source로 부터 Build
 
-- 패키지 메니저로 설치 했을때 최신 버젼이 아닐 수 있음
+- 패키지 매니저로 설치 했을때 최신 버젼이 아닐 수 있음
 
 <details>
     <summary>확장하기</summary>
@@ -99,7 +99,7 @@ nvim -v
 
 ### 필요한 의존 프로그램
 
-- `git`: github에서 clone 할때 필요
+- `git`: github에서 clone 할 때 필요
 - `nerd fonts`: 아이콘
 - `fzf`: Telescope 기능에 필요
 - `ripgrep`: Telescope live_grep 기능에 필요
@@ -136,7 +136,7 @@ sudo npm install -g pnpm yarn
 pnpm setup
 ```
 
-- `pnpm` 설정이 `~/.bashrc` 또는 `~/.zshrc`에 적용 되었고 새로고침을 해준다
+- `pnpm` 설정이 `~/.bashrc` 또는 `~/.zshrc`에 적용되었고 새로 고침을 해준다
 
 ```sh
 source ~/.zshrc
@@ -169,13 +169,13 @@ lazygit -v
 cd ~/.config
 ```
 
-- 이미 있는 설정 파일을 `mv(move)`로 이름 변경 하여 백업
+- 이미 있는 설정 파일을 `mv(move)`로 이름 변경하여 백업
 
 ```sh
 mv nvim nvim.bak
 ```
 
-- 이미 있는 플러그인, 케쉬 삭제
+- 이미 있는 플러그인, 캐시 삭제
 
 ```sh
 rm -rf ~/.local/share/nvim
@@ -207,9 +207,9 @@ nvim
 nvim --clean
 ```
 
-- 이 리포를 클론 하고서 따로 관리하고 싶다면 `nvim` 경로 밑에 있는 `.git/` 폴더를 삭제 하면 된다
+- 이 리포를 클론 하고서 따로 관리하고 싶다면 `nvim` 경로 밑에 있는 `.git/` 폴더를 삭제하면 된다
 - Neovim 플러그인들의 버젼을 git을 이용해서 관리하고 싶다면(플러그인들도 가끔 고장
-  나기 때문에) `.gitignore` 안에 있는 `**/lazy-lock.json` 파일을 삭제 하면 된다
+  나기 때문에) `.gitignore` 안에 있는 `**/lazy-lock.json` 파일을 삭제하면 된다
 
 ---
 
@@ -262,12 +262,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 ### Keymaps
 
-- 기본 키맵 제설정 그리고 lsp-config.nvim, gitsigns.nvim 키맵을 제외한
+- 기본 키맵 재설정 그리고 lsp-config.nvim, gitsigns.nvim 키맵을 제외한
   플러그인들의 키맵이 들어 있음
 
-- `:Telescope keymaps` 명령어를 이용해서 키맵들을 검색 할 수 있음
+- `:Telescope keymaps` 명령어를 이용해서 키맵들을 검색할 수 있음
 
-- `:WhichKey` 명령어를 이용해서 현재 사용가능한 키맵 팝업창을 띄울 수 있음
+- `:WhichKey` 명령어를 이용해서 현재 사용 가능한 키맵 팝업창을 띄울 수 있음
 
 ---
 
@@ -366,11 +366,11 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
-- `nvim` 명령어로 시작했을때 커스텀한 화면을 보여줌
+- `nvim` 명령어로 시작했을 때 커스텀한 화면을 보여줌
 
 - [`patorjk.com`](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=netblock)에서 `header`에 보여줄 ASCII Art를 바꿀 수 있음
 
-- `button`에서 보여주는 키를 `Alpha` 창에서 입력하면 원래 키맵과 다르게 기능을 실행 할 수 있다
+- `button`에서 보여주는 키를 `Alpha` 창에서 입력하면 원래 키맵과 다르게 기능을 실행할 수있다
 
 - `:Alpha` 명령어를 사용해서 현재 창에서 보여줄 수도 있다
 
@@ -378,13 +378,13 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [rmagatti/auto-session](https://github.com/rmagatti/auto-session)
 
-- 해당 경로의 열려있는 파일, 창 등을 자동으로 저장하고 복원 할 수 있다
+- 해당 경로의 열려있는 파일, 창 등을 자동으로 저장하고 복원할 수 있다
 
 #### bigfile
 
 - [LunarVim/bigfile.nvim](https://github.com/LunarVim/bigfile.nvim)
 
-- 파일이 특정 크기 이상일때 일부 기능들을 꺼준다
+- 파일이 특정 크기 이상일 때 일부 기능들을 꺼준다
 
 #### colorscheme
 
@@ -395,9 +395,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Neovim 테마 모음
 
-  - 각각의 테마들은 local 변수에 `table`로 선언 되어있고 파일 마지막 줄에 `return`의 값을 바꾸고 다실 실행하면 설치가 된다
+  - 각각의 테마들은 local 변수에 `table`로 선언되어있고 파일 마지막 줄에 `return`의 값을 바꾸고 다실 실행하면 설치가 된다
 
-- 각 테마들은 `flavor`, `variant`, `style`의 값을 변경하여서 다른 버젼으로 사용할 수 있다
+- 각 테마들은 `flavor`, `variant`, `style`의 값을 변경하여서 다른 버전으로 사용할 수 있다
 
 #### comment
 
@@ -409,7 +409,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)
 
-- 향상된 포멧(띄어쓰기, 들여쓰기, 줄바꾸기) 기능
+- 향상된 포멧(띄어쓰기, 들여쓰기, 줄 바꾸기) 기능
 
 #### dressing
 
@@ -439,7 +439,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 
-- 향상된 파일간 이동
+- 향상된 파일 간 이동
 
 #### lazygit
 
@@ -451,7 +451,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [barrett-ruth/live-server.nvim](https://github.com/barrett-ruth/live-server.nvim)
 
-- `npm` 페키지 `live-server`를 사용해서 html, css, javascript 파일 미리보기
+- `npm` 패키지 `live-server`를 사용해서 html, css, javascript 파일 미리 보기
 
 #### lualine
 
@@ -505,7 +505,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [kevinhwang91/nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
 
-- Buffer 내에서 검색 결과를 보여줄때 더 많은 기능을 제공
+- Buffer 내에서 검색 결과를 보여줄 때 더 많은 기능을 제공
 
 #### nvim-lint
 
@@ -535,7 +535,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
 
-- 파일 시스템을 일반 Neovim buffer 처럼 변집 할 수 있는 기능
+- 파일 시스템을 일반 Neovim buffer 처럼 편집 할 수 있는 기능
 
 #### plenary
 
@@ -553,13 +553,13 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [abecodes/tabout.nvim](https://github.com/abecodes/tabout.nvim)
 
-- Tab 키를 이용해서 점, 따옴표, 괄호 등을 뛰어 넘을 수 있는 기능 제공
+- Tab 키를 이용해서 점, 따옴표, 괄호 등을 뛰어넘을 수 있는 기능 제공
 
 #### telescope
 
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
-- Neovim 내에서 파일, 문자 등을 검색 할 수 있는 기능 제공
+- Neovim 내에서 파일, 문자 등을 검색할 수 있는 기능 제공
 
 #### todo-comments
 
@@ -577,13 +577,13 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [mbbill/undotree](https://github.com/mbbill/undotree)
 
-- 뒤로가기 기록을 나무 형식으로 보여주는 기능
+- 뒤로 가기 기록을 나무 형식으로 보여주는 기능
 
 #### vim-maximizer
 
 - [szw/vim-maximizer](https://github.com/szw/vim-maximizer)
 
-- 창을 분할 했을때 최대화/복구 하는 기능 제공
+- 창을 분할 했을때 최대화/복구하는 기능 제공
 
 #### vim-tmux-navigator
 
@@ -595,7 +595,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
-- 팝업창으로 사용가능한 키맵들을 보여준다
+- 팝업창으로 사용 가능한 키맵들을 보여준다
 
 ---
 
