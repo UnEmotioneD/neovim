@@ -411,7 +411,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 포멧(띄어쓰기, 들여쓰기, 줄 바꾸기) 기능
 
-  - SAPCE p : 포멧
+  - `SAPCE p` : 포멧
 
 #### dressing
 
@@ -431,7 +431,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 화면 내에서의 커서 이동
 
-  - SPACE SPACE f 누르고서 찾고자 하는 단어 입력하다보면
+  - `SPC SPC f` 누르고서 찾고자 하는 단어 입력하다보면
     단어 옆에 뜨는 알파벳을 누르면 이동된다
 
 #### gitsigns
@@ -446,12 +446,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 파일 간 이동
 
-  - ALT + u : 현재 파일을 harpoon에 저장
-  - ALT + i : harpoon 팝업창을 띄우고 파일로 이동 또는 리스트 편집 가능
-  - ALT + h : harpoon 리스트의 첫번째 파일로 이동
-  - ALT + j : 두번쨰 ...
-  - ALT + k : ...
-  - ALT + l : ...
+  - `ALT + u` : 현재 파일을 harpoon에 저장
+  - `ALT + i` : harpoon 팝업창을 띄우고 파일로 이동 또는 리스트 편집 가능
+  - `ALT + h` : harpoon 리스트의 첫번째 파일로 이동
+  - `ALT + j` : 두번쨰 ...
+  - `ALT + k` : ...
+  - `ALT + l` : ...
 
 #### lazygit
 
@@ -459,7 +459,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Neovim 화면에서 LazyGit을 불러옴
 
-  - SPACE h g
+  - `SPC h g`
 
 #### live-server
 
@@ -467,9 +467,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `npm` 패키지 `live-server`를 사용해서 html, css, javascript 파일 미리 보기
 
-  - SAPCE l o : 시작
-  - SAPCE l c : 종료
-  - SAPCE l t : 토글
+  - `SAPCE l o` : 시작
+  - `SAPCE l c` : 종료
+  - `SAPCE l t` : 토글
 
 #### lualine
 
@@ -486,7 +486,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Markdown 파일 미리보기 기능 제공
 
-  - SPACE m p : localhost를 사용해서 미리보기를 브라우저에 띄운다
+  - `SPC m p` : localhost를 사용해서 미리보기를 브라우저에 띄운다
 
 #### marks
 
@@ -506,7 +506,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Buffer 중앙 정렬 기능
 
-  - SPACE n p
+  - `SPC n p`
 
 #### nvim-autoparis
 
@@ -550,8 +550,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Neovim에서 VSCode 같은 파일 탐색기를 제공
 
-  - SPACE e e : nvimtree 토글
-  - SPACE e f : 현재 파일을 nvimtree에서 연다
+  - `SPC e e` : nvimtree 토글
+  - `SPC e f` : 현재 파일을 nvimtree에서 연다
 
 #### nvim-treesitter
 
@@ -565,7 +565,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 파일 시스템을 일반 Neovim buffer 처럼 편집 할 수 있는 기능
 
-  - underscore(-)를 눌러서 현재 위치의 부모 경로를 연다
+  - `underscore(-)`를 눌러서 현재 위치의 부모 경로를 연다
 
 #### plenary
 
@@ -579,7 +579,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 markdown 파일 보여주는 기능
 
-- SPACE m r : 파일에 신기한 효과 추가
+- `SPC m r` : 파일에 신기한 효과 추가
 
 #### tabout
 
@@ -593,9 +593,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Neovim 내에서 파일, 문자 등을 검색할 수 있는 기능 제공
 
-  - SPACE f f : 파일 찾기
-  - SPACE f w : CWD에서 문자열 찾기
-  - SPACE f s : CWD에서 심볼 찾기
+  - `SPC f f` : 파일 찾기
+  - `SPC f w` : CWD에서 문자열 찾기
+  - `SPC f s` : CWD에서 심볼 찾기
 
 #### todo-comments
 
@@ -618,7 +618,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 뒤로 가기 기록을 나무 형식으로 보여주는 기능
 
-  - SPACE u : undotree 창을 연다
+  - `SPC u` : undotree 창을 연다
 
 #### vim-maximizer
 
@@ -626,7 +626,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 창을 분할 했을때 최대화/복구하는 기능 제공
 
-  - SPACE s m : 초점 맞춰져 있는 창을 최대화/복원
+  - `SPC s m` : 초점 맞춰져 있는 창을 최대화/복원
 
 #### vim-tmux-navigator
 
@@ -634,7 +634,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - TMUX와 Neovim의 window 또는 pane들을 편하게 이동할 수 있는 기능 제공
 
-  - Control + h, j, k, l 키를 눌러서 이동
+  - `Ctrl + h, j, k, l` 키를 눌러서 이동
 
 #### which-key
 
@@ -642,7 +642,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 팝업창으로 사용 가능한 키맵들을 보여준다
 
-  - SPACE 키를 한번 누르고 기다려도 된다
+  - `SPC` 키를 한번 누르고 기다려도 된다
 
 ---
 
