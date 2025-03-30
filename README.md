@@ -411,7 +411,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 포멧(띄어쓰기, 들여쓰기, 줄 바꾸기) 기능
 
-  - `SAPCE p` : 포멧
+  - `SPC p` : 포멧
 
 #### dressing
 
@@ -449,7 +449,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `ALT + u` : 현재 파일을 harpoon에 저장
   - `ALT + i` : harpoon 팝업창을 띄우고 파일로 이동 또는 리스트 편집 가능
   - `ALT + h` : harpoon 리스트의 첫번째 파일로 이동
-  - `ALT + j` : 두번쨰 ...
+  - `ALT + j` : 두번째 ...
   - `ALT + k` : ...
   - `ALT + l` : ...
 
@@ -467,9 +467,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `npm` 패키지 `live-server`를 사용해서 html, css, javascript 파일 미리 보기
 
-  - `SAPCE l o` : 시작
-  - `SAPCE l c` : 종료
-  - `SAPCE l t` : 토글
+  - `SPC l o` : 시작
+  - `SPC l c` : 종료
+  - `SPC l t` : 토글
 
 #### lualine
 
