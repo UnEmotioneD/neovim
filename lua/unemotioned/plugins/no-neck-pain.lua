@@ -5,6 +5,12 @@ return {
     width = 90,
     mappings = {
       enabled = true,
+      toggle = '<Leader>np',
+      toggleLeftSide = '<Leader>nql',
+      toggleRightSide = '<Leader>nqr',
+      widthUp = '<Leader>n=',
+      widthDown = '<Leader>n-',
+      scratchPad = '<Leader>ns',
     },
     integrations = {
       NvimTree = {
