@@ -1,6 +1,5 @@
 local cat = {
   'catppuccin/nvim',
-  name = 'catppuccin',
   lazy = false,
   priority = 1000,
   config = function()
@@ -28,7 +27,6 @@ local cat = {
 
 local gruv = {
   'ellisonleao/gruvbox.nvim',
-  name = 'gruvbox',
   lazy = false,
   priority = 1000,
   config = function()
@@ -41,7 +39,6 @@ local gruv = {
 
 local rose = {
   'rose-pine/neovim',
-  name = 'rose-pine',
   priority = 1000,
   config = function()
     require('rose-pine').setup({
@@ -58,7 +55,6 @@ local rose = {
 
 local tokyo = {
   'folke/tokyonight.nvim',
-  name = 'tokyonight',
   lazy = false,
   priority = 1000,
   config = function()
