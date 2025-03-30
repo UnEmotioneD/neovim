@@ -22,7 +22,7 @@ return {
         ---@type string | 'horizontal' | 'vertical'
         layout_strategy = 'horizontal',
         ---@type string | 'ascending' | 'descending'
-        sorting_strategy = 'ascending',
+        sorting_strategy = 'descending',
 
         mappings = {
           i = {
