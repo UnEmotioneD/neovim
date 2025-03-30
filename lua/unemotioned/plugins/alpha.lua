@@ -5,7 +5,7 @@ return {
     local alpha = require('alpha')
     local dashboard = require('alpha.themes.dashboard')
 
-    -- https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=LAZYVIM
+    -- https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=NETBLOCK
     dashboard.section.header.val = {
       '                                                  ',
       '                                                  ',
