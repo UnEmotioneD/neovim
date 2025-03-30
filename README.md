@@ -367,6 +367,19 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 
 - 파일이 특정 크기 이상일때 일부 기능들을 꺼준다
 
+#### colorscheme
+
+- [Catppuccin](https://github.com/catppuccin/nvim)
+- [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim)
+- [Rose-pine](https://github.com/rose-pine/neovim)
+- [Tokyonight](https://github.com/folke/tokyonight.nvim)
+
+- Neovim 테마 모음
+
+  - 각각의 테마들은 local 변수에 `table`로 선언 되어있고 파일 마지막 줄에 `return`의 값을 바꾸고 다실 실행하면 설치가 된다
+
+- 각 테마들은 `flavor`, `variant`, `style`의 값을 변경하여서 다른 버젼으로 사용할 수 있다
+
 #### comment
 
 - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
@@ -534,12 +547,6 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
 - 주석으로 되어 있는 TODO, NOTE 등의 단어들을 강조
-
-#### tokyonight
-
-- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-
-- A color scheme
 
 #### trouble
 
