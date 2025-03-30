@@ -45,7 +45,7 @@
 - 패키지 메니저로 설치 했을때 최신 버젼이 아닐 수 있음
 
 <details>
-  <summary>확장하기</summary>
+    <summary>확장하기</summary>
 
 #### 설치
 
@@ -75,7 +75,7 @@ cd neovim
 git checkout stable
 ```
 
-- Build: `Ninja` 를 이용해서 빌드한다
+- Build: `Ninja`를 이용해서 빌드한다
 
 ```sh
 make CMAKE_BUILD_TYPE=RelWithDebInfo
@@ -247,6 +247,11 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
        └── lazy-lock.json
 ```
 
+- `ftplugin`: 특정 파일 확장자에만 적용되는 설정 지정
+- `core`: 옵션, 키맵
+- `plugins`: 모든 플러그인
+- `lsp`: lsp-config, mason
+
 ---
 
 ## 나의 Neovim 설명
@@ -257,11 +262,16 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 ### Keymaps
 
+- 기본 키맵 제설정 그리고 lsp-config.nvim, gitsigns.nvim 키맵을 제외한
+  플러그인들의 키맵이 들어 있음
+
+- `:Telescope keymaps` 명령어를 이용해서 키맵들을 검색 할 수 있음
+
+- `:WhichKey` 명령어를 이용해서 현재 사용가능한 키맵 팝업창을 띄울 수 있음
+
 ---
 
 ### LSP (Language Server Protocol)
-
----
 
 #### LSP 란?
 
@@ -312,8 +322,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 ### Plugins
 
 #### Lazy 플러그인 매니저
-
----
 
 - [alpha](#alpha)
 - [auto-session](#auto-session)
