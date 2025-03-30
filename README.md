@@ -215,16 +215,16 @@ nvim --clean
 
 ### 현재 리포를 기본 설정과 같이 쓰기
 
-- ex) 클론을 `~/.config/daniel` 경로에 했다면 다음 명령어를 사용해서 다른 설정의 `nvim` 사용 가능
+- ex) 클론을 `~/.config/unemotioned` 경로에 했다면 다음 명령어를 사용해서 다른 설정의 `nvim` 사용 가능
 
 ```sh
-NVIM_APPNAME=daniel nvim
+NVIM_APPNAME=unemotioned nvim
 ```
 
 - `~/.bashrc` 또는 `~/.zshrc`에 별칭을 추가해서 사용할 수도 있다
 
 ```sh
-alias dvim="NVIM_APPNAME=daniel nvim"
+alias evim="NVIM_APPNAME=unemotioned nvim"
 ```
 
 ---
@@ -346,7 +346,6 @@ alias dvim="NVIM_APPNAME=daniel nvim"
 - [tabout](#tabout)
 - [telescope](#telescope)
 - [todo-comments](#todo-comments)
-- [tokyonight](#tokyonight)
 - [trouble](#trouble)
 - [undotree](#undotree)
 - [vim-maximizer](#vim-maximizer)
