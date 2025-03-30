@@ -37,6 +37,9 @@ map('n', '<leader>tx', ':tabclose<CR>', { desc = '[t]ab [x] close current tab' }
 map('n', '<leader>tn', ':tabn<CR>', { desc = '[t]ab [n]ext tab' })
 map('n', '<leader>tp', ':tabp<CR>', { desc = '[t]ab [p]revious tab' })
 
+map('n', '<leader>bn', ':bnext<CR>', { desc = '[b]uffer [n]ext' })
+map('n', '<leader>bp', ':bprev<CR>', { desc = '[b]uffer [p]revious' })
+
 map('n', '<leader>cs', ':setlocal spell! spell?<CR>', { desc = '[c]heck [s]pell toggle' })
 
 -- Disable conflicting keybinds with tmux
