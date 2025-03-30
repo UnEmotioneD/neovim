@@ -124,7 +124,7 @@ sudo apt install git ripgrep fzf
 sudo apt install nodejs npm
 ```
 
-- pnpm, yarn, tree-sitter-cli 설치
+- pnpm, yarn
 
 ```sh
 sudo npm install -g pnpm yarn
