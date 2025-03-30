@@ -20,7 +20,7 @@
 
 ---
 
-## TODOs
+## TODO
 
 - [ ] 칼리 리눅스에서 nerd-font 아이콘이 정상 동작 하도록 하기
 - [ ] 자바 개발 관련 플러그인과 설정 방법 문서화 하기
@@ -31,7 +31,7 @@
 
 - [드림코딩](https://www.youtube.com/watch?v=cY0JxzENBJg&t=39s&pp=ygUNdmltIOyCrOyaqeuylQ%3D%3D) - Vim-motion 사용법
 - [Josean Martinez](https://www.youtube.com/watch?v=6pAG3BHurdM&pp=ygULam9zZWFuIG52aW0%3D) - 현재 리포의 베이스가된 영상
-- [TJ DeVries](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&pp=ygUHdGogbnZpbQ%3D%3D) - KickStart 설명
+- [TJ DeVries](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&pp=ygUHdGogbnZpbQ%3D%3D) - KickStart.nvim 설명
 
 ## 설치전 작업
 
