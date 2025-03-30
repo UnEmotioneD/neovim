@@ -31,11 +31,6 @@ opt.clipboard:append('unnamedplus')
 opt.splitright = true
 opt.splitbelow = true
 
--- Performance
-opt.updatetime = 100
-opt.ttyfast = true
-opt.lazyredraw = true
-
 -- Timeouts
 opt.timeout = true
 opt.timeoutlen = 500
