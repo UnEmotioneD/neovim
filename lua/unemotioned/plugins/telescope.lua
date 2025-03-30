@@ -14,6 +14,16 @@ return {
     telescope.setup({
       defaults = {
         path_display = { 'smart' },
+
+        layout_config = {
+          ---@type string | 'bottom' | 'top'
+          prompt_position = 'bottom',
+        },
+        ---@type string | 'horizontal' | 'vertical'
+        layout_strategy = 'horizontal',
+        ---@type string | 'ascending' | 'descending'
+        sorting_strategy = 'ascending',
+
         mappings = {
           i = {
             ['<C-k>'] = actions.move_selection_previous,

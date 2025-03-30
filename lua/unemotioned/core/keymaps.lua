@@ -146,7 +146,7 @@ map('n', '<leader>fc', ':Telescope grep_string<CR>', { desc = '[f]ind string und
 map('n', '<leader>ff', ':Telescope find_files<CR>', { desc = '[f]ind [f]iles' })
 map('n', '<leader>fk', ':Telescope keymaps<CR>', { desc = '[f]ind [k]keymaps' })
 map('n', '<leader>fn', function()
-  require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
+  require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config'), prompt_title = 'Find Nvim Config' })
 end, { desc = '[f]ind [n]eovim files' })
 map('n', '<leader>fo', ':Telescope oldfiles<CR>', { desc = '[f]ind [o]old files' })
 map('n', '<leader>fs', ':Telescope lsp_document_symbols<CR>', { desc = '[f]ind [s]symbols' })
