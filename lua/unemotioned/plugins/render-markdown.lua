@@ -13,5 +13,6 @@ return {
       above = 0, -- Number of lines above cursor to show.
       below = 0, -- Number of lines below cursor to show.
     },
+    latex = { enabled = false },
   },
 }

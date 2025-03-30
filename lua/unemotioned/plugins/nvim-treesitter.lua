@@ -37,6 +37,7 @@ return {
         'javascript',
         'json',
         'jsonc',
+        'latex',
         'lua',
         'markdown',
         'markdown_inline',
