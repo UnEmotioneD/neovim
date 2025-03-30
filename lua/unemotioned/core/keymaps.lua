@@ -135,7 +135,7 @@ map('n', '[t', function()
 end, { desc = 'Previous todo comment' })
 
 -- Undo Tree
-map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = 'Toggle Undo Tree', noremap = true, silent = true })
+map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle', noremap = true, silent = true })
 
 -- Oil
 map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
