@@ -19,6 +19,9 @@ map('n', 'x', '"_x', { desc = 'Delete char without yanking' })
 
 map('v', 'p', 'pgvy', { desc = 'Paste over selection without overriding reg' })
 
+-- 리눅스에서 '입력' 모드 일때 Esc를 누르면 IM(Input Method)를 영어로 전환
+--  키보드가 한글 일때는 '일반' 모드에서 움직일 수 없기 때문에 유용
+--  'fcitx5'를 이용할때 사용 가능
 if vim.loop.os_uname().sysname == 'Linux' then
   map('i', '<Esc>', function()
     vim.fn.system('fcitx5-remote -c')
