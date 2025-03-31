@@ -278,6 +278,11 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 에디터를 `Language Server`와 연결해 줘서 자동완성, syntax-highlighting, 에러 파악
   등의 기능을 제공한다
 
+- `:Mason` 명령어로 `Mason.nvim` 팝업창을 띄울 수 있다
+
+- `mason.lua` 파일의 `ensure_installed` 테이블에 추가할 LSP들은 `mason`
+  팝업창에서 `/`를 이용해서 찾을 수 있다
+
 ---
 
 - Lua
@@ -322,6 +327,10 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 ### Plugins
 
 #### Lazy 플러그인 매니저
+
+- `:Lazy` 명령어로 lazy.nvim 플러그인 매니저 팝업창을 띄울 수 있다
+
+  - 팝업창에서 플러그인 업데이트, 사용하지 않는 프러그인 삭제 등을 할 수 있다
 
 - [alpha](#alpha)
 - [auto-session](#auto-session)
