@@ -78,25 +78,37 @@ map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 -- Haproon ---
 -- stylua: ignore start
 local add = function() require('harpoon'):list():add() end
-local edit = function() local harpoon = require('harpoon') harpoon.ui:toggle_quick_menu(harpoon:list()) end
+local edit = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
 local sel1 = function() require('harpoon'):list():select(1) end
 local sel2 = function() require('harpoon'):list():select(2) end
 local sel3 = function() require('harpoon'):list():select(3) end
 local sel4 = function() require('harpoon'):list():select(4) end
+local addDesc = { desc = 'Harpoon [f]ile' }
+local editDesc = { desc = 'Harpoon [e]dit' }
+local sel1Desc = { desc = 'Harpoon to 1' }
+local sel2Desc = { desc = 'Harpoon to 2' }
+local sel3Desc = { desc = 'Harpoon to 3' }
+local sel4Desc = { desc = 'Harpoon to 4' }
+
+map('n', '<C-S-n>', function() require('harpoon'):list():next() end, {desc = 'next on harpoon list'})
+map('n', '<C-S-p>', function() require('harpoon'):list():prev() end, {desc = 'prev on harpoon list'})
 -- stylua: ignore end
+
 -- for Linux harpoon with alt key
-map('n', '<M-u>', add, { desc = 'Harpoon File' })
-map('n', '<M-i>', edit, { desc = 'Harpoon Edit' })
-map('n', '<M-h>', sel1, { desc = 'Harpoon to 1' })
-map('n', '<M-j>', sel2, { desc = 'Harpoon to 2' })
-map('n', '<M-k>', sel3, { desc = 'Harpoon to 3' })
-map('n', '<M-l>', sel4, { desc = 'Harpoon to 4' })
+map('n', '<M-u>', add, addDesc)
+map('n', '<M-i>', edit, editDesc)
+map('n', '<M-h>', sel1, sel1Desc)
+map('n', '<M-j>', sel2, sel2Desc)
+map('n', '<M-k>', sel3, sel3Desc)
+map('n', '<M-l>', sel4, sel4Desc)
+
 -- for macOS harpoon with leader key
-map('n', '<leader><leader>h', add, { desc = '[h]arpoon File' })
-map('n', '<leader><leader>e', edit, { desc = 'Harpoon [e]dit' })
-map('n', '<leader>1', sel1, { desc = 'Harpoon to 1' })
-map('n', '<leader>2', sel2, { desc = 'Harpoon to 2' })
-map('n', '<leader>3', sel3, { desc = 'Harpoon to 3' })
+map('n', '<leader><leader>h', add, addDesc)
+map('n', '<leader><leader>e', edit, editDesc)
+map('n', '<leader>1', sel1, sel1Desc)
+map('n', '<leader>2', sel2, sel2Desc)
+map('n', '<leader>3', sel3, sel3Desc)
+map('n', '<leader>4', sel4, sel4Desc)
 
 -- Hlslens
 local function hlslens_key(key)
