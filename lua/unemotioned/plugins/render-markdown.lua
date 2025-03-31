@@ -8,7 +8,7 @@ return {
   opts = {
     enabled = false, -- render by default
     ---@type string | 'none' | 'lazy' | 'obsidian'
-    preset = 'obsidian',
+    preset = 'lazy',
     anti_conceal = {
       above = 0, -- Number of lines above cursor to show.
       below = 0, -- Number of lines below cursor to show.
