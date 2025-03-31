@@ -6,10 +6,6 @@ opt.linebreak = true
 opt.textwidth = 79
 opt.formatoptions:append('t') -- Automatically wrap text using textwidth
 
--- Fold headers
-opt.foldmethod = 'expr'
-opt.foldexpr = "getline(v:lnum)=~'^\\s*#' ? '>' . (strlen(submatch(0)) - 1) : '='"
-
 local map = vim.keymap.set
 
 -- For navigatiung wrapped lines like normal lines
