@@ -27,6 +27,7 @@ return {
         'cssls',
         'ts_ls',
         'emmet_ls',
+        'pyright',
         'ruff', -- python LSP
         'clangd',
         'taplo', -- toml LSP
