@@ -473,8 +473,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `ALT + j` : 두번째 ...
   - `ALT + k` : ...
   - `ALT + l` : ...
-  - `Ctrl + Shft + n` : 리스트에서 다음
-  - `Ctrl + Shft + p` : 리스트에서 이전
+  - `CTRL + SHFT + n` : 리스트에서 다음
+  - `CTRL + SHFT + p` : 리스트에서 이전
 
 #### lazygit
 
