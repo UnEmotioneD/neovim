@@ -24,6 +24,7 @@
 
 - [ ] 칼리 리눅스에서 nerd-font 아이콘이 정상 동작하도록 하기
 - [ ] 자바 개발 관련 플러그인과 설정 방법 문서화 하기
+- [ ] Vim 사용하기 편한 키보드 매핑 설명하기
 
 ---
 
@@ -278,10 +279,16 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 에디터를 `Language Server`와 연결해 줘서 자동완성, syntax-highlighting, 에러 파악
   등의 기능을 제공한다
 
-- `:Mason` 명령어로 `Mason.nvim` 팝업창을 띄울 수 있다
+- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
-- `mason.lua` 파일의 `ensure_installed` 테이블에 추가할 LSP들은 `mason`
-  팝업창에서 `/`를 이용해서 찾을 수 있다
+  - `:LspInfo` 명령어로 현재 버퍼의 LSP 정보 확인
+
+- [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
+
+  - `:Mason` 명령어로 `Mason.nvim` 팝업창을 띄울 수 있다
+
+  - `mason.lua` 파일의 `ensure_installed` 테이블에 추가할 LSP들은 `mason`
+    팝업창에서 `/`를 이용해서 찾을 수 있다
 
 ---
 
@@ -307,7 +314,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Python
 
-  - ruff
+  - pyright (LSP)
+  - ruff (LSP, linter, formatter)
 
 - Markdown
 
@@ -330,7 +338,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `:Lazy` 명령어로 lazy.nvim 플러그인 매니저 팝업창을 띄울 수 있다
 
-  - 팝업창에서 플러그인 업데이트, 사용하지 않는 프러그인 삭제 등을 할 수 있다
+  - 팝업창에서 플러그인 업데이트, 사용하지 않는 플러그인 삭제 등을 할 수 있다
+
+---
 
 - [alpha](#alpha)
 - [auto-session](#auto-session)
@@ -397,14 +407,14 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 #### colorscheme
 
-- [Catppuccin](https://github.com/catppuccin/nvim)
-- [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim)
-- [Rose-pine](https://github.com/rose-pine/neovim)
-- [Tokyonight](https://github.com/folke/tokyonight.nvim)
-
 - Neovim 테마 모음
 
-  - 각각의 테마들은 local 변수에 `table`로 선언되어있고 파일 마지막 줄에 `return`의 값을 바꾸고 다실 실행하면 설치가 된다
+  - [Catppuccin](https://github.com/catppuccin/nvim)
+  - [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim)
+  - [Rose-pine](https://github.com/rose-pine/neovim)
+  - [Tokyonight](https://github.com/folke/tokyonight.nvim)
+
+- 각각의 테마들은 local 변수에 `table`로 선언되어있고 파일 마지막 줄에 `return`의 값을 바꾸고 다실 실행하면 설치가 된다
 
 - 각 테마들은 `flavor`, `variant`, `style`의 값을 변경하여서 다른 버전으로 사용할 수 있다
 
@@ -421,6 +431,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 향상된 포멧(띄어쓰기, 들여쓰기, 줄 바꾸기) 기능
 
   - `SPC p` : 포멧
+
+  - `SPC c i` : 현재 버퍼에서의 포메터 관련 정보를 확인
 
 #### dressing
 
