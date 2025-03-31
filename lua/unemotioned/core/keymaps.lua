@@ -8,7 +8,8 @@ local map = vim.keymap.set
 
 map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 
-map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true })
+map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true }) -- Only clears highlight
+map('n', '<leader>nh', ':nohl<Bar>let @/ = ""<CR>', { desc = '[n]o [h]ighlight and pattern' }) -- Clears pattern so no more n/N
 
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center' })
