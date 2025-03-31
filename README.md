@@ -25,6 +25,7 @@
 - [ ] 칼리 리눅스에서 nerd-font 아이콘이 정상 동작하도록 하기
 - [ ] 자바 개발 관련 플러그인과 설정 방법 문서화 하기
 - [ ] Vim 사용하기 편한 키보드 매핑 설명하기
+- [ ] Database SQL 기능 추가
 
 ---
 
@@ -659,7 +660,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - TMUX와 Neovim의 window 또는 pane들을 편하게 이동할 수 있는 기능 제공
 
-  - `Ctrl + h, j, k, l` 키를 눌러서 이동
+  - `CTRL + h, j, k, l` 키를 눌러서 이동
 
 #### which-key
 
