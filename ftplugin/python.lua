@@ -1,3 +1,5 @@
+vim.opt.colorcolumn = '80'
+
 -- Auto format on save
 vim.api.nvim_create_autocmd('BufWritePre', {
   buffer = 0, -- current buffer only
