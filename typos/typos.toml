@@ -1,0 +1,7 @@
+[default.extend-words]
+"noice" = "noice"
+
+[files]
+extend-exclude = [
+  # Ignore these files
+]

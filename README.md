@@ -329,6 +329,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 철자
 
   - typos_lsp
+    - `typos/typos.toml` 파일의 `default.extend-words` 밑에 형식에 맞춰서
+      작성하면 `typos`가 틀린 단어로 경고 하지 않는다
 
 ---
 
