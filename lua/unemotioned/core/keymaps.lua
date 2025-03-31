@@ -75,38 +75,28 @@ end, { desc = '[f]lash' })
 -- Gitsings
 map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
--- Haproon
-local mod = '<M-'
-
--- TODO: Use command key for macOS
--- if vim.loop.os_uname().sysname == 'Darwin' then
---   mod = ''
--- end
-
-map('n', mod .. 'u>', function()
-  require('harpoon'):list():add()
-end, { desc = '[h]arpoon File' })
-
-map('n', mod .. 'i>', function()
-  local harpoon = require('harpoon')
-  harpoon.ui:toggle_quick_menu(harpoon:list())
-end, { desc = 'Harpoon [e]dit' })
-
-map('n', mod .. 'h>', function()
-  require('harpoon'):list():select(1)
-end, { desc = 'Harpoon to 1' })
-
-map('n', mod .. 'j>', function()
-  require('harpoon'):list():select(2)
-end, { desc = 'Harpoon to 2' })
-
-map('n', mod .. 'k>', function()
-  require('harpoon'):list():select(3)
-end, { desc = 'Harpoon to 3' })
-
-map('n', mod .. 'l>', function()
-  require('harpoon'):list():select(4)
-end, { desc = 'Harpoon to 4' })
+-- Haproon ---
+-- stylua: ignore start
+local add = function() require('harpoon'):list():add() end
+local edit = function() local harpoon = require('harpoon') harpoon.ui:toggle_quick_menu(harpoon:list()) end
+local sel1 = function() require('harpoon'):list():select(1) end
+local sel2 = function() require('harpoon'):list():select(2) end
+local sel3 = function() require('harpoon'):list():select(3) end
+local sel4 = function() require('harpoon'):list():select(4) end
+-- stylua: ignore end
+-- for Linux harpoon with alt key
+map('n', '<M-u>', add, { desc = 'Harpoon File' })
+map('n', '<M-i>', edit, { desc = 'Harpoon Edit' })
+map('n', '<M-h>', sel1, { desc = 'Harpoon to 1' })
+map('n', '<M-j>', sel2, { desc = 'Harpoon to 2' })
+map('n', '<M-k>', sel3, { desc = 'Harpoon to 3' })
+map('n', '<M-l>', sel4, { desc = 'Harpoon to 4' })
+-- for macOS harpoon with leader key
+map('n', '<leader><leader>h', add, { desc = '[h]arpoon File' })
+map('n', '<leader><leader>e', edit, { desc = 'Harpoon [e]dit' })
+map('n', '<leader>1', sel1, { desc = 'Harpoon to 1' })
+map('n', '<leader>2', sel2, { desc = 'Harpoon to 2' })
+map('n', '<leader>3', sel3, { desc = 'Harpoon to 3' })
 
 -- Hlslens
 local function hlslens_key(key)
