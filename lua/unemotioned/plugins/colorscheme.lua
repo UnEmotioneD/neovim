@@ -22,6 +22,10 @@ local cat = {
       },
     })
     vim.cmd.colorscheme('catppuccin')
+
+    -- change line number colors (from vscode catppuccin-mocha)
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#7f849c' })
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#7F849C' })
   end,
 }
 
@@ -48,7 +52,6 @@ local rose = {
         transparency = false,
       },
     })
-
     vim.cmd.colorscheme('rose-pine')
   end,
 }
@@ -65,7 +68,6 @@ local tokyo = {
     })
     vim.cmd.colorscheme('tokyonight')
 
-    -- change line number colors (from vscode catppuccin-mocha)
     vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#7f849c' })
     vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#7F849C' })
   end,
