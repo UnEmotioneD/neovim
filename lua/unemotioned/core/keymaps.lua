@@ -9,7 +9,7 @@ local map = vim.keymap.set
 map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 
 map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true }) -- only clears highlight
-map('n', '<leader>nh', ':nohl<Bar>let @/ = ""<CR>', { desc = '[n]o [h]ighlight and pattern' }) -- clears pattern so no more n/N
+map('n', '<leader>nh', ':nohlsearch | let @/ = "" | echo "Search reg cleared"<CR>', { desc = '[n]o [h]ighlight and register' }) -- clears pattern so no more n/N
 
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center' })
@@ -78,7 +78,7 @@ map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
 -- haproon ---
 -- stylua: ignore start
-local add = function() require('harpoon'):list():add() end
+local add = function() require('harpoon'):list():add() vim.cmd('echo"File harpooned"') end
 local edit = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
 local sel1 = function() require('harpoon'):list():select(1) end
 local sel2 = function() require('harpoon'):list():select(2) end
