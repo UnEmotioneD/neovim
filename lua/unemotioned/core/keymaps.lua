@@ -68,6 +68,10 @@ end, { desc = 'Format(in range)' })
 
 map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[C]onform [I]nfo' })
 
+map('n', '<leader>cc', function()
+  vim.fn.system('rm /home/unemotioned/.local/state/nvim/conform.log')
+end, { desc = '[c]onform log [c]lear' })
+
 -- Flash
 map('n', '<leader><leader>f', function()
   require('flash').jump()
