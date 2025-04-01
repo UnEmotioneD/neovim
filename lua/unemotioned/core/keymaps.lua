@@ -119,6 +119,24 @@ map('n', '<leader>lo', ':LiveServerStart<CR>', { desc = '[l]ive server [o]pen' }
 map('n', '<leader>lc', ':LiveServerStop<CR>', { desc = '[l]ive server [c]lose' })
 map('n', '<leader>lt', ':LiveServerToggle<CR>', { desc = '[l]ive server [t]oggle' })
 
+-- lsp-config
+local isTextOn = true
+map('n', '<leader>vt', function()
+  if isTextOn == true then
+    vim.diagnostic.config({
+      virtual_lines = { current_line = true },
+    })
+    vim.cmd('echo"Line diagnostics on"')
+  else
+    vim.diagnostic.config({
+      virtual_lines = false,
+    })
+    vim.cmd('echo"Text diagnostics on"')
+  end
+  vim.diagnostic.config({ virtual_text = not isTextOn })
+  isTextOn = not isTextOn
+end, { desc = '[v]irtual diagnostic [t]oggle' })
+
 -- nvim-hlslens
 local function hlslens_key(key)
   return string.format("<Cmd>execute('normal! ' .. v:count1 .. '%szz')<CR><Cmd>lua require('hlslens').start()<CR>", key)
