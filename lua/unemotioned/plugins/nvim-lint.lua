@@ -15,8 +15,9 @@ return {
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
 
+    -- ignore "Could not find config file. eslint_d" error for javascript files
+    ---@return vim.Diagnostic | nil
     lint.linters.eslint_d = require('lint.util').wrap(lint.linters.eslint_d, function(diagnostic)
-      -- ignore "No ESLint configuration found" error
       if diagnostic.message:find('Error: Could not find config file') then
         return nil
       end
