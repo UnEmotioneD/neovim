@@ -111,6 +111,7 @@ nvim -v
 - `pnpm`: live-server 설치
 - `yarn`: markdown-preview 설치
 - `lazygit`: git TUI(Terminal User Interface) tool
+- `tree-sitter-cli`: treesitter parser 설치에 필요
 
 ---
 
@@ -131,7 +132,7 @@ sudo apt install nodejs npm
 - pnpm, yarn
 
 ```sh
-sudo npm install -g pnpm yarn
+sudo npm install -g pnpm yarn tree-sitter-cli
 ```
 
 - `pnpm`을 사용할 수 있도록 설정
