@@ -9,7 +9,13 @@ local map = vim.keymap.set
 map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 
 map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true }) -- only clears highlight
-map('n', '<leader>nh', ':nohlsearch | let @/ = "" | echo "Search reg cleared"<CR>', { desc = '[n]o [h]ighlight and register' }) -- clears pattern so no more n/N
+map('n', '<leader>nh', function()
+  vim.fn.setreg('/', '')
+  vim.cmd([[
+    noh
+    echo "Search register cleared"
+  ]])
+end, { desc = '[n]o [h]ighlight' })
 
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center' })
