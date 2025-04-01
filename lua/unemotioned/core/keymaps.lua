@@ -8,8 +8,8 @@ local map = vim.keymap.set
 
 map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 
-map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true }) -- Only clears highlight
-map('n', '<leader>nh', ':nohl<Bar>let @/ = ""<CR>', { desc = '[n]o [h]ighlight and pattern' }) -- Clears pattern so no more n/N
+map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true }) -- only clears highlight
+map('n', '<leader>nh', ':nohl<Bar>let @/ = ""<CR>', { desc = '[n]o [h]ighlight and pattern' }) -- clears pattern so no more n/N
 
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center' })
@@ -46,22 +46,18 @@ map('n', '<leader>bp', ':bprev<CR>', { desc = '[b]uffer [p]revious' })
 
 map('n', '<leader>cs', ':setlocal spell! spell?<CR>', { desc = '[c]heck [s]pell toggle' })
 
--- Disable conflicting keybinds with tmux
-map('', '<C-n>', '<Nop>', { noremap = true, silent = true })
-map('', '<C-p>', '<Nop>', { noremap = true, silent = true })
-
--- Disable Ex Mode
+-- disable Ex Mode
 map('n', 'Q', '<Nop>', { noremap = true, silent = true })
 
 ----------------------
 --- plugin keymaps ---
 ----------------------
 
--- Auto-session
+-- auto-session
 map('n', '<leader>wr', ':SessionRestore<CR>', { desc = 'Session [s]ave' })
 map('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Session [r]estore' })
 
--- Conform
+-- conform
 map({ 'n', 'v' }, '<leader>p', function()
   require('conform').format()
 end, { desc = 'Format(in range)' })
@@ -72,15 +68,15 @@ map('n', '<leader>cc', function()
   vim.fn.system('rm /home/unemotioned/.local/state/nvim/conform.log')
 end, { desc = '[c]onform log [c]lear' })
 
--- Flash
+-- flash
 map('n', '<leader><leader>f', function()
   require('flash').jump()
 end, { desc = '[f]lash' })
 
--- Gitsings
+-- gitsings
 map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
--- Haproon ---
+-- haproon ---
 -- stylua: ignore start
 local add = function() require('harpoon'):list():add() end
 local edit = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
@@ -95,8 +91,8 @@ local sel2Desc = { desc = 'Harpoon to 2' }
 local sel3Desc = { desc = 'Harpoon to 3' }
 local sel4Desc = { desc = 'Harpoon to 4' }
 
-map('n', '<C-S-n>', function() require('harpoon'):list():next() end, {desc = 'next on harpoon list'})
-map('n', '<C-S-p>', function() require('harpoon'):list():prev() end, {desc = 'prev on harpoon list'})
+map('n', '<C-n>', function() require('harpoon'):list():next() end, {desc = 'next on harpoon list'})
+map('n', '<C-p>', function() require('harpoon'):list():prev() end, {desc = 'prev on harpoon list'})
 -- stylua: ignore end
 
 -- for Linux harpoon with alt key
@@ -115,28 +111,28 @@ map('n', '<leader>2', sel2, sel2Desc)
 map('n', '<leader>3', sel3, sel3Desc)
 map('n', '<leader>4', sel4, sel4Desc)
 
--- Hlslens
+-- lazygit
+map('n', '<leader>hg', ':LazyGit<CR>', { desc = 'Lazy[g]it' })
+
+-- live-server
+map('n', '<leader>lo', ':LiveServerStart<CR>', { desc = '[l]ive server [o]pen' })
+map('n', '<leader>lc', ':LiveServerStop<CR>', { desc = '[l]ive server [c]lose' })
+map('n', '<leader>lt', ':LiveServerToggle<CR>', { desc = '[l]ive server [t]oggle' })
+
+-- nvim-hlslens
 local function hlslens_key(key)
   return string.format("<Cmd>execute('normal! ' .. v:count1 .. '%szz')<CR><Cmd>lua require('hlslens').start()<CR>", key)
 end
 map('n', 'n', hlslens_key('n'), { desc = 'Next hlsearch', noremap = true, silent = true })
 map('n', 'N', hlslens_key('N'), { desc = 'Prev hlsearch', noremap = true, silent = true })
 
--- Lazygit
-map('n', '<leader>hg', ':LazyGit<CR>', { desc = 'Lazy[g]it' })
-
--- Live server
-map('n', '<leader>lo', ':LiveServerStart<CR>', { desc = '[l]ive server [o]pen' })
-map('n', '<leader>lc', ':LiveServerStop<CR>', { desc = '[l]ive server [c]lose' })
-map('n', '<leader>lt', ':LiveServerToggle<CR>', { desc = '[l]ive server [t]oggle' })
-
--- Tree
+-- nvimtree
 map('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[e]xplorer toggle' })
 map('n', '<leader>ef', ':NvimTreeFindFileToggle<CR>', { desc = '[e]xplorer on current [f]ile' })
 map('n', '<leader>ec', ':NvimTreeCollapse<CR>', { desc = '[e]explorer [c]ollapse' })
 map('n', '<leader>er', ':NvimTreeRefresh<CR>', { desc = '[e]xplorer [r]efresh' })
 
--- Todo-comments
+-- todo-comments
 map('n', ']t', function()
   require('todo-comments').jump_next()
 end, { desc = 'Next todo comment' })
@@ -144,13 +140,10 @@ map('n', '[t', function()
   require('todo-comments').jump_prev()
 end, { desc = 'Previous todo comment' })
 
--- Undo Tree
-map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle' })
-
--- Oil
+-- oil
 map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
 
--- Telescope
+-- telescope
 map('n', '<leader>fb', ':Telescope buffers<CR>', { desc = '[f]ind [b]uffers' })
 map('n', '<leader>fc', ':Telescope grep_string<CR>', { desc = '[f]ind string under [c]ursor in cwd' })
 map('n', '<leader>ff', ':Telescope find_files<CR>', { desc = '[f]ind [f]iles' })
@@ -166,12 +159,15 @@ map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ winblend = 0, previewer = false }))
 end, { desc = '[/] Fuzzy search current buffer' })
 
--- Trouble
+-- trouble
 map('n', '<leader>xw', ':Trouble diagnostics toggle<CR>', { desc = 'Open trouble [w]orkspace diagnostics' })
 map('n', '<leader>xd', ':Trouble diagnostics toggle filter.buf=0<CR>', { desc = 'Open trouble [d]ocument diagnostics' })
 map('n', '<leader>xq', ':Trouble quickfix toggle<CR>', { desc = 'Open trouble [q]uickfix list' })
 map('n', '<leader>xl', ':Trouble loclist toggle<CR>', { desc = 'Open trouble [l]ocation list' })
 map('n', '<leader>xt', ':Trouble todo toggle<CR>', { desc = 'Open [t]odos in trouble' })
 
--- Vim-maximizer
+-- undotree
+map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle' })
+
+-- vim-maximizer
 map('n', '<leader>sm', ':MaximizerToggle<CR>', { desc = '[s]plit to [m]ax/min' })
