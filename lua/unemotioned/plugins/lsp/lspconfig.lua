@@ -7,29 +7,9 @@ return {
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
-    -- Safely require modules
-    local ok, lspconfig = pcall(require, 'lspconfig')
-    if not ok then
-      return
-    end
-
-    local mason_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
-    if not mason_ok then
-      return
-    end
-
-    local cmp_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-    if not cmp_ok then
-      return
-    end
-
-    local keymap = vim.keymap
-
-    -- Optional: Check if Telescope is installed for key mappings that depend on it
-    local telescope_ok, _ = pcall(require, 'telescope')
-    if not telescope_ok then
-      vim.notify('Telescope is not installed. Some key mappings might not work as expected.')
-    end
+    local lspconfig = require('lspconfig')
+    local mason_lspconfig = require('mason-lspconfig')
+    local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
     -- Global diagnostic configuration
     vim.diagnostic.config({
@@ -39,8 +19,7 @@ return {
     })
 
     -- Set diagnostic signs in the sign column (gutter)
-    local signs = { Error = ' ', Warn = ' ', Hint = '󰠠 ', Info = ' ' }
-    for type, icon in pairs(signs) do
+    for type, icon in pairs({ Error = ' ', Warn = ' ', Hint = '󰠠 ', Info = ' ' }) do
       local hl = 'DiagnosticSign' .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
     end
@@ -67,7 +46,7 @@ return {
       }
 
       for _, map in ipairs(mappings) do
-        keymap.set(map.mode, map.lhs, map.rhs, vim.tbl_extend('force', opts, { desc = map.desc }))
+        vim.keymap.set(map.mode, map.lhs, map.rhs, vim.tbl_extend('force', opts, { desc = map.desc }))
       end
     end
 
@@ -115,7 +94,7 @@ return {
     }
 
     -- fix warning: multiple different client offset_encodings detected for buffer (c, cpp file)
-    local clangd_capabilities = vim.tbl_deep_extend('force', {}, capabilities, {
+    local capabilities_utf_16 = vim.tbl_deep_extend('force', {}, capabilities, {
       offsetEncoding = { 'utf-16' },
     })
 
@@ -166,7 +145,7 @@ return {
       ['clangd'] = function()
         lspconfig.clangd.setup({
           on_attach = on_attach,
-          capabilities = clangd_capabilities,
+          capabilities = capabilities_utf_16,
           filetypes = { 'c', 'cpp' },
         })
       end,
