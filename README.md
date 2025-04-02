@@ -355,6 +355,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [alpha](#alpha)
 - [auto-session](#auto-session)
 - [bigfile](#bigfile)
+- [bufferline](#bufferline)
 - [comment](#comment)
 - [conform](#conform)
 - [dressing](#dressing)
@@ -414,6 +415,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [LunarVim/bigfile.nvim](https://github.com/LunarVim/bigfile.nvim)
 
 - 파일이 특정 크기 이상일 때 일부 기능들을 꺼준다
+
+#### bufferline
+
+- [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+
+- VSCode 같이 파일 이름을 탭에서 보여준다
 
 #### colorscheme
 
