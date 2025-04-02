@@ -363,6 +363,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [flash](#flash)
 - [gitsigns](#gitsigns)
 - [harpoon](#harpoon)
+- [indent-blankline](#indent-blankline)
 - [lazygit](#lazygit)
 - [live-server](#live-server)
 - [lualine](#lualine)
@@ -492,6 +493,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `ALT + l` : ...
   - `CTRL + SHFT + n` : 리스트에서 다음
   - `CTRL + SHFT + p` : 리스트에서 이전
+
+#### indent-blankline
+
+- [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+
+  - 들여쓰기 상태를 보여줌
 
 #### lazygit
 
