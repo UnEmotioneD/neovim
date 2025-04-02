@@ -36,8 +36,8 @@ return {
         end,
       },
       window = {
-        completion = cmp.config.window.bordered({ border = 'none' }),
-        documentation = cmp.config.window.bordered({ border = 'none' }),
+        completion = cmp.config.window.bordered({ border = 'single' }),
+        documentation = cmp.config.window.bordered({ border = 'single' }),
       },
       mapping = cmp.mapping.preset.insert({
         ['<C-k>'] = cmp.mapping.select_prev_item(), -- previous suggestion
