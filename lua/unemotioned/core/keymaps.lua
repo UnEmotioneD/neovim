@@ -97,8 +97,8 @@ local sel2Desc = { desc = 'Harpoon to 2' }
 local sel3Desc = { desc = 'Harpoon to 3' }
 local sel4Desc = { desc = 'Harpoon to 4' }
 
-map('n', '<C-n>', function() require('harpoon'):list():next() end, {desc = 'next on harpoon list'})
-map('n', '<C-p>', function() require('harpoon'):list():prev() end, {desc = 'prev on harpoon list'})
+map('n', '<C-S-n>', function() require('harpoon'):list():next() end, {desc = 'next on harpoon list'})
+map('n', '<C-S-p>', function() require('harpoon'):list():prev() end, {desc = 'prev on harpoon list'})
 -- stylua: ignore end
 
 -- for Linux harpoon with alt key
