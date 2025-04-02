@@ -336,15 +336,17 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
     - `typos/typos.toml` 파일의 `default.extend-words` 밑에 형식에 맞춰서
       작성하면 `typos`가 틀린 단어로 경고 하지 않는다
 
+> [!NOTE] > `clangd LSP` 가 설치하는데 제일 오래 걸림 (오류 아님)
+
 ---
 
 ### Plugins
 
 #### Lazy 플러그인 매니저
 
-- `:Lazy` 명령어로 lazy.nvim 플러그인 매니저 팝업창을 띄울 수 있다
+> [!TIP] > `:Lazy` 명령어로 lazy.nvim 플러그인 매니저 팝업창을 띄울 수 있다
 
-  - 팝업창에서 플러그인 업데이트, 사용하지 않는 플러그인 삭제 등을 할 수 있다
+- 팝업창에서 플러그인 업데이트, 사용하지 않는 플러그인 삭제 등을 할 수 있다
 
 ---
 
