@@ -383,6 +383,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [nvim-surround](#nvim-surround)
 - [nvim-tree](#nvim-tree)
 - [nvim-treesitter](#nvim-treesitter)
+- [nvim-ts-autotag](#nvim-ts-autotag)
 - [oil](#oil)
 - [plenary](#plenary)
 - [render-markdown](#render-markdown)
@@ -609,6 +610,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 - 향상된 syntax-highlight 기능
+
+#### nvim-ts-autotag
+
+- [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
+
+- `HTML`등의 파일에서 태그의 자동 닫는 태그, 이름 변경 기능 제공
 
 #### oil
 

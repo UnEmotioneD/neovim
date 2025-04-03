@@ -2,17 +2,16 @@ return {
   'nvim-treesitter/nvim-treesitter',
   event = { 'BufReadPre', 'BufNewFile' },
   build = ':TSUpdate',
-  dependencies = {
-    'windwp/nvim-ts-autotag',
-  },
   config = function()
     require('nvim-treesitter.configs').setup({
       highlight = {
         enable = true,
-        -- Disable treesitter if file if bigger then 100 KB
+
+        -- disable treesitter if file if bigger then 100 kb
         disable = function(lang, buf)
           local max_filesize = 100 * 1024
           local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+
           if ok and stats and stats.size > max_filesize then
             return true
           end
@@ -21,9 +20,6 @@ return {
         additional_vim_regex_highlighting = false,
       },
       indent = { enable = true },
-      autotag = {
-        enable = true,
-      },
       ensure_installed = {
         'bash',
         'c',
@@ -61,9 +57,11 @@ return {
           node_decremental = '<bs>',
         },
       },
-
       vim.filetype.add({
-        pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang' },
+        pattern = {
+          ['.*/[^/]*bash[^/]*'] = 'bash',
+          ['.*/hypr/.*%.conf'] = 'hyprlang',
+        },
       }),
     })
   end,
