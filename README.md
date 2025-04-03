@@ -350,6 +350,10 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 팝업창에서 플러그인 업데이트, 사용하지 않는 플러그인 삭제 등을 할 수 있다
 
+> [!TIP]
+> 플러그인 리포지토리를 불러오는 코드와 같은 레벨에 `enabled = true | false` 를 추가 하여서
+> 플러그인을 활성화/비활성화 할 수 있다
+
 ---
 
 - [alpha](#alpha)
