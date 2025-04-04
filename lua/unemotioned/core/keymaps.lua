@@ -88,18 +88,41 @@ map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
 -- haproon ---
 -- stylua: ignore start
--- 'M' for 'Alt' key
-map('n', '<M-u>', function() require('harpoon.mark').add_file() vim.cmd('echo "File harpooned"') end, { desc = 'Harpoon File' })
-map('n', '<M-i>', function() require('harpoon.ui').toggle_quick_menu() end, { desc = 'Harpoon Menu' })
+local add = function() require('harpoon'):list():add() vim.cmd('echo "File harpooned"') end
+local edit = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
+local sel1 = function() require('harpoon'):list():select(1) end
+local sel2 =function() require('harpoon'):list():select(2) end
+local sel3 =function() require('harpoon'):list():select(3) end
+local sel4 =function() require('harpoon'):list():select(4) end
 
-map('n', '<M-j>', function() require('harpoon.ui').nav_file(1) end, { desc = 'Harpoon to 1' })
-map('n', '<M-k>', function() require('harpoon.ui').nav_file(2) end, { desc = 'Harpoon to 2' })
-map('n', '<M-l>', function() require('harpoon.ui').nav_file(3) end, { desc = 'Harpoon to 3' })
-map('n', '<M-;>', function() require('harpoon.ui').nav_file(4) end, { desc = 'Harpoon to 4' })
+local addDesc = { desc = 'Harpoon File' }
+local editDesc = { desc = 'Harpoon Menu' }
+local sel1Desc = { desc = 'Harpoon to 1' }
+local sel2Desc = { desc = 'Harpoon to 2' }
+local sel3Desc = { desc = 'Harpoon to 3' }
+local sel4Desc = { desc = 'Harpoon to 4' }
 
-map('n', '<C-S-n>', function() require('harpoon.ui').nav_next() end, { desc = 'next on harpoon list' })
-map('n', '<C-S-p>', function() require('harpoon.ui').nav_prev() end, { desc = 'prev on harpoon list' })
+map('n', '<C-S-n>', function() require('harpoon'):list():next() end, { desc = 'next on harpoon list' })
+map('n', '<C-S-p>', function() require('harpoon'):list():prev() end, { desc = 'prev on harpoon list' })
 -- stylua: ignore end
+
+if vim.loop.os_uname().sysname == 'Darwin' then
+  -- for macOS
+  map('n', '<leader><leader>h', add, addDesc)
+  map('n', '<leader><leader>e', edit, editDesc)
+  map('n', '<leader>1', sel1, sel1Desc)
+  map('n', '<leader>2', sel2, sel2Desc)
+  map('n', '<leader>3', sel3, sel3Desc)
+  map('n', '<leader>4', sel4, sel4Desc)
+else
+  -- <M> for Alt key
+  map('n', '<M-u>', add, addDesc)
+  map('n', '<M-i>', edit, editDesc)
+  map('n', '<M-j>', sel1, sel1Desc)
+  map('n', '<M-k>', sel2, sel2Desc)
+  map('n', '<M-l>', sel3, sel3Desc)
+  map('n', '<M-;>', sel4, sel4Desc)
+end
 
 -- lazy
 map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })
