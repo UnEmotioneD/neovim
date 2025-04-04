@@ -71,12 +71,12 @@ map({ 'n', 'v' }, '<leader>p', function()
   require('conform').format()
 end, { desc = 'Format(in range)' })
 
-map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[c]onform [i]nfo' })
-
 map('n', '<leader>cc', function()
   vim.fn.system('rm /home/unemotioned/.local/state/nvim/conform.log')
   vim.cmd('echo "Conform log removed"')
 end, { desc = '[c]onform log [c]lear' })
+
+map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[c]onform [i]nfo' })
 
 -- flash
 map('n', '<CR>', function()
@@ -107,7 +107,7 @@ map('n', '<C-S-p>', function() require('harpoon'):list():prev() end, { desc = 'p
 -- stylua: ignore end
 
 if vim.loop.os_uname().sysname == 'Darwin' then
-  -- for macOS
+  -- for macOS harpoon with leader key
   map('n', '<leader><leader>h', add, addDesc)
   map('n', '<leader><leader>e', edit, editDesc)
   map('n', '<leader>1', sel1, sel1Desc)
@@ -115,7 +115,6 @@ if vim.loop.os_uname().sysname == 'Darwin' then
   map('n', '<leader>3', sel3, sel3Desc)
   map('n', '<leader>4', sel4, sel4Desc)
 else
-  -- <M> for Alt key
   map('n', '<M-u>', add, addDesc)
   map('n', '<M-i>', edit, editDesc)
   map('n', '<M-j>', sel1, sel1Desc)
@@ -129,11 +128,6 @@ map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })
 
 -- lazygit
 map('n', '<leader>hg', ':LazyGit<CR>', { desc = 'Lazy[g]it' })
-
--- live-server
-map('n', '<leader>lo', ':LiveServerStart<CR>', { desc = '[l]ive server [o]pen' })
-map('n', '<leader>lc', ':LiveServerStop<CR>', { desc = '[l]ive server [c]lose' })
-map('n', '<leader>lt', ':LiveServerToggle<CR>', { desc = '[l]ive server [t]oggle' })
 
 -- lsp-config
 local isTextOn = true
@@ -153,15 +147,16 @@ map('n', '<leader>vt', function()
   isTextOn = not isTextOn
 end, { desc = '[v]irtual diagnostic [t]oggle' })
 
+-- live-server
+map('n', '<leader>lo', ':LiveServerStart<CR>', { desc = '[l]ive server [o]pen' })
+map('n', '<leader>lc', ':LiveServerStop<CR>', { desc = '[l]ive server [c]lose' })
+map('n', '<leader>lt', ':LiveServerToggle<CR>', { desc = '[l]ive server [t]oggle' })
+
 -- mason
 map('n', '<leader>M', ':Mason<CR>', { desc = '[M]ason', silent = true })
 
--- nvim-hlslens
-local function hlslens_key(key)
-  return string.format(":execute('normal! ' .. v:count1 .. '%szz')<CR>:lua require('hlslens').start()<CR>", key)
-end
-map('n', 'n', hlslens_key('n'), { desc = 'Next hlsearch', noremap = true, silent = true })
-map('n', 'N', hlslens_key('N'), { desc = 'Prev hlsearch', noremap = true, silent = true })
+-- maximizer
+map('n', '<leader>sm', ':lua require("maximizer").toggle()<CR>', { desc = '[s]plit to [m]ax/min', silent = true, noremap = true })
 
 -- nvimtree
 map('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[e]xplorer toggle' })
@@ -169,13 +164,12 @@ map('n', '<leader>ef', ':NvimTreeFindFileToggle<CR>', { desc = '[e]xplorer on cu
 map('n', '<leader>ec', ':NvimTreeCollapse<CR>', { desc = '[e]explorer [c]ollapse' })
 map('n', '<leader>er', ':NvimTreeRefresh<CR>', { desc = '[e]xplorer [r]efresh' })
 
--- todo-comments
-map('n', ']t', function()
-  require('todo-comments').jump_next()
-end, { desc = 'Next todo comment' })
-map('n', '[t', function()
-  require('todo-comments').jump_prev()
-end, { desc = 'Previous todo comment' })
+-- nvim-hlslens
+local function hlslens_key(key)
+  return string.format(":execute('normal! ' .. v:count1 .. '%szz')<CR>:lua require('hlslens').start()<CR>", key)
+end
+map('n', 'n', hlslens_key('n'), { desc = 'Next hlsearch', noremap = true, silent = true })
+map('n', 'N', hlslens_key('N'), { desc = 'Prev hlsearch', noremap = true, silent = true })
 
 -- oil
 map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
@@ -196,6 +190,14 @@ map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ winblend = 0, previewer = false }))
 end, { desc = '[/] Fuzzy search current buffer' })
 
+-- todo-comments
+map('n', ']t', function()
+  require('todo-comments').jump_next()
+end, { desc = 'Next todo comment' })
+map('n', '[t', function()
+  require('todo-comments').jump_prev()
+end, { desc = 'Previous todo comment' })
+
 -- trouble
 map('n', '<leader>xw', ':Trouble diagnostics toggle<CR>', { desc = 'Open trouble [w]orkspace diagnostics' })
 map('n', '<leader>xd', ':Trouble diagnostics toggle filter.buf=0<CR>', { desc = 'Open trouble [d]ocument diagnostics' })
@@ -205,9 +207,6 @@ map('n', '<leader>xt', ':Trouble todo toggle<CR>', { desc = 'Open [t]odos in tro
 
 -- undotree
 map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle' })
-
--- maximizer
-map('n', '<leader>sm', ':lua require("maximizer").toggle()<CR>', { desc = '[s]plit to [m]ax/min', silent = true, noremap = true })
 
 -- zen-mode
 map('n', '<leader>zz', ':ZenMode<CR>', { desc = '[z]en [z]en', silent = true })
