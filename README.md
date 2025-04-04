@@ -48,8 +48,7 @@
 
 - 패키지 매니저로 설치 했을때 최신 버젼이 아닐 수 있음
 
-<details>
-    <summary>확장하기</summary>
+<details><summary>확장하기</summary>
 
 #### 설치
 
@@ -246,6 +245,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
        │       ├── plugins
        │       │   └── lsp
        │       └── lazy.lua
+       ├── snippets
        ├── spell
        ├── typos
        ├── init.lua
@@ -256,6 +256,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - `core`: 옵션, 키맵
 - `plugins`: 모든 플러그인
 - `lsp`: lsp-config, mason
+- `snippets`: 커스텀 자동완성 파일들 저장
 
 ---
 
@@ -289,7 +290,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
 
-  - `:Mason` 명령어로 `Mason.nvim` 팝업창을 띄울 수 있다
+  - `:Mason` 명령어 또는 `SPC M`를 이용해서 `Mason.nvim` 팝업창을 띄울 수 있다
 
   - `mason.lua` 파일의 `ensure_installed` 테이블에 추가할 LSP들은 `mason`
     팝업창에서 `/`를 이용해서 찾을 수 있다
@@ -346,7 +347,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 #### Lazy 플러그인 매니저
 
 > [!TIP]
-> :Lazy 명령어로 lazy.nvim 플러그인 매니저 팝업창을 띄울 수 있다
+> :Lazy 명령어 또는 `SPC L`으로 lazy.nvim 플러그인 매니저 팝업창을 띄울 수 있다
 
 - 팝업창에서 플러그인 업데이트, 사용하지 않는 플러그인 삭제 등을 할 수 있다
 
@@ -360,6 +361,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [auto-session](#auto-session)
 - [bigfile](#bigfile)
 - [bufferline](#bufferline)
+- [colorscheme](#colorscheme)
 - [comment](#comment)
 - [conform](#conform)
 - [dressing](#dressing)
@@ -371,19 +373,22 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [lazygit](#lazygit)
 - [live-server](#live-server)
 - [lualine](#lualine)
+- [luasnip](#luasnip)
 - [markdown-preview](#markdown-preview)
 - [marks](#marks)
+- [maximizer](#maximizer)
 - [mini-icon](#mini-icon)
-- [no-neck-pain](#no-neck-pain)
 - [nvim-autoparis](#nvim-autoparis)
 - [nvim-cmp](#nvim-cmp)
 - [nvim-colorizer](#nvim-colorizer)
 - [nvim-hlslens](#nvim-hlslens)
 - [nvim-lint](#nvim-lint)
 - [nvim-surround](#nvim-surround)
+- [nvim-tmux-navigation](#nvim-tmux-navigation)
 - [nvim-tree](#nvim-tree)
 - [nvim-treesitter](#nvim-treesitter)
 - [nvim-ts-autotag](#nvim-ts-autotag)
+- [nvim-web-devicons](#nvim-web-devicons)
 - [oil](#oil)
 - [plenary](#plenary)
 - [render-markdown](#render-markdown)
@@ -392,9 +397,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [todo-comments](#todo-comments)
 - [trouble](#trouble)
 - [undotree](#undotree)
-- [vim-maximizer](#vim-maximizer)
-- [vim-tmux-navigator](#vim-tmux-navigator)
 - [which-key](#which-key)
+- [zen-mode](#zen-mode)
 
 ---
 
@@ -408,7 +412,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `button`에서 보여주는 키를 `Alpha` 창에서 입력하면 원래 키맵과 다르게 기능을 실행할 수있다
 
-- `:Alpha` 명령어를 사용해서 현재 창에서 보여줄 수도 있다
+- `:Alpha` 명령어 또는 `SPC A`를 사용해서 현재 창에서 보여줄 수도 있다
 
 #### auto-session
 
@@ -475,7 +479,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 화면 내에서의 커서 이동
 
-  - `SPC SPC f` 누르고서 찾고자 하는 단어 입력하다보면
+  - `Enter`키를 누르고서 찾고자 하는 단어 입력하다보면
     단어 옆에 뜨는 알파벳을 누르면 이동된다
 
 #### gitsigns
@@ -532,6 +536,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - git 상태 (branch ...)
   - 파일 이름, 상태, 크기, 위치 등
 
+#### luasnip
+
+- [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+
+- 커스텀 자동완성을 만들 수 있게 해줌
+
 #### markdown-preview
 
 - [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
@@ -546,19 +556,19 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Gutter(line-number 옆)에 마크를 보여줌
 
+#### maximizer
+
+- [0x00-ketsu/maximizer.nvim](https://github.com/0x00-ketsu/maximizer.nvim)
+
+- 창을 분할 했을때 최대화/복구하는 기능 제공
+
+  - `SPC s m` : 초점 맞춰져 있는 창을 최대화/복원
+
 #### mini-icon
 
 - [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
 
 - Nvim에서 보여줄 아이콘 제공
-
-#### no-neck-pain
-
-- [shortcuts/no-neck-pain.nvim](https://github.com/shortcuts/no-neck-pain.nvim)
-
-- Buffer 중앙 정렬 기능
-
-  - `SPC n p`
 
 #### nvim-autoparis
 
@@ -590,6 +600,14 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Lint: 코드의 경고, 에러 등을 보여줌
 
+#### nvim-tmux-navigation
+
+- [alexghergh/nvim-tmux-navigation](https://github.com/alexghergh/nvim-tmux-navigation)
+
+- TMUX와 Neovim의 window 또는 pane들을 편하게 이동할 수 있는 기능 제공
+
+  - `CTRL + h, j, k, l` 키를 눌러서 이동
+
 #### nvim-surround
 
 - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
@@ -616,6 +634,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 
 - `HTML`등의 파일에서 태그의 자동 닫는 태그, 이름 변경 기능 제공
+
+#### nvim-web-devicons
+
+- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+
+- Nvim에서 보여줄 아이콘 제공
 
 #### oil
 
@@ -678,22 +702,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `SPC u` : undotree 창을 연다
 
-#### vim-maximizer
-
-- [szw/vim-maximizer](https://github.com/szw/vim-maximizer)
-
-- 창을 분할 했을때 최대화/복구하는 기능 제공
-
-  - `SPC s m` : 초점 맞춰져 있는 창을 최대화/복원
-
-#### vim-tmux-navigator
-
-- [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
-
-- TMUX와 Neovim의 window 또는 pane들을 편하게 이동할 수 있는 기능 제공
-
-  - `CTRL + h, j, k, l` 키를 눌러서 이동
-
 #### which-key
 
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
@@ -701,6 +709,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 팝업창으로 사용 가능한 키맵들을 보여준다
 
   - `SPC` 키를 한번 누르고 기다려도 된다
+
+#### zen-mode
+
+- [folke/zen-mode.nvim](https://github.com/folke/zen-mode.nvim)
+
+  - `SPC z z`를 누르면 에디터 창을 중앙 정렬 시킬 수 있다
 
 ---
 
