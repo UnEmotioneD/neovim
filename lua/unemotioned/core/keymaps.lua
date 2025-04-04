@@ -107,20 +107,20 @@ map('n', '<C-S-p>', function() require('harpoon.ui').nav_prev() end, { desc = 'p
 -- stylua: ignore end
 
 -- for Linux harpoon with alt key
-map('n', '<M-h>', add, addDesc)
-map('n', '<M-e>', edit, editDesc)
+map('n', '<M-u>', add, addDesc)
+map('n', '<M-i>', edit, editDesc)
 map('n', '<M-j>', sel1, sel1Desc)
 map('n', '<M-k>', sel2, sel2Desc)
 map('n', '<M-l>', sel3, sel3Desc)
 map('n', '<M-;>', sel4, sel4Desc)
 
 -- for macOS harpoon with leader key
-map('n', '<leader>H', add, addDesc)
-map('n', '<leader>E', edit, editDesc)
-map('n', '<leader>j', sel1, sel1Desc)
-map('n', '<leader>k', sel2, sel2Desc)
-map('n', '<leader>l', sel3, sel3Desc)
-map('n', '<leader>;', sel4, sel4Desc)
+map('n', '<leader><leader>h', add, addDesc)
+map('n', '<leader><leader>e', edit, editDesc)
+map('n', '<leader>1', sel1, sel1Desc)
+map('n', '<leader>2', sel2, sel2Desc)
+map('n', '<leader>3', sel3, sel3Desc)
+map('n', '<leader>4', sel4, sel4Desc)
 
 -- lazy
 map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })
