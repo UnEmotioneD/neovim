@@ -1,10 +1,6 @@
 return {
   'MeanderingProgrammer/render-markdown.nvim',
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter',
-    'echasnovski/mini.nvim',
-    'nvim-tree/nvim-web-devicons',
-  },
+  dependencies = 'echasnovski/mini.nvim',
   opts = {
     enabled = false, -- render by default
     ---@type string | 'none' | 'lazy' | 'obsidian'

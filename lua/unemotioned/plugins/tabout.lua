@@ -1,11 +1,9 @@
 return {
   'abecodes/tabout.nvim',
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter',
-    'hrsh7th/nvim-cmp',
-  },
   lazy = false,
   event = 'InsertCharPre', -- for better compatibility
+  priority = 1000,
+  dependencies = 'hrsh7th/nvim-cmp',
   opts = {
     tabkey = '<Tab>',
     backwards_tabkey = '<S-Tab>',
@@ -27,6 +25,4 @@ return {
     ignore_beginning = true, -- if the cursor is at the beginning of a filled element it will rather tab out than shift the content
     exclude = {}, -- filetypes to ignore
   },
-  priority = 1000,
-  opt = true, -- Set this to true if the plugin is optional
 }

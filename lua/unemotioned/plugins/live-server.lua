@@ -1,7 +1,7 @@
 return {
   'barrett-ruth/live-server.nvim',
-  build = 'pnpm add -g live-server',
   event = 'VeryLazy',
   cmd = { 'LiveServerStart', 'LiveServerStop' },
+  build = 'pnpm add -g live-server',
   config = true,
 }
