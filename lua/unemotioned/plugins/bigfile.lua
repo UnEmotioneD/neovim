@@ -1,11 +1,17 @@
 return {
   'LunarVim/bigfile.nvim',
   event = 'BufReadPre',
-  opts = {
-    -- size of the file in MiB, the plugin round file sizes to the closest MiB
-    filesize = 2,
-  },
-  config = function(_, opts)
-    require('bigfile').setup(opts)
+  config = function()
+    require('bigfile').setup({
+      filesize = 2, -- MiB
+      pattern = { '*' },
+      features = {
+        'filetype', -- :filetype = ""
+        'lsp', -- detach LSP from buffer
+        'treesitter',
+        'syntax', -- :syntax off
+        'vimopts', -- swapfile = false, foldmethod = "manual", undolevels = -1, undoreload = 0, list = false
+      },
+    })
   end,
 }
