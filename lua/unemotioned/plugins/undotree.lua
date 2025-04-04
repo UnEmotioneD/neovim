@@ -1,6 +1,5 @@
 return {
   'jiaoshijie/undotree',
-  dependencies = 'nvim-lua/plenary.nvim',
   opts = {
     float_diff = true, -- `true` disables layout option
     ---@type string | "left_bottom" | "left_left_bottom"
