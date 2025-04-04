@@ -11,6 +11,7 @@ return {
       },
     },
     spec = {
+      { '<leader>c', group = '[C]ode actions' },
       { '<leader>e', group = '[E]xplorer' },
       { '<leader>f', group = '[F]ind' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
@@ -21,8 +22,10 @@ return {
       { '<leader>s', group = '[S]plit' },
       { '<leader>t', group = '[T]ab' },
       { '<leader>u', group = '[U]ndo' },
+      { '<leader>v', group = '[V]irtual' },
       { '<leader>w', group = '[W]session' },
       { '<leader>x', group = '[X]trouble' },
+      { '<leader>z', group = '[Z]en' },
       { '<leader>/', group = '[/]Search' },
     },
 
