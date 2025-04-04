@@ -93,7 +93,7 @@ local edit = function() require('harpoon.ui').toggle_quick_menu() end
 local sel1 = function() require('harpoon.ui').nav_file(1) end
 local sel2 = function() require('harpoon.ui').nav_file(2) end
 local sel3 = function() require('harpoon.ui').nav_file(3) end
-local sel4 = function() require('harpoon.ui').nave_file(4) end
+local sel4 = function() require('harpoon.ui').nav_file(4) end
 
 local addDesc = { desc = 'Harpoon File' }
 local editDesc = { desc = 'Harpoon Menu' }
