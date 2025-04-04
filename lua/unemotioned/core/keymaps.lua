@@ -8,7 +8,7 @@ local map = vim.keymap.set
 
 map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 
-map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true }) -- only clears highlight
+map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true }) -- Only clears highlight
 map('n', '<leader>nh', function()
   vim.fn.setreg('/', '')
   vim.cmd([[
@@ -47,8 +47,8 @@ map('n', '<leader>tx', ':tabclose<CR>', { desc = '[t]ab [x] close current tab' }
 map('n', '<leader>tn', ':tabn<CR>', { desc = '[t]ab [n]ext tab' })
 map('n', '<leader>tp', ':tabp<CR>', { desc = '[t]ab [p]revious tab' })
 
-map('n', '<leader>bn', ':bnext<CR>', { desc = '[b]uffer [n]ext' })
-map('n', '<leader>bp', ':bprev<CR>', { desc = '[b]uffer [p]revious' })
+map('n', 'H', ':bp<CR>', { desc = 'Buffer Previous' })
+map('n', 'L', ':bn<CR>', { desc = 'Buffer Next' })
 
 map('n', '<leader>cs', ':setlocal spell! spell?<CR>', { desc = '[c]heck [s]pell toggle' })
 
@@ -59,6 +59,9 @@ map('n', 'Q', '<Nop>', { noremap = true, silent = true })
 --- plugin keymaps ---
 ----------------------
 
+-- alpha
+map('n', '<leader>A', ':Alpha<CR>', { desc = '[A]lpha', silent = true })
+
 -- auto-session
 map('n', '<leader>wr', ':SessionRestore<CR>', { desc = 'Session [s]ave' })
 map('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Session [r]estore' })
@@ -68,14 +71,15 @@ map({ 'n', 'v' }, '<leader>p', function()
   require('conform').format()
 end, { desc = 'Format(in range)' })
 
-map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[C]onform [I]nfo' })
+map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[c]onform [i]nfo' })
 
 map('n', '<leader>cc', function()
   vim.fn.system('rm /home/unemotioned/.local/state/nvim/conform.log')
+  vim.cmd('echo"Conform log removed"')
 end, { desc = '[c]onform log [c]lear' })
 
 -- flash
-map('n', '<leader><leader>f', function()
+map('n', '<CR>', function()
   require('flash').jump()
 end, { desc = '[f]lash' })
 
@@ -117,6 +121,9 @@ map('n', '<leader>2', sel2, sel2Desc)
 map('n', '<leader>3', sel3, sel3Desc)
 map('n', '<leader>4', sel4, sel4Desc)
 
+-- lazy
+map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })
+
 -- lazygit
 map('n', '<leader>hg', ':LazyGit<CR>', { desc = 'Lazy[g]it' })
 
@@ -143,9 +150,12 @@ map('n', '<leader>vt', function()
   isTextOn = not isTextOn
 end, { desc = '[v]irtual diagnostic [t]oggle' })
 
+-- mason
+map('n', '<leader>M', ':Mason<CR>', { desc = '[M]ason', silent = true })
+
 -- nvim-hlslens
 local function hlslens_key(key)
-  return string.format("<Cmd>execute('normal! ' .. v:count1 .. '%szz')<CR><Cmd>lua require('hlslens').start()<CR>", key)
+  return string.format(":execute('normal! ' .. v:count1 .. '%szz')<CR>:lua require('hlslens').start()<CR>", key)
 end
 map('n', 'n', hlslens_key('n'), { desc = 'Next hlsearch', noremap = true, silent = true })
 map('n', 'N', hlslens_key('N'), { desc = 'Prev hlsearch', noremap = true, silent = true })
@@ -193,5 +203,8 @@ map('n', '<leader>xt', ':Trouble todo toggle<CR>', { desc = 'Open [t]odos in tro
 -- undotree
 map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle' })
 
--- vim-maximizer
-map('n', '<leader>sm', ':MaximizerToggle<CR>', { desc = '[s]plit to [m]ax/min' })
+-- maximizer
+map('n', '<leader>sm', ':lua require("maximizer").toggle()<CR>', { desc = '[s]plit to [m]ax/min', silent = true, noremap = true })
+
+-- zen-mode
+map('n', '<leader>zz', ':ZenMode<CR>', { desc = '[z]en [z]en', silent = true })
