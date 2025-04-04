@@ -4,7 +4,7 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- html = { 'prettier' },
+      html = { 'prettier' }, -- prettier formats html to htmx
       css = { 'prettier' },
       javascript = { 'prettier' },
       typescript = { 'prettier' },
