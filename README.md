@@ -494,12 +494,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 파일 간 이동
 
-  - `ALT + u` : 현재 파일을 harpoon에 저장
-  - `ALT + i` : harpoon 팝업창을 띄우고 파일로 이동 또는 리스트 편집 가능
-  - `ALT + h` : harpoon 리스트의 첫번째 파일로 이동
-  - `ALT + j` : 두번째 ...
-  - `ALT + k` : ...
+  - `ALT + h` : 현재 파일을 harpoon에 저장
+  - `ALT + e` : harpoon 팝업창을 띄우고 파일로 이동 또는 리스트 편집 가능
+  - `ALT + j` : harpoon 리스트의 첫번째 파일로 이동
+  - `ALT + k` : 두번째 ...
   - `ALT + l` : ...
+  - `ALT + ;` : ...
   - `CTRL + SHFT + n` : 리스트에서 다음
   - `CTRL + SHFT + p` : 리스트에서 이전
 
