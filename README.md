@@ -392,6 +392,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [oil](#oil)
 - [plenary](#plenary)
 - [render-markdown](#render-markdown)
+- [smear-cursor](#smear-cursor)
 - [tabout](#tabout)
 - [telescope](#telescope)
 - [todo-comments](#todo-comments)
@@ -662,6 +663,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 향상된 markdown 파일 보여주는 기능
 
 - `SPC m r` : 파일에 신기한 효과 추가
+
+#### smear-cursor
+
+- [sphamba/smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)
+
+- 커서가 움직일때 신기한 효과 추가
 
 #### tabout
 
