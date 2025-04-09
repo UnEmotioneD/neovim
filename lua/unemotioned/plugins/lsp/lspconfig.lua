@@ -1,33 +1,17 @@
 return {
   'neovim/nvim-lspconfig',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = {
+    'BufReadPre',
+    'BufNewFile',
+  },
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     { 'antosha417/nvim-lsp-file-operations', config = true },
-    { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
-    -- Safely require modules
-    local ok, lspconfig = pcall(require, 'lspconfig')
-    if not ok then
-      return
-    end
-
-    local mason_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
-    if not mason_ok then
-      return
-    end
-
-    local cmp_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-    if not cmp_ok then
-      return
-    end
-
-    -- Optional: Check if Telescope is installed for key mappings that depend on it
-    local telescope_ok, _ = pcall(require, 'telescope')
-    if not telescope_ok then
-      vim.notify('Telescope is not installed. Some key mappings might not work as expected.')
-    end
+    local lspconfig = require('lspconfig')
+    local mason_lspconfig = require('mason-lspconfig')
+    local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
     -- Global diagnostic configuration
     vim.diagnostic.config({
@@ -165,6 +149,17 @@ return {
           on_attach = on_attach,
           capabilities = capabilities_utf_16,
           filetypes = { 'c', 'cpp' },
+        })
+      end,
+      ['ruff'] = function()
+        lspconfig.ruff.setup({
+          on_attach = function(client)
+            -- Disable hover/completion from ruff
+            client.server_capabilities.hoverProvider = false
+            client.server_capabilities.completionProvider = false
+          end,
+          capabilities = capabilities,
+          filetypes = { 'python' },
         })
       end,
     })
