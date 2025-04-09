@@ -1,9 +1,5 @@
-local opt = vim.opt
+vim.opt_local.colorcolumn = '80'
 
-opt.colorcolumn = '80'
-
-local indent = 4
-
-opt.tabstop = indent
-opt.shiftwidth = indent
-opt.softtabstop = indent
+vim.opt_local.tabstop = 4
+vim.opt_local.shiftwidth = 4
+vim.opt_local.softtabstop = 4

@@ -1,17 +1,14 @@
-local opt = vim.opt_local
+vim.g.markdown_recommended_style = 0 -- Fix markdown indentation settings
 
-opt.wrap = true
-opt.linebreak = true
+vim.opt_local.wrap = true
+vim.opt_local.linebreak = true
 
-opt.textwidth = 79
-opt.formatoptions:append('t') -- Automatically wrap text using textwidth
-
-local map = vim.keymap.set
+vim.opt_local.textwidth = 79
+vim.opt_local.formatoptions:append('t') -- Automatically wrap text using textwidth
 
 -- For navigatiung wrapped lines like normal lines
-map('n', 'j', 'gj')
-map('n', 'k', 'gk')
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 
-map('n', '<leader>mp', '<Cmd>MarkdownPreview<CR>', { desc = '[m]arkdown [p]erview' })
-
-map('n', '<leader>mr', '<Cmd>RenderMarkdown toggle<CR>', { desc = '[m]arkdown [r]ender' })
+vim.keymap.set('n', '<leader>mp', '<Cmd>MarkdownPreview<CR>', { desc = '[m]arkdown [p]erview' })
+vim.keymap.set('n', '<leader>mr', '<Cmd>RenderMarkdown toggle<CR>', { desc = '[m]arkdown [r]ender' })
