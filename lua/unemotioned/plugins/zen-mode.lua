@@ -8,7 +8,7 @@ return {
     plugins = {
       options = {
         ---@type integer 0 | 3
-        laststatus = 3, -- 3 for on
+        laststatus = 3, -- 0 for lualine off, 3 for on
       },
     },
   },
