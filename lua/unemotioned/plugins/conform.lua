@@ -1,18 +1,21 @@
 return {
   'stevearc/conform.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = {
+    'BufReadPre',
+    'BufNewFile',
+  },
   opts = {
     formatters_by_ft = {
       lua = { 'stylua' },
-      html = { 'prettier' }, -- prettier formats html to htmx
-      css = { 'prettier' },
-      javascript = { 'prettier' },
-      typescript = { 'prettier' },
-      javascriptreact = { 'prettier' },
-      typescriptreact = { 'prettier' },
-      markdown = { 'prettier' },
-      json = { 'prettier' },
-      yaml = { 'prettier' },
+      html = { 'prettierd' },
+      css = { 'prettierd' },
+      javascript = { 'prettierd' },
+      typescript = { 'prettierd' },
+      javascriptreact = { 'prettierd' },
+      typescriptreact = { 'prettierd' },
+      markdown = { 'prettierd' },
+      json = { 'prettierd' },
+      yaml = { 'prettierd' },
       toml = { 'taplo' },
       c = { 'clang-format' },
       cpp = { 'clang-format' },

@@ -5,15 +5,7 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
   },
   config = function()
-    require('mason').setup({
-      ui = {
-        icons = {
-          package_installed = '✓',
-          package_pending = '➜',
-          package_uninstalled = '✗',
-        },
-      },
-    })
+    require('mason').setup()
 
     require('mason-lspconfig').setup({
       ensure_installed = {
@@ -23,8 +15,8 @@ return {
         'cssls',
         'ts_ls',
         'emmet_ls',
-        'pyright',
-        'ruff', -- python LSP, linter, formatter
+        'pyright', -- python LSP
+        'ruff', -- python linter, formatter
         'clangd',
         'taplo', -- toml LSP
         'marksman', -- markdown LSP
@@ -35,7 +27,7 @@ return {
     require('mason-tool-installer').setup({
       ensure_installed = {
         'stylua',
-        'prettier',
+        'prettierd',
         'eslint_d',
         'cpplint',
         'clang-format',
