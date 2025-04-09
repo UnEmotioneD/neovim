@@ -1,3 +1,6 @@
+-- :so[urce] %
+--  for the changes made to take effect
+
 local opt = vim.opt
 
 -- UI
@@ -9,7 +12,6 @@ opt.cursorline = true
 opt.scrolloff = 5
 opt.termguicolors = true
 opt.background = 'dark'
-opt.fillchars = { eob = ' ' }
 
 -- Tabs & Indentation
 local indent = 2
@@ -19,6 +21,11 @@ opt.softtabstop = indent
 opt.expandtab = true
 opt.autoindent = true
 opt.startofline = true -- 'gg' to (0, 0)
+
+-- nosplit is default
+--  when doing :%s/ command it will show the matches in split window
+---@type string | 'nosplit' | 'split' | ''
+opt.inccommand = 'split'
 
 -- Search
 opt.ignorecase = true
@@ -45,10 +52,9 @@ opt.writebackup = false
 opt.swapfile = false
 
 -- Spelling
-opt.spell = false
 opt.spelllang = { 'en', 'cjk' }
 opt.spellsuggest = 'best'
-opt.spellfile = vim.fn.stdpath('config') .. '/spell/en.utf-8.add'
+-- opt.spellfile = vim.fn.stdpath('config') .. '/spell/en.utf-8.add'
 
 -- Session Options
 vim.o.sessionoptions = table.concat({
@@ -69,3 +75,5 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+vim.g.deprecation_warnings = false
