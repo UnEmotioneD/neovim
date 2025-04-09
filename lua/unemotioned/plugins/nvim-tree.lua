@@ -1,26 +1,17 @@
 return {
   'nvim-tree/nvim-tree.lua',
   config = function()
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
-
     require('nvim-tree').setup({
       view = {
-        width = 35,
         relativenumber = true,
+        width = 40,
       },
       renderer = {
         indent_markers = {
           enable = true,
+          inline_arrows = true,
         },
-        highlight_git = false,
         icons = {
-          show = {
-            file = true, -- You can toggle this to false to debug
-            folder = true,
-            folder_arrow = true,
-            git = false,
-          },
           glyphs = {
             folder = {
               arrow_closed = '',
@@ -30,17 +21,17 @@ return {
         },
       },
       git = {
-        enable = false, -- Disable Git integration for debugging
+        enable = false,
+      },
+      diagnostics = {
+        enable = false,
+      },
+      modified = {
+        enable = false,
       },
       filters = {
+        enable = true,
         custom = { '.DS_Store' },
-      },
-      actions = {
-        open_file = {
-          window_picker = {
-            enable = false,
-          },
-        },
       },
     })
   end,
