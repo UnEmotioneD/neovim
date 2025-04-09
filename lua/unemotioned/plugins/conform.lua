@@ -17,10 +17,15 @@ return {
       c = { 'clang-format' },
       cpp = { 'clang-format' },
     },
-    format_on_save = {
-      lsp_fallback = true,
+    default_format_opts = {
       async = false,
-      timeout_ms = 3000,
+      quiet = false,
+      lsp_format = 'fallback',
+      timeout_ms = 1000,
+    },
+    format_on_save = {
+      lsp_format = 'fallback',
+      timeout_ms = 1000,
     },
   },
 }
