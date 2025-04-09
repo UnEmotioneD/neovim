@@ -63,8 +63,10 @@ map('n', 'Q', '<Nop>', { noremap = true, silent = true })
 map('n', '<leader>A', ':Alpha<CR>', { desc = '[A]lpha', silent = true })
 
 -- auto-session
-map('n', '<leader>wr', ':SessionRestore<CR>', { desc = 'Session [s]ave' })
-map('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Session [r]estore' })
+map('n', '<leader>wr', '<cmd>SessionRestore<cr>', { desc = 'Session [s]ave' })
+map('n', '<leader>ws', '<cmd>SessionSave<cr>', { desc = 'Session [r]estore' })
+map('n', '<leader>wf', '<cmd>SessionSearch<CR>', { desc = 'Session [f]ind' })
+map('n', '<leader>wp', '<cmd>SessionPurgeOrphaned<CR>', { desc = 'Session [p]urge' })
 
 -- conform
 map({ 'n', 'v' }, '<leader>p', function()
