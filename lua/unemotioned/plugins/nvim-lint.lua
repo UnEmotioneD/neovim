@@ -9,16 +9,17 @@ return {
 
     lint.linters_by_ft = {
       javascript = { 'eslint_d' },
+      typescript = { 'eslint_d' },
       javascriptreact = { 'eslint_d' },
+      typescriptreact = { 'eslint_d' },
       c = { 'cpplint' },
       cpp = { 'cpplint' },
       python = { 'ruff' },
       markdown = { 'markdownlint' },
     }
 
-    local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
-
     -- ignore "Could not find config file. eslint_d" error for javascript files
+    local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
     ---@return vim.Diagnostic | nil
     lint.linters.eslint_d = require('lint.util').wrap(lint.linters.eslint_d, function(diagnostic)
       if diagnostic.message:find('Error: Could not find config file') then
