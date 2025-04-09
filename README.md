@@ -284,6 +284,10 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 에디터를 `Language Server`와 연결해 줘서 자동완성, syntax-highlighting, 에러 파악
   등의 기능을 제공한다
 
+- [folke/lazydev.nvim](https://github.com/folke/lazydev.nvim)
+
+  - Neovim 설정을 위한 `LuaLS` 라이브러리 제공
+
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
   - `:LspInfo` 명령어로 현재 버퍼의 LSP 정보 확인
@@ -364,12 +368,10 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [colorscheme](#colorscheme)
 - [comment](#comment)
 - [conform](#conform)
-- [dressing](#dressing)
 - [fidget](#fidget)
 - [flash](#flash)
 - [gitsigns](#gitsigns)
 - [harpoon](#harpoon)
-- [indent-blankline](#indent-blankline)
 - [lazygit](#lazygit)
 - [live-server](#live-server)
 - [lualine](#lualine)
@@ -377,7 +379,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [markdown-preview](#markdown-preview)
 - [marks](#marks)
 - [maximizer](#maximizer)
-- [mini-icon](#mini-icon)
+- [mini](#mini)
 - [nvim-autoparis](#nvim-autoparis)
 - [nvim-cmp](#nvim-cmp)
 - [nvim-colorizer](#nvim-colorizer)
@@ -393,6 +395,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [plenary](#plenary)
 - [render-markdown](#render-markdown)
 - [smear-cursor](#smear-cursor)
+- [snacks](#snacks)
 - [tabout](#tabout)
 - [telescope](#telescope)
 - [todo-comments](#todo-comments)
@@ -462,12 +465,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `SPC c i` : 현재 버퍼에서의 포메터 관련 정보를 확인
 
-#### dressing
-
-- [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim)
-
-- 향상된 UI
-
 #### fidget
 
 - [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
@@ -503,12 +500,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `ALT + ;` : ...
   - `CTRL + SHFT + n` : 리스트에서 다음
   - `CTRL + SHFT + p` : 리스트에서 이전
-
-#### indent-blankline
-
-- [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-
-  - 들여쓰기 상태를 보여줌
 
 #### lazygit
 
@@ -565,7 +556,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `SPC s m` : 초점 맞춰져 있는 창을 최대화/복원
 
-#### mini-icon
+#### mini
 
 - [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
 
@@ -669,6 +660,22 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [sphamba/smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)
 
 - 커서가 움직일때 신기한 효과 추가
+
+#### snacks
+
+- [folke/snacks.nvim](https://github.com/folke/snacks.nvim)
+
+##### snacks.indent
+
+- [folke/snacks.indent](https://github.com/folke/snacks.nvim/blob/main/docs/indent.md)
+
+- 들여쓰기 가이드 라인 제공
+
+##### snacks.input
+
+- [folke/snacks.input](https://github.com/folke/snacks.nvim/blob/main/docs/input.md)
+
+- vim.ui 에 대해서 향상된 UI 제공
 
 #### tabout
 
