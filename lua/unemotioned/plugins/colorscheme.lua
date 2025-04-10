@@ -52,6 +52,7 @@ local rose = {
         transparency = false,
       },
     })
+    vim.opt.fillchars:append({ eob = ' ' })
     vim.cmd.colorscheme('rose-pine')
   end,
 }
@@ -65,6 +66,10 @@ local tokyo = {
       ---@type string | 'moon' | 'storm' | 'night' | 'day'
       style = 'night',
       transparent = false,
+      cache = true,
+      plugins = {
+        auto = true,
+      },
     })
     vim.cmd.colorscheme('tokyonight')
 
