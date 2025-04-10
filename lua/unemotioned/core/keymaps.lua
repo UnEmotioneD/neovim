@@ -8,27 +8,24 @@ local map = vim.keymap.set
 
 map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 
-map('n', '<esc>', '<cmd>nohl<cr>', { desc = 'Clear hlsearch', silent = true })
-
-map('n', '<leader>nh', function()
-  vim.fn.setreg('/', '')
-  vim.cmd('noh')
-  vim.cmd('echo "Search register cleared"')
-end, { desc = '[n]o [h]ighlight' })
-
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up and center' })
 
-map('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
-map('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
+map('n', 'H', '<cmd>bp<cr>', { desc = 'Buffer Previous' })
+map('n', 'L', '<cmd>bn<cr>', { desc = 'Buffer Next' })
 
 map('n', 'J', 'mzJ`z<cmd>delm z<cr>', { desc = 'Join lines without moving cursor' })
+
+map('x', 'J', "<cmd>m '>+1<cr>gv=gv", { desc = 'Move Block Down' })
+map('x', 'K', "<cmd>m '<-2<cr>gv=gv", { desc = 'Move Block Up' })
+
+map('v', 'p', '"_dP', { desc = 'Paste over selection without overriding reg' })
 
 map('n', 'Y', 'y$', { desc = 'Yank to End of Line' })
 
 map('n', 'x', '"_x', { desc = 'Delete char without yanking' })
 
-map('v', 'p', 'pgvy', { desc = 'Paste over selection without overriding reg' })
+map('n', '<esc>', '<cmd>nohl<cr>', { desc = 'Clear hlsearch', silent = true })
 
 -- 리눅스에서 '입력' 모드 일때 Esc를 누르면 IM(Input Method)를 영어로 전환
 --  키보드가 한글 일때는 '일반' 모드에서 움직일 수 없기 때문에 유용
@@ -40,18 +37,25 @@ if vim.uv.os_uname().sysname == 'Linux' then
   end, { expr = true })
 end
 
-map('n', 'H', '<cmd>bp<cr>', { desc = 'Buffer Previous' })
-map('n', 'L', '<cmd>bn<cr>', { desc = 'Buffer Next' })
+map('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
+map('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
+
+map('n', '<leader>ch', '<cmd>checkhealth<cr>', { desc = '[c]heck [h]ealth ' })
+
+map('n', '<leader>cs', '<cmd>setlocal spell! spell?<cr>', { desc = '[c]heck [s]pell toggle' })
+
+map('n', '<leader>dm', '<cmd>delm!<cr>', { desc = '[d]elete all [m]arks' })
 
 map('n', '<leader>sv', '<C-w>v', { desc = '[s]plit [v]ertically' })
 map('n', '<leader>sh', '<C-w>s', { desc = '[s]plit [h]orizontally' })
 map('n', '<leader>se', '<C-w>=', { desc = '[s]plits into [e]qual size' })
 map('n', '<leader>sx', '<C-w>x', { desc = '[s]plits [s]wap sides' })
 
-map('n', '<leader>ch', '<cmd>checkhealth<cr>', { desc = '[c]heck [h]ealth ' })
-map('n', '<leader>cs', '<cmd>setlocal spell! spell?<cr>', { desc = '[c]heck [s]pell toggle' })
-
-map('n', '<leader>dm', '<cmd>delm!<cr>', { desc = '[d]elete all [m]arks' })
+map('n', '<leader>nh', function()
+  vim.fn.setreg('/', '')
+  vim.cmd('noh')
+  vim.cmd('echo "Search register cleared"')
+end, { desc = '[n]o [h]ighlight' })
 
 ----------------------
 --- Disable Keymaps --
