@@ -58,30 +58,6 @@ map('n', '<leader>nh', function()
 end, { desc = '[n]o [h]ighlight' })
 
 ----------------------
---- Disable Keymaps --
-----------------------
-
-map({ 'n', 'x' }, 'Q', '<Nop>', { noremap = true, silent = true }) -- Ex mode (old command interface)
-map('n', 'q:', '<Nop>', { noremap = true, silent = true }) -- Command-line window
-
--- Disable default nvim keymap since it is done by lsp with telescope
-map('n', 'gO', '<Nop>', { noremap = true, silent = true })
-map({ 'n', 'x' }, 'gra', '<Nop>', { noremap = true, silent = true })
-map('n', 'gri', '<Nop>', { noremap = true, silent = true })
-map('n', 'grr', '<Nop>', { noremap = true, silent = true })
-map('n', 'grn', '<Nop>', { noremap = true, silent = true })
-
--- Completely delete keymaps to not show it from telescoe keymaps
-vim.keymap.del('n', 'Q')
-vim.keymap.del('x', 'Q')
-vim.keymap.del('n', 'gO') -- symbol
-vim.keymap.del('n', 'gra') -- code action
-vim.keymap.del('x', 'gra')
-vim.keymap.del('n', 'gri') -- implementation
-vim.keymap.del('n', 'grr') -- reference
-vim.keymap.del('n', 'grn') -- rename
-
-----------------------
 --- Plugin Keymaps ---
 ----------------------
 
@@ -257,3 +233,27 @@ map('n', '<leader>u', "<cmd>lua require('undotree').toggle()<cr>", { desc = '[u]
 
 -- zen-mode
 map('n', '<leader>zz', '<cmd>ZenMode<cr>', { desc = '[z]en [z]en', silent = true })
+
+----------------------
+--- Disable Keymaps --
+----------------------
+
+map({ 'n', 'x' }, 'Q', '<Nop>', { noremap = true, silent = true }) -- Ex mode (old command interface)
+map('n', 'q:', '<Nop>', { noremap = true, silent = true }) -- Command-line window
+
+-- Disable default nvim keymap since it is done by lsp with telescope
+map('n', 'gO', '<Nop>', { noremap = true, silent = true }) -- symbol
+map({ 'n', 'x' }, 'gra', '<Nop>', { noremap = true, silent = true }) -- code action
+map('n', 'gri', '<Nop>', { noremap = true, silent = true }) -- implementation
+map('n', 'grr', '<Nop>', { noremap = true, silent = true }) -- reference
+map('n', 'grn', '<Nop>', { noremap = true, silent = true }) -- rename
+
+-- Completely delete keymaps to not show it from telescoe keymaps
+vim.keymap.del('n', 'Q')
+vim.keymap.del('x', 'Q')
+vim.keymap.del('n', 'gO')
+vim.keymap.del('n', 'gra')
+vim.keymap.del('x', 'gra')
+vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'grr')
+vim.keymap.del('n', 'grn')
