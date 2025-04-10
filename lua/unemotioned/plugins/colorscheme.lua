@@ -52,7 +52,6 @@ local rose = {
         transparency = false,
       },
     })
-    vim.opt.fillchars:append({ eob = ' ' })
     vim.cmd.colorscheme('rose-pine')
   end,
 }

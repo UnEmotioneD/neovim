@@ -12,6 +12,7 @@ opt.cursorline = true
 opt.scrolloff = 5
 opt.termguicolors = true
 opt.background = 'dark'
+opt.fillchars:append({ eob = ' ' })
 
 -- Tabs & Indentation
 local indent = 2
