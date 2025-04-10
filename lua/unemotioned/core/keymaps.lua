@@ -251,6 +251,7 @@ map('n', 'grn', '<Nop>', { noremap = true, silent = true }) -- rename
 -- Completely delete keymaps to not show it from telescoe keymaps
 vim.keymap.del('n', 'Q')
 vim.keymap.del('x', 'Q')
+vim.keymap.del('n', 'q:')
 vim.keymap.del('n', 'gO')
 vim.keymap.del('n', 'gra')
 vim.keymap.del('x', 'gra')
