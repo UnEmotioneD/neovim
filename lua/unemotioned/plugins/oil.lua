@@ -26,12 +26,11 @@ return {
     },
     -- Set to false to disable all of the above keymaps
     use_default_keymaps = true,
+
     view_options = {
       show_hidden = true,
-      -- This function defines what will never be shown, even when `show_hidden` is set
-      is_always_hidden = function(name, bufnr)
-        local dsStore = name:match('.DS_Store')
-        return dsStore
+      is_always_hidden = function(name, _)
+        return name == '..' or name == '.git' or name == '.DS_Store'
       end,
     },
   },
