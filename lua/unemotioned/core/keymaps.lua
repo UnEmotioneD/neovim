@@ -1,6 +1,6 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = ' ' -- leader key to SPACE
 
-local map = vim.keymap.set
+local map = vim.keymap.set -- for conciseness
 
 -----------------------
 --- General Keymaps ---
