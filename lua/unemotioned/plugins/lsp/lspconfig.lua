@@ -31,14 +31,14 @@ return {
       local opts = { buffer = ev.buf, silent = true }
       local mappings = {
         -- stylua: ignore start
-        { mode = 'n', lhs = 'gR', rhs = ':Telescope lsp_references<CR>', desc = 'Show LSP references' },
+        { mode = 'n', lhs = 'gR', rhs = ':Telescope lsp_references<cr>', desc = 'Show LSP references' },
         { mode = 'n', lhs = 'gD', rhs = vim.lsp.buf.declaration, desc = 'Go to declaration' },
-        { mode = 'n', lhs = 'gd', rhs = ':Telescope lsp_definitions<CR>', desc = 'Show LSP definitions' },
-        { mode = 'n', lhs = 'gi', rhs = ':Telescope lsp_implementations<CR>', desc = 'Show LSP implementations' },
-        { mode = 'n', lhs = 'gt', rhs = ':Telescope lsp_type_definitions<CR>', desc = 'Show LSP type definitions' },
+        { mode = 'n', lhs = 'gd', rhs = ':Telescope lsp_definitions<cr>', desc = 'Show LSP definitions' },
+        { mode = 'n', lhs = 'gi', rhs = ':Telescope lsp_implementations<cr>', desc = 'Show LSP implementations' },
+        { mode = 'n', lhs = 'gt', rhs = ':Telescope lsp_type_definitions<cr>', desc = 'Show LSP type definitions' },
         { mode = { 'n', 'v' }, lhs = '<leader>ca', rhs = vim.lsp.buf.code_action, desc = 'See available code actions' },
         { mode = 'n', lhs = '<leader>rn', rhs = vim.lsp.buf.rename, desc = 'Smart rename' },
-        { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = 'Show buffer diagnostics' },
+        { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<cr>', desc = 'Show buffer diagnostics' },
         { mode = 'n', lhs = '<leader>d', rhs = vim.diagnostic.open_float, desc = 'Show line diagnostics' },
         { mode = 'n', lhs = '[d', rhs = function() vim.diagnostic.jump({ count = -1 }) end, desc = 'Go to previous diagnostic', },
         { mode = 'n', lhs = ']d', rhs = function() vim.diagnostic.jump({ count = 1 }) end, desc = 'Go to next diagnostic', },
