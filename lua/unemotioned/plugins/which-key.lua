@@ -30,7 +30,7 @@ return {
     },
 
     win = {
-      ---@type string | "single" | "double" | "solid" | "shadow"
+      ---@type string 'single' | 'double' | 'solid' | 'shadow'
       border = 'rounded',
     },
   },

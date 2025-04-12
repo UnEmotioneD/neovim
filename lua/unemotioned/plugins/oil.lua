@@ -4,7 +4,7 @@ return {
   opts = {
     delete_to_trash = true,
     skip_confirm_for_simple_edits = true,
-    ---@type string | 'editable' | 'name' | 'false'
+    ---@type 'editable' | 'name' | 'false'
     constrain_cursor = 'name',
     keymaps = {
       ['g?'] = { 'actions.show_help', mode = 'n' },

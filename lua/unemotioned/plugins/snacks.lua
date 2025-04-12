@@ -9,7 +9,7 @@ return {
       only_current = true,
       animate = {
         enabled = true,
-        ---@type string | 'out' | 'up_down' | 'down' | 'up'
+        ---@type 'out' | 'up_down' | 'down' | 'up'
         style = 'out',
         duration = {
           step = 20, -- ms per step

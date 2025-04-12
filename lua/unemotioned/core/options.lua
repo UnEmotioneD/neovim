@@ -25,7 +25,7 @@ opt.startofline = true -- 'gg' to (0, 0)
 
 -- nosplit is default
 --  when doing :%s/ command it will show the matches in split window
----@type string | 'nosplit' | 'split' | ''
+---@type 'nosplit' | 'split' | ''
 opt.inccommand = 'split'
 
 -- Search

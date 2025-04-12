@@ -4,7 +4,7 @@ local cat = {
   priority = 1000,
   config = function()
     require('catppuccin').setup({
-      ---@type string | 'latte' | 'frappe' | 'macchiato' | 'mocha'
+      ---@type 'latte' | 'frappe' | 'macchiato' | 'mocha'
       flavour = 'mocha',
       transparent_background = false,
       color_overrides = {},
@@ -46,7 +46,7 @@ local rose = {
   priority = 1000,
   config = function()
     require('rose-pine').setup({
-      ---@type string | 'main' | 'moon' | 'dawn'
+      ---@type 'main' | 'moon' | 'dawn'
       variant = 'moon',
       styles = {
         transparency = false,
@@ -62,7 +62,7 @@ local tokyo = {
   priority = 1000,
   config = function()
     require('tokyonight').setup({
-      ---@type string | 'moon' | 'storm' | 'night' | 'day'
+      ---@type 'moon' | 'storm' | 'night' | 'day'
       style = 'night',
       transparent = false,
       cache = true,

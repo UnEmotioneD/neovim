@@ -15,11 +15,11 @@ return {
       },
       integrations = {
         NvimTree = {
-          position = 'left', ---@type "left"|"right"
+          position = 'left', ---@type 'left' | 'right'
           reopen = true,
         },
         undotree = {
-          position = 'left', ---@type "left"|"right"
+          position = 'left', ---@type 'left' | 'right'
         },
       },
     })

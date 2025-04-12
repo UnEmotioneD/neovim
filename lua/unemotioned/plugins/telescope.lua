@@ -13,10 +13,10 @@ return {
         path_display = { 'smart' },
 
         layout_config = {
-          prompt_position = 'bottom', ---@type string | 'bottom' | 'top'
+          prompt_position = 'bottom', ---@type 'bottom' | 'top'
         },
-        layout_strategy = 'horizontal', ---@type string | 'horizontal' | 'vertical'
-        sorting_strategy = 'descending', ---@type string | 'ascending' | 'descending'
+        layout_strategy = 'horizontal', ---@type 'horizontal' | 'vertical'
+        sorting_strategy = 'descending', ---@type 'ascending' | 'descending'
 
         mappings = {
           i = {

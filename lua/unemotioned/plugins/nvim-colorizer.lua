@@ -13,11 +13,11 @@ return {
       css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
       css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 
-      ---@type string | 'foreground' | 'background' | 'virtualtext'
+      ---@type 'foreground' | 'background' | 'virtualtext'
       mode = 'background',
 
       -- True is same as normal
-      ---@type string | 'normal' | 'lsp' | 'both'
+      ---@type 'normal' | 'lsp' | 'both'
       ---@type boolean
       tailwind = false,
 

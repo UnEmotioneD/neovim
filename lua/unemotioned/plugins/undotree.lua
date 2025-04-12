@@ -2,10 +2,8 @@ return {
   'jiaoshijie/undotree',
   opts = {
     float_diff = true, -- `true` disables layout option
-    ---@type string | "left_bottom" | "left_left_bottom"
-    layout = 'left_bottom',
-    ---@type string | "left" | "right" | "bottom"
-    position = 'left',
+    layout = 'left_bottom', ---@type  'left_bottom' | 'left_left_bottom'
+    position = 'left', ---@type  'left' | 'right' | 'bottom'
     ignore_filetype = {
       'undotree',
       'undotreeDiff',

@@ -117,7 +117,7 @@ return {
           cmd_env = { RUST_LOG = 'error' },
           init_options = {
             config = vim.fn.expand('~/.config/nvim/typos/typos.toml'),
-            ---@type string | 'Error' | 'Warning' | 'Hint' | 'Info'
+            ---@type 'Error' | 'Warning' | 'Hint' | 'Info'
             diagnosticSeverity = 'Info',
           },
         })

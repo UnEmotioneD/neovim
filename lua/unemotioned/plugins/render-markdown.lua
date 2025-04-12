@@ -3,7 +3,7 @@ return {
   dependencies = 'echasnovski/mini.nvim',
   opts = {
     enabled = false, -- render by default
-    ---@type string | 'none' | 'lazy' | 'obsidian'
+    ---@type 'none' | 'lazy' | 'obsidian'
     preset = 'lazy',
     anti_conceal = {
       above = 0, -- Number of lines above cursor to show.
