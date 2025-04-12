@@ -3,7 +3,6 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    input = { enabled = false }, -- change it to true to replace dressing.nvim
     indent = {
       animate = { enabled = false },
       scope = {
@@ -15,11 +14,9 @@ return {
         only_current = true,
       },
     },
+    input = { enabled = false }, -- change it to true to replace dressing.nvim
     picker = { enabled = true },
     quickfile = { enabled = true },
     toggle = { enabled = true },
   },
-  config = function()
-    require('snacks').setup()
-  end,
 }
