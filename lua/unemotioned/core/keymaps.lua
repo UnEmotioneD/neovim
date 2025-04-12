@@ -240,9 +240,6 @@ map('n', '<leader>xw', '<cmd>Trouble diagnostics toggle<cr>', { desc = 'Open tro
 -- undotree
 map('n', '<leader>u', "<cmd>lua require('undotree').toggle()<cr>", { desc = '[u]ndo-tree toggle' })
 
--- zen-mode
-map('n', '<leader>zz', '<cmd>ZenMode<cr>', { desc = '[z]en [z]en', silent = true })
-
 ----------------------
 --- Disable Keymaps --
 ----------------------

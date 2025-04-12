@@ -380,6 +380,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [marks](#marks)
 - [maximizer](#maximizer)
 - [mini](#mini)
+- [no-neck-pain](#no-neck-pain)
 - [nvim-autoparis](#nvim-autoparis)
 - [nvim-cmp](#nvim-cmp)
 - [nvim-colorizer](#nvim-colorizer)
@@ -563,6 +564,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Nvim에서 보여줄 아이콘 제공
 
+#### no-neck-pain
+
+- [shortcuts/no-neck-pain.nvim](https://github.com/shortcuts/no-neck-pain.nvim)
+
+- 화면 중앙 정렬 기능 제공
+
 #### nvim-autoparis
 
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
@@ -730,12 +737,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 팝업창으로 사용 가능한 키맵들을 보여준다
 
   - `SPC` 키를 한번 누르고 기다려도 된다
-
-#### zen-mode
-
-- [folke/zen-mode.nvim](https://github.com/folke/zen-mode.nvim)
-
-  - `SPC z z`를 누르면 에디터 창을 중앙 정렬 시킬 수 있다
 
 ---
 
