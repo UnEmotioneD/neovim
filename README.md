@@ -497,7 +497,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 향상된 화면 내에서의 커서 이동
 
-  - `Enter`키를 누르고서 찾고자 하는 단어 입력하다보면
+  - `SPC Enter`를 누르고서 찾고자 하는 단어 입력하다보면
     단어 옆에 뜨는 알파벳을 누르면 이동된다
 
 **[⬆ 플러그인 목록](#contents)**
@@ -632,7 +632,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 
-- Virtual-text를 만들어서 색깔을 보여줌
+- 소스 코드에서 색상을 보여줌
 
 **[⬆ 플러그인 목록](#contents)**
 
