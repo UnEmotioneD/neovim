@@ -200,6 +200,39 @@ map('n', '<leader>ql', function()
   require('quicker').toggle({ loclist = true })
 end, { desc = '[q]uickfix [l]ocalist' })
 
+-- snacks.picker
+map('n', '<leader>gb', function()
+  require('snacks').picker.git_branches()
+end, { desc = '[g]it [b]ranches' })
+
+map('n', '<leader>gd', function()
+  require('snacks').picker.git_diff()
+end, { desc = '[g]it [d]iff (Hunks)' })
+
+map('n', '<leader>gf', function()
+  require('snacks').picker.git_log_file()
+end, { desc = '[g]it [l]og [f]iles' })
+
+map('n', '<leader>gl', function()
+  require('snacks').picker.git_log()
+end, { desc = '[g]it [l]og' })
+
+map('n', '<leader>gL', function()
+  require('snacks').picker.git_log_line()
+end, { desc = '[g]it log [l]ine' })
+
+map('n', '<leader>gs', function()
+  require('snacks').picker.git_status()
+end, { desc = '[g]it [s]tatus' })
+
+map('n', '<leader>gS', function()
+  require('snacks').picker.git_stash()
+end, { desc = '[g]it [s]tash' })
+
+map('n', '<leader>fI', function()
+  require('snacks').picker.icons()
+end, { desc = '[f]ind [I]cons' })
+
 -- telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = '[f]ind [f]iles' })
 map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', { desc = '[f]ind [w]ords' })

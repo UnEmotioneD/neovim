@@ -1,5 +1,6 @@
 return {
   'nvim-tree/nvim-tree.lua',
+  dependencies = 'stevearc/dressing.nvim',
   config = function()
     require('nvim-tree').setup({
       view = {

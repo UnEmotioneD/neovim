@@ -404,7 +404,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [trouble](#trouble)
 - [undotree](#undotree)
 - [which-key](#which-key)
-- [zen-mode](#zen-mode)
 
 ---
 
