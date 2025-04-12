@@ -400,6 +400,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [render-markdown](#render-markdown)
 - [smear-cursor](#smear-cursor)
 - [snacks](#snacks)
+  - [input](#snacksinput)
+  - [indent](#snacksindent)
+  - [picker](#snacksinput)
 - [tabout](#tabout)
 - [telescope](#telescope)
 - [todo-comments](#todo-comments)
@@ -752,17 +755,24 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - [folke/snacks.nvim](https://github.com/folke/snacks.nvim)
 
+##### snacks.input
+
+- [folke/snacks.input](https://github.com/folke/snacks.nvim/blob/main/docs/input.md)
+
+- vim.ui 에 대해서 향상된 UI 제공
+
 ##### snacks.indent
 
 - [folke/snacks.indent](https://github.com/folke/snacks.nvim/blob/main/docs/indent.md)
 
 - 들여쓰기 가이드 라인 제공
 
-##### snacks.input
+##### snacks.picker
 
-- [folke/snacks.input](https://github.com/folke/snacks.nvim/blob/main/docs/input.md)
+- [folke/snacks.picker](https://github.com/folke/snacks.nvim/blob/main/docs/picker.md)
 
-- vim.ui 에 대해서 향상된 UI 제공
+- Nvim 내에서 검색 기능 제공
+  - git 관련, nerd font 아이콘 검색
 
 **[⬆ back to top](#contents)**
 
