@@ -361,6 +361,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 ---
 
+#### contents
+
 - [alpha](#alpha)
 - [auto-session](#auto-session)
 - [bigfile](#bigfile)
@@ -419,11 +421,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `:Alpha` 명령어 또는 `SPC A`를 사용해서 현재 창에서 보여줄 수도 있다
 
+**[⬆ back to top](#contents)**
+
 #### auto-session
 
 - [rmagatti/auto-session](https://github.com/rmagatti/auto-session)
 
 - 해당 경로의 열려있는 파일, 창 등을 자동으로 저장하고 복원할 수 있다
+
+**[⬆ back to top](#contents)**
 
 #### bigfile
 
@@ -431,11 +437,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 파일이 특정 크기 이상일 때 일부 기능들을 꺼준다
 
+**[⬆ back to top](#contents)**
+
 #### bufferline
 
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 
 - VSCode 같이 파일 이름을 탭에서 보여준다
+
+**[⬆ back to top](#contents)**
 
 #### colorscheme
 
@@ -450,11 +460,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 각 테마들은 `flavor`, `variant`, `style`의 값을 변경하여서 다른 버전으로 사용할 수 있다
 
+**[⬆ back to top](#contents)**
+
 #### comment
 
 - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
 - 향상된 주석 기능
+
+**[⬆ back to top](#contents)**
 
 #### conform
 
@@ -466,11 +480,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `SPC c i` : 현재 버퍼에서의 포메터 관련 정보를 확인
 
+**[⬆ back to top](#contents)**
+
 #### fidget
 
 - [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
 
 - 해당 buffer에 LSP 상태를 오른쪽 아래에서 보여줌
+
+**[⬆ back to top](#contents)**
 
 #### flash
 
@@ -481,11 +499,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `Enter`키를 누르고서 찾고자 하는 단어 입력하다보면
     단어 옆에 뜨는 알파벳을 누르면 이동된다
 
+**[⬆ back to top](#contents)**
+
 #### gitsigns
 
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
 - Buffer에서의 git 상태를 gutter(line-number 옆)에서 보여준다
+
+**[⬆ back to top](#contents)**
 
 #### harpoon
 
@@ -502,6 +524,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `CTRL + SHFT + n` : 리스트에서 다음
   - `CTRL + SHFT + p` : 리스트에서 이전
 
+**[⬆ back to top](#contents)**
+
 #### lazygit
 
 - [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
@@ -509,6 +533,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - Neovim 화면에서 LazyGit을 불러옴
 
   - `SPC h g`
+
+**[⬆ back to top](#contents)**
 
 #### live-server
 
@@ -520,6 +546,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `SPC l c` : 종료
   - `SPC l t` : 토글
 
+**[⬆ back to top](#contents)**
+
 #### lualine
 
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
@@ -529,11 +557,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - git 상태 (branch ...)
   - 파일 이름, 상태, 크기, 위치 등
 
+**[⬆ back to top](#contents)**
+
 #### luasnip
 
 - [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 
 - 커스텀 자동완성을 만들 수 있게 해줌
+
+**[⬆ back to top](#contents)**
 
 #### markdown-preview
 
@@ -543,11 +575,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `SPC m p` : localhost를 사용해서 미리보기를 브라우저에 띄운다
 
+**[⬆ back to top](#contents)**
+
 #### marks
 
 - [chentoast/marks.nvim](https://github.com/chentoast/marks.nvim)
 
 - Gutter(line-number 옆)에 마크를 보여줌
+
+**[⬆ back to top](#contents)**
 
 #### maximizer
 
@@ -557,11 +593,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `SPC s m` : 초점 맞춰져 있는 창을 최대화/복원
 
+**[⬆ back to top](#contents)**
+
 #### mini
 
 - [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
 
 - Nvim에서 보여줄 아이콘 제공
+
+**[⬆ back to top](#contents)**
 
 #### no-neck-pain
 
@@ -569,11 +609,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 화면 중앙 정렬 기능 제공
 
+**[⬆ back to top](#contents)**
+
 #### nvim-autoparis
 
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
 - 여는 따옴표, 괄호, HTML 태그 등을 자동으로 닫아줌
+
+**[⬆ back to top](#contents)**
 
 #### nvim-cmp
 
@@ -581,11 +625,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 자동 완성 엔진
 
+**[⬆ back to top](#contents)**
+
 #### nvim-colorizer
 
 - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 
 - Virtual-text를 만들어서 색깔을 보여줌
+
+**[⬆ back to top](#contents)**
 
 #### nvim-hlslens
 
@@ -593,11 +641,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - Buffer 내에서 검색 결과를 보여줄 때 더 많은 기능을 제공
 
+**[⬆ back to top](#contents)**
+
 #### nvim-lint
 
 - [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
 
 - Lint: 코드의 경고, 에러 등을 보여줌
+
+**[⬆ back to top](#contents)**
 
 #### nvim-tmux-navigation
 
@@ -607,11 +659,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `CTRL + h, j, k, l` 키를 눌러서 이동
 
+**[⬆ back to top](#contents)**
+
 #### nvim-surround
 
 - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
 
 - 문자 쌍 또는 HTML 태그를 추가/삭제/변경 기능
+
+**[⬆ back to top](#contents)**
 
 #### nvim-tree
 
@@ -622,11 +678,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `SPC e e` : nvimtree 토글
   - `SPC e f` : 현재 파일을 nvimtree에서 연다
 
+**[⬆ back to top](#contents)**
+
 #### nvim-treesitter
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 - 향상된 syntax-highlight 기능
+
+**[⬆ back to top](#contents)**
 
 #### nvim-ts-autotag
 
@@ -634,11 +694,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `HTML`등의 파일에서 태그의 자동 닫는 태그, 이름 변경 기능 제공
 
+**[⬆ back to top](#contents)**
+
 #### nvim-web-devicons
 
 - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 
 - Nvim에서 보여줄 아이콘 제공
+
+**[⬆ back to top](#contents)**
 
 #### oil
 
@@ -648,17 +712,23 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `underscore(-)`를 눌러서 현재 위치의 부모 경로를 연다
 
+**[⬆ back to top](#contents)**
+
 #### plenary
 
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
 - Neovim 플러그인을 개발하는데 필수적인 function들을 제공하는 라이브러리
 
+**[⬆ back to top](#contents)**
+
 #### quicker
 
 - [stevearc/quicker.nvim](https://github.com/stevearc/quicker.nvim)
 
 - 향상된 `Quick fix list` UI
+
+**[⬆ back to top](#contents)**
 
 #### render-markdown
 
@@ -668,11 +738,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `SPC m r` : 파일에 신기한 효과 추가
 
+**[⬆ back to top](#contents)**
+
 #### smear-cursor
 
 - [sphamba/smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)
 
 - 커서가 움직일때 신기한 효과 추가
+
+**[⬆ back to top](#contents)**
 
 #### snacks
 
@@ -690,11 +764,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - vim.ui 에 대해서 향상된 UI 제공
 
+**[⬆ back to top](#contents)**
+
 #### tabout
 
 - [abecodes/tabout.nvim](https://github.com/abecodes/tabout.nvim)
 
 - Tab 키를 이용해서 점, 따옴표, 괄호 등을 뛰어넘을 수 있는 기능 제공
+
+**[⬆ back to top](#contents)**
 
 #### telescope
 
@@ -706,6 +784,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `SPC f w` : CWD에서 문자열 찾기
   - `SPC f s` : CWD에서 심볼 찾기
 
+**[⬆ back to top](#contents)**
+
 #### todo-comments
 
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
@@ -715,11 +795,15 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   <!-- WARNING: -->
   <!-- BUG: -->
 
+**[⬆ back to top](#contents)**
+
 #### trouble
 
 - [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 
 - 코드 진단, `telescope` 검색 결과 등을 보여주는 리스트
+
+**[⬆ back to top](#contents)**
 
 #### undotree
 
@@ -729,6 +813,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - `SPC u` : undotree 창을 연다
 
+**[⬆ back to top](#contents)**
+
 #### which-key
 
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
@@ -736,6 +822,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 팝업창으로 사용 가능한 키맵들을 보여준다
 
   - `SPC` 키를 한번 누르고 기다려도 된다
+
+**[⬆ back to top](#contents)**
 
 ---
 
