@@ -4,9 +4,20 @@ return {
   lazy = false,
   opts = {
     indent = {
-      animate = { enabled = false },
+      enabled = true,
+      only_scope = true,
+      only_current = true,
+      animate = {
+        enabled = true,
+        ---@type string | 'out' | 'up_down' | 'down' | 'up'
+        style = 'out',
+        duration = {
+          step = 20, -- ms per step
+          total = 500, -- maximum duration
+        },
+      },
       scope = {
-        underline = false,
+        underline = true,
         only_current = true,
       },
       chunk = {
