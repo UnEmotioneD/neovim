@@ -5,7 +5,7 @@ local i = ls.insert_node
 
 -- 느낌표(!, bang) 를 입력하고 자동완성에서 선택하면 아래와 같은 코드를 완성 시키고
 --  <Tab>을 눌러서 커서를 i(1) 위치에서 i(0)으로 이동 할 수 있다
---  (prettier 로 포멧 했을때의 형식)
+--  (prettier 로 포멧한 htmx 형식)
 return {
   s('!', {
     t('<!doctype html>'),
@@ -24,7 +24,7 @@ return {
     t({ '', '    ' }),
     i(0),
     t({ '', '  </body>' }),
-    t({ '', '  <scripts> </scripts>' }),
+    t({ '', '  <script></script>' }),
     t({ '', '</html>' }),
   }),
 }
