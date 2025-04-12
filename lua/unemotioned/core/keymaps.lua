@@ -64,8 +64,8 @@ end, { desc = '[n]o [h]ighlight' })
 -- auto-session
 map('n', '<leader>wr', '<cmd>SessionRestore<cr>', { desc = 'Session [s]ave' })
 map('n', '<leader>ws', '<cmd>SessionSave<cr>', { desc = 'Session [r]estore' })
-map('n', '<leader>wf', '<cmd>SessionSearch<CR>', { desc = 'Session [f]ind' })
-map('n', '<leader>wp', '<cmd>SessionPurgeOrphaned<CR>', { desc = 'Session [p]urge' })
+map('n', '<leader>wf', '<cmd>SessionSearch<cr>', { desc = 'Session [f]ind' })
+map('n', '<leader>wp', '<cmd>SessionPurgeOrphaned<cr>', { desc = 'Session [p]urge' })
 
 -- conform
 map({ 'n', 'v' }, '<leader>p', function()
@@ -199,8 +199,8 @@ map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ winblend = 0, previewer = false }))
 end, { desc = '[/] Fuzzy search current buffer' })
 
-map('n', '<leader>fs', '<cmd>Telescope lsp_document_symbols<CR>', { desc = '[f]ind buffer [s]ymbols' })
-map('n', '<leader>fS', '<cmd>Telescope lsp_workspace_symbols<CR>', { desc = '[f]ind workspace [S]ymbols' })
+map('n', '<leader>fs', '<cmd>Telescope lsp_document_symbols<cr>', { desc = '[f]ind buffer [s]ymbols' })
+map('n', '<leader>fS', '<cmd>Telescope lsp_workspace_symbols<cr>', { desc = '[f]ind workspace [S]ymbols' })
 
 map('n', '<leader>fn', function()
   require('telescope.builtin').find_files({

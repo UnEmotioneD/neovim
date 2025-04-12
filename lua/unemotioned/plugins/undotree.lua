@@ -23,7 +23,7 @@ return {
       ['gj'] = 'move2parent',
       ['J'] = 'move_change_next',
       ['K'] = 'move_change_prev',
-      ['<CR>'] = 'action_enter',
+      ['<cr>'] = 'action_enter',
       ['p'] = 'enter_diffbuf',
       ['q'] = 'quit',
     },
