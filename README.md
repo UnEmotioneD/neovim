@@ -422,8 +422,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `button`에서 보여주는 키를 `Alpha` 창에서 입력하면 원래 키맵과 다르게 기능을 실행할 수있다
 
-- `:Alpha` 명령어 또는 `SPC A`를 사용해서 현재 창에서 보여줄 수도 있다
-
 **[⬆ back to top](#contents)**
 
 #### auto-session
