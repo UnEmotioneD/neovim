@@ -191,6 +191,15 @@ map('n', '<leader>ql', function()
   require('quicker').toggle({ loclist = true })
 end, { desc = '[q]uickfix [l]ocalist' })
 
+-- quicker
+map('n', '<leader>qq', function()
+  require('quicker').toggle()
+end, { desc = '[q]uickfix list toggle' })
+
+map('n', '<leader>ql', function()
+  require('quicker').toggle({ loclist = true })
+end, { desc = '[q]uickfix [l]ocalist' })
+
 -- telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = '[f]ind [f]iles' })
 map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', { desc = '[f]ind [w]ords' })

@@ -393,6 +393,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [nvim-web-devicons](#nvim-web-devicons)
 - [oil](#oil)
 - [plenary](#plenary)
+- [quicker](#quicker)
 - [render-markdown](#render-markdown)
 - [smear-cursor](#smear-cursor)
 - [snacks](#snacks)
@@ -646,6 +647,12 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
 - Neovim 플러그인을 개발하는데 필수적인 function들을 제공하는 라이브러리
+
+#### quicker
+
+- [stevearc/quicker.nvim](https://github.com/stevearc/quicker.nvim)
+
+- 향상된 `Quick fix list` UI
 
 #### render-markdown
 
