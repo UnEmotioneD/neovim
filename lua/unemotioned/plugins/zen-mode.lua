@@ -15,5 +15,12 @@ return {
         vim.opt.colorcolumn = '87'
       end
     end,
+    on_close = function()
+      if vim.bo.filetype == 'lua' then
+        vim.opt.colorcolumn = '0'
+      elseif vim.bo.filetype == 'python' then
+        vim.opt.colorcolumn = '0'
+      end
+    end,
   },
 }
