@@ -409,6 +409,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [trouble](#trouble)
 - [undotree](#undotree)
 - [which-key](#which-key)
+- [zen-mode](#zen-mode)
 
 ---
 
@@ -800,6 +801,8 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - 주석으로 되어 있는 TODO:, NOTE: 등의 단어들을 강조
 
+- `SPC f t`를 이용해서 찾을 수 있다
+
   <!-- WARNING: -->
   <!-- BUG: -->
 
@@ -830,6 +833,16 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 팝업창으로 사용 가능한 키맵들을 보여준다
 
   - `SPC` 키를 한번 누르고 기다려도 된다
+
+**[⬆ 플러그인 목록](#contents)**
+
+#### zen-mode
+
+- [folke/zen-mode.nvim](https://github.com/folke/zen-mode.nvim)
+
+- 화면 중앙 정렬 기능 제공
+
+- `SPC z z`를 이용해서 토글
 
 **[⬆ 플러그인 목록](#contents)**
 
