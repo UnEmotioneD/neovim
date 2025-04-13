@@ -2,7 +2,15 @@ return {
   'folke/which-key.nvim',
   event = 'VimEnter',
   opts = {
+    ---@type false | 'classic' | 'modern' | 'helix'
+    preset = 'classic',
     delay = 300,
+    plugins = {
+      spelling = {
+        enabled = true,
+        suggestions = 4,
+      },
+    },
     icons = {
       keys = {
         Esc = '<Esc>',
@@ -31,7 +39,7 @@ return {
 
     win = {
       ---@type string 'single' | 'double' | 'solid' | 'shadow'
-      border = 'rounded',
+      border = 'single',
     },
   },
 }
