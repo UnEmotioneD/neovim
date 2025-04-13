@@ -241,9 +241,6 @@ map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ winblend = 0, previewer = false }))
 end, { desc = '[/] Fuzzy search current buffer' })
 
-map('n', '<leader>fs', '<cmd>Telescope lsp_document_symbols<cr>', { desc = '[f]ind buffer [s]ymbols' })
-map('n', '<leader>fS', '<cmd>Telescope lsp_workspace_symbols<cr>', { desc = '[f]ind workspace [S]ymbols' })
-
 map('n', '<leader>fn', function()
   require('telescope.builtin').find_files({
     cwd = vim.fn.stdpath('config'),
