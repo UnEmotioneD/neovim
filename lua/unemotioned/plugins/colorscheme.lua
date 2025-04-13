@@ -58,6 +58,12 @@ local rose = {
 
 local tokyo = {
   'folke/tokyonight.nvim',
+  dependencies = {
+    'catppuccin/nvim',
+    'rose-pine/neovim',
+    'ellisonleao/gruvbox.nvim',
+    'projekt0n/github-nvim-theme',
+  },
   lazy = false,
   priority = 1000,
   config = function()
