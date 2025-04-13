@@ -25,7 +25,7 @@ map('n', 'Y', 'y$', { desc = 'Yank to End of Line' })
 
 map('n', 'x', '"_x', { desc = 'Delete char without yanking' })
 
-map('n', '<Esc>', ':nohl<CR>', { dEsc = 'Clear hlsearch', silent = true })
+map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true })
 
 -- 리눅스에서 '입력' 모드 일때 Esc를 누르면 IM(Input Method)를 영어로 전환
 --  키보드가 한글 일때는 '일반' 모드에서 움직일 수 없기 때문에 유용
@@ -272,7 +272,7 @@ map('n', '<leader>xw', ':Trouble diagnostics toggle<CR>', { desc = 'Open trouble
 map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle' })
 
 -- zen-mode
-map('n', '<leader>zz', ':ZenMode<CR>', { desc = '[z]en [z]en' })
+map('n', '<leader>zz', ':ZenMode<CR>', { desc = '[z]en [z]en', silent = true })
 
 ----------------------
 --- Disable Keymaps --
