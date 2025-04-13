@@ -20,13 +20,17 @@ return {
 
         mappings = {
           i = {
+            ['<C-h>'] = actions.select_horizontal,
             ['<C-j>'] = actions.move_selection_next,
             ['<C-k>'] = actions.move_selection_previous,
             ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
             ['<C-w>'] = actions.which_key,
             ['<C-x>'] = nil, -- disable default keymap to open in horizontal split
-            ['<C-h>'] = actions.select_horizontal,
           },
+        },
+        -- files to not search
+        file_ignore_patterns = {
+          '%.git/',
         },
       },
 
