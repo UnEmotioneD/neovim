@@ -25,13 +25,13 @@ return {
     }
 
     dashboard.section.buttons.val = {
-      dashboard.button('e', '  > Open Explorer', ':NvimTreeToggle<cr>'),
-      dashboard.button('f', '󰱼  > Find File', ':Telescope find_files<cr>'),
-      dashboard.button('w', '  > Find Word', ':Telescope live_grep<cr>'),
-      dashboard.button('k', '  > Find Keymap', ':Telescope keymaps<cr>'),
-      dashboard.button('r', '󰁯  > Restore Session', ':SessionRestore<cr>'),
-      dashboard.button('g', '  > Open LazyGit', ':LazyGit<cr>'),
-      dashboard.button('q', '  > Quit NVIM', ':qa<cr>'),
+      dashboard.button('e', '  > Open Explorer', ':NvimTreeToggle<CR>'),
+      dashboard.button('f', '󰱼  > Find File', ':Telescope find_files<CR>'),
+      dashboard.button('w', '  > Find Word', ':Telescope live_grep<CR>'),
+      dashboard.button('k', '  > Find Keymap', ':Telescope keymaps<CR>'),
+      dashboard.button('r', '󰁯  > Restore Session', ':SessionRestore<CR>'),
+      dashboard.button('g', '  > Open LazyGit', ':LazyGit<CR>'),
+      dashboard.button('q', '  > Quit NVIM', ':qa<CR>'),
     }
 
     alpha.setup(dashboard.opts)

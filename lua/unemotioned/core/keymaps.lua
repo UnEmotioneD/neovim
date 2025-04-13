@@ -11,13 +11,13 @@ map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up and center' })
 
-map('n', 'H', '<cmd>bp<cr>', { desc = 'Buffer Previous' })
-map('n', 'L', '<cmd>bn<cr>', { desc = 'Buffer Next' })
+map('n', 'H', ':bp<CR>', { desc = 'Buffer Previous' })
+map('n', 'L', ':bn<CR>', { desc = 'Buffer Next' })
 
-map('n', 'J', 'mzJ`z<cmd>delm z<cr>', { desc = 'Join lines without moving cursor' })
+map('n', 'J', 'mzJ`z:delm z<CR>', { desc = 'Join lines without moving cursor' })
 
-map('x', 'J', "<cmd>m '>+1<cr>gv=gv", { desc = 'Move Block Down' })
-map('x', 'K', "<cmd>m '<-2<cr>gv=gv", { desc = 'Move Block Up' })
+map('x', 'J', ":move '>+1<CR>gv=gv", { desc = 'Move Block Down' })
+map('x', 'K', ":move '<-2<CR>gv=gv", { desc = 'Move Block Up' })
 
 map('v', 'p', '"_dP', { desc = 'Paste over selection without overriding reg' })
 
@@ -25,26 +25,26 @@ map('n', 'Y', 'y$', { desc = 'Yank to End of Line' })
 
 map('n', 'x', '"_x', { desc = 'Delete char without yanking' })
 
-map('n', '<esc>', '<cmd>nohl<cr>', { desc = 'Clear hlsearch', silent = true })
+map('n', '<Esc>', ':nohl<CR>', { dEsc = 'Clear hlsearch', silent = true })
 
 -- 리눅스에서 '입력' 모드 일때 Esc를 누르면 IM(Input Method)를 영어로 전환
 --  키보드가 한글 일때는 '일반' 모드에서 움직일 수 없기 때문에 유용
 --  'fcitx5'를 이용할때 사용 가능
 if vim.uv.os_uname().sysname == 'Linux' then
-  map('i', '<esc>', function()
+  map('i', '<Esc>', function()
     vim.fn.system('fcitx5-remote -c')
-    return '<esc>'
+    return '<Esc>'
   end, { expr = true })
 end
 
-map('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
-map('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
+map('n', 'gco', 'o<Esc>Vcx<Esc>:normal gcc<CR>fxa<bs>', { desc = 'Add Comment Below' })
+map('n', 'gcO', 'O<Esc>Vcx<Esc>:normal gcc<CR>fxa<bs>', { desc = 'Add Comment Above' })
 
-map('n', '<leader>ch', '<cmd>checkhealth<cr>', { desc = '[c]heck [h]ealth ' })
+map('n', '<leader>ch', ':checkhealth<CR>', { desc = '[c]heck [h]ealth ' })
 
-map('n', '<leader>cs', '<cmd>setlocal spell! spell?<cr>', { desc = '[c]heck [s]pell toggle' })
+map('n', '<leader>cs', ':setlocal spell! spell?<CR>', { desc = '[c]heck [s]pell toggle' })
 
-map('n', '<leader>dm', '<cmd>delm!<cr>', { desc = '[d]elete all [m]arks' })
+map('n', '<leader>dm', ':delm!<CR>', { desc = '[d]elete all [m]arks' })
 
 map('n', '<leader>sv', '<C-w>v', { desc = '[s]plit [v]ertically' })
 map('n', '<leader>sh', '<C-w>s', { desc = '[s]plit [h]orizontally' })
@@ -62,10 +62,10 @@ end, { desc = '[n]o [h]ighlight' })
 ----------------------
 
 -- auto-session
-map('n', '<leader>wr', '<cmd>SessionRestore<cr>', { desc = 'Session [s]ave' })
-map('n', '<leader>ws', '<cmd>SessionSave<cr>', { desc = 'Session [r]estore' })
-map('n', '<leader>wf', '<cmd>SessionSearch<cr>', { desc = 'Session [f]ind' })
-map('n', '<leader>wp', '<cmd>SessionPurgeOrphaned<cr>', { desc = 'Session [p]urge' })
+map('n', '<leader>wr', ':SessionRestore<CR>', { desc = 'Session [s]ave' })
+map('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Session [r]estore' })
+map('n', '<leader>wf', ':SessionSearch<CR>', { desc = 'Session [f]ind' })
+map('n', '<leader>wp', ':SessionPurgeOrphaned<CR>', { desc = 'Session [p]urge' })
 
 -- conform
 map({ 'n', 'v' }, '<leader>p', function()
@@ -78,15 +78,15 @@ map('n', '<leader>cc', function()
   vim.cmd('echo "Conform log removed"')
 end, { desc = '[c]onform log [c]lear' })
 
-map('n', '<leader>ci', '<cmd>ConformInfo<cr>', { desc = '[c]onform [i]nfo' })
+map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[c]onform [i]nfo' })
 
 -- flash
-map('n', '<leader><cr>', function()
+map('n', '<leader><CR>', function()
   require('flash').jump()
 end, { desc = '[f]lash' })
 
 -- gitsings
-map('n', '<leader>hc', '<cmd>q1<cr>', { desc = 'Diff [c]lose' })
+map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
 -- haproon ---
 -- stylua: ignore start
@@ -125,10 +125,10 @@ else
 end
 
 -- lazy
-map('n', '<leader>L', '<cmd>Lazy<cr>', { desc = '[L]azy', silent = true })
+map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })
 
 -- lazygit
-map('n', '<leader>hg', '<cmd>LazyGit<cr>', { desc = 'Lazy[g]it' })
+map('n', '<leader>hg', ':LazyGit<CR>', { desc = 'Lazy[g]it' })
 
 -- nvim-lspconfig
 local isTextOn = true
@@ -153,12 +153,12 @@ map('n', '<leader>vi', function()
 end, { desc = '[i]nlay hints toggle' })
 
 -- live-server
-map('n', '<leader>lo', '<cmd>LiveServerStart<cr>', { desc = '[l]ive server [o]pen' })
-map('n', '<leader>lc', '<cmd>LiveServerStop<cr>', { desc = '[l]ive server [c]lose' })
-map('n', '<leader>lt', '<cmd>LiveServerToggle<cr>', { desc = '[l]ive server [t]oggle' })
+map('n', '<leader>lo', ':LiveServerStart<CR>', { desc = '[l]ive server [o]pen' })
+map('n', '<leader>lc', ':LiveServerStop<CR>', { desc = '[l]ive server [c]lose' })
+map('n', '<leader>lt', ':LiveServerToggle<CR>', { desc = '[l]ive server [t]oggle' })
 
 -- mason
-map('n', '<leader>M', '<cmd>Mason<cr>', { desc = '[M]ason', silent = true })
+map('n', '<leader>M', ':Mason<CR>', { desc = '[M]ason', silent = true })
 
 -- maximizer
 map('n', '<leader>sm', function()
@@ -167,20 +167,20 @@ end, { desc = '[s]plit to [m]ax/restore', silent = true, noremap = true })
 
 -- nvim-hlslens
 local function hlslens_key(key)
-  return string.format("<cmd>execute('normal! ' .. v:count1 .. '%szz')<cr><cmd>lua require('hlslens').start()<cr>", key)
+  return string.format(":execute('normal! ' .. v:count1 .. '%szz')<CR>:lua require('hlslens').start()<CR>", key)
 end
 map('n', 'n', hlslens_key('n'), { desc = 'Next hlsearch', noremap = true, silent = true })
 map('n', 'N', hlslens_key('N'), { desc = 'Prev hlsearch', noremap = true, silent = true })
 
 -- nvim-tree
-map('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>', { desc = '[e]xplorer toggle' })
-map('n', '<leader>ef', '<cmd>NvimTreeFindFileToggle<cr>', { desc = '[e]xplorer on current [f]ile' })
-map('n', '<leader>ec', '<cmd>NvimTreeCollapse<cr>', { desc = '[e]explorer [c]ollapse' })
-map('n', '<leader>ek', '<cmd>NvimTreeCollapseKeepBuffers<cr>', { desc = '[e]explorer collapse [k]eep buffer' })
-map('n', '<leader>er', '<cmd>NvimTreeRefresh<cr>', { desc = '[e]xplorer [r]efresh' })
+map('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[e]xplorer toggle' })
+map('n', '<leader>ef', ':NvimTreeFindFileToggle<CR>', { desc = '[e]xplorer on current [f]ile' })
+map('n', '<leader>ec', ':NvimTreeCollapse<CR>', { desc = '[e]explorer [c]ollapse' })
+map('n', '<leader>ek', ':NvimTreeCollapseKeepBuffers<CR>', { desc = '[e]explorer collapse [k]eep buffer' })
+map('n', '<leader>er', ':NvimTreeRefresh<CR>', { desc = '[e]xplorer [r]efresh' })
 
 -- oil
-map('n', '-', '<cmd>Oil<cr>', { desc = 'Open parent directory', silent = true })
+map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
 
 -- quicker
 map('n', '<leader>qq', function()
@@ -234,9 +234,9 @@ map('n', '<leader>fI', function()
 end, { desc = '[f]ind [I]cons' })
 
 -- telescope
-map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = '[f]ind [f]iles' })
-map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', { desc = '[f]ind [w]ords' })
-map('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', { desc = '[f]ind string under [c]ursor' })
+map('n', '<leader>ff', ':Telescope find_files<CR>', { desc = '[f]ind [f]iles' })
+map('n', '<leader>fw', ':Telescope live_grep<CR>', { desc = '[f]ind [w]ords' })
+map('n', '<leader>fc', ':Telescope grep_string<CR>', { desc = '[f]ind string under [c]ursor' })
 map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ winblend = 0, previewer = false }))
 end, { desc = '[/] Fuzzy search current buffer' })
@@ -248,30 +248,31 @@ map('n', '<leader>fn', function()
   })
 end, { desc = '[f]ind [n]eovim files' })
 
-map('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', { desc = '[f]ind [k]keymaps' })
+map('n', '<leader>fk', ':Telescope keymaps<CR>', { desc = '[f]ind [k]keymaps' })
 
-map('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[f]ind [t]odos' })
+map('n', '<leader>ft', ':TodoTelescope<CR>', { desc = '[f]ind [t]odos' })
 
 -- todo-comments
-map('n', ']t', function()
-  require('todo-comments').jump_next()
-end, { desc = 'Next todo comment' })
 map('n', '[t', function()
   require('todo-comments').jump_prev()
 end, { desc = 'Previous todo comment' })
 
+map('n', ']t', function()
+  require('todo-comments').jump_next()
+end, { desc = 'Next todo comment' })
+
 -- trouble
-map('n', '<leader>xd', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', { desc = 'Open trouble [d]ocument diagnostics' })
-map('n', '<leader>xl', '<cmd>Trouble loclist toggle<cr>', { desc = 'Open trouble [l]ocation list' })
-map('n', '<leader>xt', '<cmd>Trouble todo toggle<cr>', { desc = 'Open [t]odos in trouble' })
-map('n', '<leader>xq', '<cmd>Trouble quickfix toggle<cr>', { desc = 'Open trouble [q]uickfix list' })
-map('n', '<leader>xw', '<cmd>Trouble diagnostics toggle<cr>', { desc = 'Open trouble [w]orkspace diagnostics' })
+map('n', '<leader>xd', ':Trouble diagnostics toggle filter.buf=0<CR>', { desc = 'Open trouble [d]ocument diagnostics' })
+map('n', '<leader>xl', ':Trouble loclist toggle<CR>', { desc = 'Open trouble [l]ocation list' })
+map('n', '<leader>xt', ':Trouble todo toggle<CR>', { desc = 'Open [t]odos in trouble' })
+map('n', '<leader>xq', ':Trouble quickfix toggle<CR>', { desc = 'Open trouble [q]uickfix list' })
+map('n', '<leader>xw', ':Trouble diagnostics toggle<CR>', { desc = 'Open trouble [w]orkspace diagnostics' })
 
 -- undotree
-map('n', '<leader>u', "<cmd>lua require('undotree').toggle()<cr>", { desc = '[u]ndo-tree toggle' })
+map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle' })
 
 -- zen-mode
-map('n', '<leader>zz', '<cmd>ZenMode<cr>', { desc = '[z]en [z]en' })
+map('n', '<leader>zz', ':ZenMode<CR>', { desc = '[z]en [z]en' })
 
 ----------------------
 --- Disable Keymaps --

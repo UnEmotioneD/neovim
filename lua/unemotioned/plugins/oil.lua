@@ -8,7 +8,7 @@ return {
     constrain_cursor = 'name',
     keymaps = {
       ['g?'] = { 'actions.show_help', mode = 'n' },
-      ['<cr>'] = 'actions.select',
+      ['<CR>'] = 'actions.select',
       ['<C-s>'] = { 'actions.select', opts = { vertical = true } },
       ['<C-h>'] = false,
       ['<C-t>'] = { 'actions.select', opts = { tab = true } },

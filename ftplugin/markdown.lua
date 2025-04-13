@@ -10,8 +10,8 @@ vim.opt_local.formatoptions:append('t') -- Automatically wrap text using textwid
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
-vim.keymap.set('n', 'gj', [[/^##\+ .*<cr>]], { desc = 'Jump to next header', buffer = true, silent = true })
-vim.keymap.set('n', 'gk', [[?^##\+ .*<cr>]], { desc = 'Jump to prev header', buffer = true, silent = true })
+vim.keymap.set('n', 'gj', [[/^##\+ .*<CR>]], { desc = 'Jump to next header', buffer = true, silent = true })
+vim.keymap.set('n', 'gk', [[?^##\+ .*<CR>]], { desc = 'Jump to prev header', buffer = true, silent = true })
 
 vim.keymap.set('n', '<leader>mp', '<Cmd>MarkdownPreview<cr>', { desc = '[m]arkdown [p]erview' })
 vim.keymap.set('n', '<leader>mr', '<Cmd>RenderMarkdown toggle<cr>', { desc = '[m]arkdown [r]ender' })
