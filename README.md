@@ -370,6 +370,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [colorscheme](#colorscheme)
 - [comment](#comment)
 - [conform](#conform)
+- [dashboard](#dashboard)
 - [fidget](#fidget)
 - [flash](#flash)
 - [gitsigns](#gitsigns)
@@ -481,6 +482,14 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - `SPC p` : 포멧
 
   - `SPC c i` : 현재 버퍼에서의 포메터 관련 정보를 확인
+
+**[⬆ 플러그인 목록](#contents)**
+
+#### dashboard
+
+- [nvimdev/dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)
+
+- `nvim` 명령어로 시작했을 때 커스텀한 화면을 보여줌
 
 **[⬆ 플러그인 목록](#contents)**
 
