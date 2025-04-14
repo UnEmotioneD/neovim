@@ -30,7 +30,7 @@ return {
       dashboard.button('w', '  > Find Word', ':Telescope live_grep<CR>'),
       dashboard.button('k', '  > Find Keymap', ':Telescope keymaps<CR>'),
       dashboard.button('r', '󰁯  > Restore Session', ':SessionRestore<CR>'),
-      dashboard.button('g', '  > Open LazyGit', ':LazyGit<CR>'),
+      dashboard.button('g', '  > Open LazyGit', '<cmd>LazyGit<cr>'),
       dashboard.button('q', '  > Quit NVIM', ':qa<CR>'),
     }
 
