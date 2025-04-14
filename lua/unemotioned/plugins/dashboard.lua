@@ -18,8 +18,7 @@ return {
           { desc = ' Git', group = '@property', action = 'LazyGit', key = 'g' },
           { desc = '󰩈 Quit', group = 'Boolean', action = 'wqa', key = 'q' },
         },
-        project = { limit = 5, action = 'Telescope find_files cwd=' },
-        mru = { limit = 5, cwd_only = true },
+        mru = { cwd_only = true },
       },
     })
   end,
