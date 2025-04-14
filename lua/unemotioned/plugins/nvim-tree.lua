@@ -4,6 +4,8 @@ return {
   config = function()
     require('nvim-tree').setup({
       view = {
+        ---@type 'left' | 'right'
+        side = 'left',
         relativenumber = true,
         width = 40,
       },

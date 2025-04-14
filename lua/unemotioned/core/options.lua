@@ -71,6 +71,10 @@ vim.o.sessionoptions = table.concat({
   'localoptions',
 }, ',')
 
+-- disable netrw from nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Disable Unused Providers
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
