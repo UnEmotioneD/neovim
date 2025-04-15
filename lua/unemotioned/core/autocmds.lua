@@ -56,3 +56,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end,
 })
+
+-- Console log macro to register lima
+-- 콘솔에 출력할 값(변수 이름)을 "viw(visual inside word)"등으로 선택하고 "@l" 로 매크로를 실행
+local esc = vim.api.nvim_replace_termcodes('<Esc>', true, true, true)
+local group = vim.api.nvim_create_augroup('JSLogMacro', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  group = group,
+  pattern = { 'html', 'javascript', 'typescript' }, -- 해당 파일을 열면 자동으로 매크로가 생김
+  callback = function()
+    local macro = "yoconsole.log('" .. esc .. "pa: '," .. esc .. 'pa);' .. esc
+    vim.fn.setreg('l', macro)
+  end,
+})
