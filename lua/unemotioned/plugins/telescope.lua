@@ -23,7 +23,15 @@ return {
         },
         -- files or directories to not search
         file_ignore_patterns = {
+          '.DS_Store',
           '%.git/',
+          'build/',
+          -- For python
+          'venv/',
+          '__pycache__/',
+          -- For java project
+          '.class',
+          '.prefs',
         },
       },
       pickers = {
