@@ -239,7 +239,7 @@ map('n', '<leader>fw', ':Telescope live_grep<CR>', { desc = '[f]ind [w]ords' })
 map('n', '<leader>fc', ':Telescope grep_string<CR>', { desc = '[f]ind string under [c]ursor' })
 map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(
-    require('telescope.themes').get_dropdown({ winblend = 0, previewer = false })
+    require('telescope.themes').get_dropdown({ previewer = false })
   )
 end, { desc = '[/] Fuzzy search current buffer' })
 

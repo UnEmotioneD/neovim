@@ -11,13 +11,6 @@ return {
     telescope.setup({
       defaults = {
         path_display = { 'smart' },
-
-        layout_config = {
-          prompt_position = 'bottom', ---@type 'bottom' | 'top'
-        },
-        layout_strategy = 'horizontal', ---@type 'horizontal' | 'vertical'
-        sorting_strategy = 'descending', ---@type 'ascending' | 'descending'
-
         mappings = {
           i = {
             ['<C-h>'] = actions.select_horizontal,
@@ -28,12 +21,11 @@ return {
             ['<C-x>'] = nil, -- disable default keymap to open in horizontal split
           },
         },
-        -- files to not search
+        -- files or directories to not search
         file_ignore_patterns = {
           '%.git/',
         },
       },
-
       pickers = {
         find_files = {
           hidden = false,
