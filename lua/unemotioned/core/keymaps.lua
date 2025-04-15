@@ -83,7 +83,15 @@ map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[c]onform [i]nfo' })
 -- flash
 map('n', '<leader><CR>', function()
   require('flash').jump()
-end, { desc = '[f]lash' })
+end, { desc = 'Flash' })
+
+map('n', '<leader><leader><CR>', function()
+  require('flash').treesitter()
+end, { desc = 'Treesitter Flash' })
+
+map('o', '<leader><CR>', function()
+  require('flash').remote()
+end, { desc = 'Remote Flash' })
 
 -- gitsings
 map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
