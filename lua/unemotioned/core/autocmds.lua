@@ -57,6 +57,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- Center the match with / or ?
+vim.api.nvim_create_autocmd('CmdlineLeave', {
+  pattern = '[/?]',
+  callback = function()
+    local search_autocmd
+    search_autocmd = vim.api.nvim_create_autocmd('CursorMoved', {
+      once = true,
+      callback = function()
+        vim.cmd('normal! zz')
+        vim.api.nvim_del_autocmd(search_autocmd)
+      end,
+    })
+  end,
+})
+
 ----------------------
 -- Macros for print --
 ----------------------
