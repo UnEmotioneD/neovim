@@ -37,8 +37,8 @@ if vim.uv.os_uname().sysname == 'Linux' then
   end, { expr = true })
 end
 
-map('n', 'gco', 'o<Esc>Vcx<Esc>:normal gcc<CR>fxa<bs>', { desc = 'Add Comment Below' })
-map('n', 'gcO', 'O<Esc>Vcx<Esc>:normal gcc<CR>fxa<bs>', { desc = 'Add Comment Above' })
+map('n', 'gco', 'o<Esc>Vcx<Esc>:normal gcc<CR>fxa<BS>', { desc = 'Add Comment Below' })
+map('n', 'gcO', 'O<Esc>Vcx<Esc>:normal gcc<CR>fxa<BS>', { desc = 'Add Comment Above' })
 
 map('n', '<leader>ch', ':checkhealth<CR>', { desc = '[c]heck [h]ealth ' })
 
@@ -176,7 +176,6 @@ map('n', 'N', hlslens_key('N'), { desc = 'Prev hlsearch', noremap = true, silent
 map('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[e]xplorer toggle' })
 map('n', '<leader>ef', ':NvimTreeFindFileToggle<CR>', { desc = '[e]xplorer on current [f]ile' })
 map('n', '<leader>ec', ':NvimTreeCollapse<CR>', { desc = '[e]explorer [c]ollapse' })
-map('n', '<leader>ek', ':NvimTreeCollapseKeepBuffers<CR>', { desc = '[e]explorer collapse [k]eep buffer' })
 map('n', '<leader>er', ':NvimTreeRefresh<CR>', { desc = '[e]xplorer [r]efresh' })
 
 -- oil
@@ -241,7 +240,7 @@ map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(
     require('telescope.themes').get_dropdown({ previewer = false })
   )
-end, { desc = '[/] Fuzzy search current buffer' })
+end, { desc = '[/] Fuzzy search buffer' })
 
 map('n', '<leader>fn', function()
   require('telescope.builtin').find_files({
@@ -280,23 +279,25 @@ map('n', '<leader>zz', ':ZenMode<CR>', { desc = '[z]en [z]en', silent = true })
 --- Disable Keymaps --
 ----------------------
 
-map({ 'n', 'x' }, 'Q', '<Nop>', { noremap = true, silent = true }) -- Ex mode (old command interface)
-map('n', 'q:', '<Nop>', { noremap = true, silent = true }) -- Command-line window
+map({ 'n', 'x' }, 'Q', '<Nop>', { noremap = true }) -- Ex mode (old command interface)
+map('n', 'q:', '<Nop>', { noremap = true }) -- Command-line window
 
 -- Disable default nvim keymap since it is done by lsp with telescope
-map('n', 'gO', '<Nop>', { noremap = true, silent = true }) -- symbol
-map({ 'n', 'x' }, 'gra', '<Nop>', { noremap = true, silent = true }) -- code action
-map('n', 'gri', '<Nop>', { noremap = true, silent = true }) -- implementation
-map('n', 'grr', '<Nop>', { noremap = true, silent = true }) -- reference
-map('n', 'grn', '<Nop>', { noremap = true, silent = true }) -- rename
+map('n', 'gO', '<Nop>', { noremap = true }) -- symbol
+map({ 'n', 'x' }, 'gra', '<Nop>', { noremap = true }) -- code action
+map('n', 'gri', '<Nop>', { noremap = true }) -- implementation
+map('n', 'grr', '<Nop>', { noremap = true }) -- reference
+map('n', 'grn', '<Nop>', { noremap = true }) -- rename
 
 -- Completely delete keymaps to not show it from telescoe keymaps
-vim.keymap.del('n', 'Q')
-vim.keymap.del('x', 'Q')
-vim.keymap.del('n', 'q:')
-vim.keymap.del('n', 'gO')
-vim.keymap.del('n', 'gra')
-vim.keymap.del('x', 'gra')
-vim.keymap.del('n', 'gri')
-vim.keymap.del('n', 'grr')
-vim.keymap.del('n', 'grn')
+local del = vim.keymap.del
+
+del('n', 'Q')
+del('x', 'Q')
+del('n', 'q:')
+del('n', 'gO')
+del('n', 'gra')
+del('x', 'gra')
+del('n', 'gri')
+del('n', 'grr')
+del('n', 'grn')
