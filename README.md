@@ -262,7 +262,16 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 ## 나의 Neovim 설명
 
-### Options
+### Autocmds
+
+- 자동 매크로 생성
+
+  - `html`, `javascript`, `tyepscript` 파일을 열면 레지스터 `l` 에 console.log
+    해주는 매크로 생성
+
+  - `java`, `python` 파일의 경우 레지스터 p
+
+- 메트로를 실행하기 위해서는 `@l` 또는 `@p` 를 이용해서 사용
 
 ---
 
