@@ -57,15 +57,41 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Console log macro to register lima
--- 콘솔에 출력할 값(변수 이름)을 "viw(visual inside word)"등으로 선택하고 "@l" 로 매크로를 실행
+----------------------
+-- Macros for print --
+----------------------
+
 local esc = vim.api.nvim_replace_termcodes('<Esc>', true, true, true)
-local group = vim.api.nvim_create_augroup('JSLogMacro', { clear = true })
+
+-- 콘솔에 출력할 값(변수 이름)을 "viw(visual inside word)"등으로 선택하고 "@l" 로 매크로를 실행
+local jSLogMacro = vim.api.nvim_create_augroup('JSLogMacro', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
-  group = group,
-  pattern = { 'html', 'javascript', 'typescript' }, -- 해당 파일을 열면 자동으로 매크로가 생김
+  group = jSLogMacro,
+  pattern = { 'html', 'javascript', 'typescript' },
   callback = function()
-    local macro = "yoconsole.log('" .. esc .. "pa: '," .. esc .. 'pa);' .. esc
+    local macro = 'yoconsole.log("' .. esc .. 'pa: ", ' .. esc .. 'pa);' .. esc
     vim.fn.setreg('l', macro)
+  end,
+})
+
+-- Java print macro to register papa
+local javaPrintMacro = vim.api.nvim_create_augroup('JavaPrintMacro', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  group = javaPrintMacro,
+  pattern = { 'java' },
+  callback = function()
+    local macro = 'yoSystem.out.println("' .. esc .. 'pa: " + ' .. esc .. 'pa);' .. esc
+    vim.fn.setreg('p', macro)
+  end,
+})
+
+-- Python print macro to register papa
+local pythopnPrintMacro = vim.api.nvim_create_augroup('PythopnPrintMacro', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  group = pythopnPrintMacro,
+  pattern = { 'python' },
+  callback = function()
+    local macro = "yoprint(f'" .. esc .. 'pa {' .. esc .. "pa}')" .. esc
+    vim.fn.setreg('p', macro)
   end,
 })
