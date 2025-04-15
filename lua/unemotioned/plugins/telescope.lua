@@ -23,7 +23,7 @@ return {
         },
         -- files or directories to not search
         file_ignore_patterns = {
-          '.DS_Store',
+          '.DS_Store', -- for macOS
           '%.git/',
           'build/',
           -- For python
