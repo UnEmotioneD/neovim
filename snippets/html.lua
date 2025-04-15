@@ -17,7 +17,7 @@ return {
     i(1),
     t('</title>'),
     t({ '', '    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>' }),
-    t({ '', '    <link rel="stylesheet" href="style.css" />' }),
+    t({ '', '    <link rel="stylesheet" type="text/css" href="style.css" />' }),
     t({ '', '    <style></style>' }),
     t({ '', '  </head>' }),
     t({ '', '  <body>' }),

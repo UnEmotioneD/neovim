@@ -5,8 +5,12 @@ local i = ls.insert_node
 
 return {
   s('main', {
-    t('if __name__ == "__main__":'),
-    t({ '', '    ' }),
+    t('def main() -> None:'),
+    t({ '', '    print("Hello, world")' }),
     i(1),
+    t({ '', '' }),
+    t({ '', '' }),
+    t({ '', 'if __name__ == "__main__":' }),
+    t({ '', '    main()' }),
   }),
 }
