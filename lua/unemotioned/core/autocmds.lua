@@ -25,7 +25,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(attach_event)
     local client = vim.lsp.get_client_by_id(attach_event.data.client_id)
 
-    if client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, attach_event.buf) then
+    if
+      client
+      and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, attach_event.buf)
+    then
       local highlight_group = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
 
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
