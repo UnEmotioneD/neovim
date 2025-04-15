@@ -410,6 +410,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [trouble](#trouble)
 - [undotree](#undotree)
 - [which-key](#which-key)
+- [winresize](#winresize)
 - [zen-mode](#zen-mode)
 
 ---
@@ -842,6 +843,16 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - 팝업창으로 사용 가능한 키맵들을 보여준다
 
   - `SPC` 키를 한번 누르고 기다려도 된다
+
+**[⬆ 플러그인 목록](#contents)**
+
+#### winresize
+
+- [pogyomo/winresize.nvim](https://github.com/pogyomo/winresize.nvim)
+
+- 더 직관적인 창 변경 기능 제공
+
+- `CTRL SHIFT h, j, k, l` 을 이용해서 창 크기 변경
 
 **[⬆ 플러그인 목록](#contents)**
 
