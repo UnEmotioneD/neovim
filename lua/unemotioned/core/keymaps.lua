@@ -42,7 +42,7 @@ map('n', 'gcO', 'O<Esc>Vcx<Esc>:normal gcc<CR>fxa<BS>', { desc = 'Add Comment Ab
 
 map('n', '<leader>ch', ':checkhealth<CR>', { desc = '[c]heck [h]ealth ' })
 
-map('n', '<leader>cs', ':setlocal spell! spell?<CR>', { desc = '[c]heck [s]pell toggle' })
+map('n', '<leader>tc', ':setlocal spell! spell?<CR>', { desc = '[t]oggle [c]heck spell' })
 
 map('n', '<leader>dm', ':delm!<CR>', { desc = '[d]elete all [m]arks' })
 
@@ -85,10 +85,6 @@ map('n', '<leader><CR>', function()
   require('flash').jump()
 end, { desc = 'Flash' })
 
-map('n', '<leader><leader><CR>', function()
-  require('flash').treesitter()
-end, { desc = 'Treesitter Flash' })
-
 map('o', '<leader><CR>', function()
   require('flash').remote()
 end, { desc = 'Remote Flash' })
@@ -98,39 +94,17 @@ map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
 -- haproon ---
 -- stylua: ignore start
-local add = function() require('harpoon'):list():add() vim.cmd('echo "File harpooned"') end
-local edit = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
-local sel1 = function() require('harpoon'):list():select(1) end
-local sel2 = function() require('harpoon'):list():select(2) end
-local sel3 = function() require('harpoon'):list():select(3) end
-local sel4 = function() require('harpoon'):list():select(4) end
+map('n', '<leader><leader>h', function() require('harpoon'):list():add() vim.cmd('echo "File harpooned"') end, { desc = '[f]ile' })
+map('n', '<leader><leader>e', function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, { desc = '[e]dit' })
 
-local addDesc = { desc = 'Harpoon File' }
-local editDesc = { desc = 'Harpoon Menu' }
-local sel1Desc = { desc = 'Harpoon to 1' }
-local sel2Desc = { desc = 'Harpoon to 2' }
-local sel3Desc = { desc = 'Harpoon to 3' }
-local sel4Desc = { desc = 'Harpoon to 4' }
+map('n', '<C-7>', function() require('harpoon'):list():select(1) end, {desc = 'Harpoon to 1'})
+map('n', '<C-8>', function() require('harpoon'):list():select(2) end, {desc = 'Harpoon to 2'})
+map('n', '<C-9>', function() require('harpoon'):list():select(3) end, {desc = 'Harpoon to 3'})
+map('n', '<C-0>', function() require('harpoon'):list():select(4) end, {desc = 'Harpoon to 4'})
 
 map('n', '<C-S-n>', function() require('harpoon'):list():next() end, { desc = 'next on harpoon list' })
 map('n', '<C-S-p>', function() require('harpoon'):list():prev() end, { desc = 'prev on harpoon list' })
 -- stylua: ignore end
-
-if vim.loop.os_uname().sysname == 'Darwin' then
-  map('n', '<leader><leader>u', add, addDesc)
-  map('n', '<leader><leader>i', edit, editDesc)
-  map('n', '<leader><leader>j', sel1, sel1Desc)
-  map('n', '<leader><leader>k', sel2, sel2Desc)
-  map('n', '<leader><leader>l', sel3, sel3Desc)
-  map('n', '<leader><leader>;', sel4, sel4Desc)
-else
-  map('n', '<M-u>', add, addDesc)
-  map('n', '<M-i>', edit, editDesc)
-  map('n', '<M-j>', sel1, sel1Desc)
-  map('n', '<M-k>', sel2, sel2Desc)
-  map('n', '<M-l>', sel3, sel3Desc)
-  map('n', '<M-;>', sel4, sel4Desc)
-end
 
 -- lazy
 map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })

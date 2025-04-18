@@ -42,7 +42,7 @@ local dark = {
       ending_tildes = false,
       cmp_itemkind_reverse = false,
 
-      toggle_style_key = '<leader>ts',
+      toggle_style_key = '<leader>tt',
       toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' },
 
       -- italic, bold, underline, none
