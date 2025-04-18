@@ -20,4 +20,5 @@ return {
       mru = { cwd_only = true },
     },
   },
+  enabled = false,
 }
