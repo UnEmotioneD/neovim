@@ -1,6 +1,6 @@
 return {
   'barrett-ruth/live-server.nvim',
-  event = 'VeryLazy',
+  ft = 'html',
   cmd = {
     'LiveServerStart',
     'LiveServerStop',

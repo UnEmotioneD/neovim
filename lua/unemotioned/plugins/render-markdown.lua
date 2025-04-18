@@ -1,6 +1,7 @@
 return {
   'MeanderingProgrammer/render-markdown.nvim',
   dependencies = 'echasnovski/mini.nvim',
+  ft = 'markdown',
   opts = {
     enabled = false, -- render by default
     ---@type 'none' | 'lazy' | 'obsidian'
