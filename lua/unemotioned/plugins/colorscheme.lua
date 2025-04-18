@@ -29,6 +29,35 @@ local cat = {
   end,
 }
 
+local dark = {
+  'navarasu/onedark.nvim',
+  priority = 1000,
+  config = function()
+    local onedark = require('onedark')
+    onedark.setup({
+      ---@type 'dark' | 'darker' | 'cool' | 'deep' | 'warm' | 'warmer' | 'light'
+      style = 'dark',
+      transparent = false,
+      term_colors = true,
+      ending_tildes = false,
+      cmp_itemkind_reverse = false,
+
+      toggle_style_key = '<leader>ts',
+      toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' },
+
+      -- italic, bold, underline, none
+      code_style = {
+        comments = 'none',
+        keywords = 'none',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none',
+      },
+    })
+    onedark.load()
+  end,
+}
+
 local gruv = {
   'ellisonleao/gruvbox.nvim',
   lazy = false,
@@ -58,12 +87,6 @@ local rose = {
 
 local tokyo = {
   'folke/tokyonight.nvim',
-  dependencies = {
-    'catppuccin/nvim',
-    'rose-pine/neovim',
-    'ellisonleao/gruvbox.nvim',
-    'projekt0n/github-nvim-theme',
-  },
   lazy = false,
   priority = 1000,
   config = function()
