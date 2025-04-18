@@ -1,9 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
-  event = {
-    'BufReadPre',
-    'BufNewFile',
-  },
+  event = { 'BufReadPre', 'BufNewFile' },
+  Lazy = true,
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     { 'antosha417/nvim-lsp-file-operations', config = true },
@@ -13,44 +11,75 @@ return {
     local mason_lspconfig = require('mason-lspconfig')
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
+    local isTextOn = true
     -- Global diagnostic configuration
     vim.diagnostic.config({
-      virtual_text = { prefix = '●' },
+      virtual_text = isTextOn,
       severity_sort = true,
       float = { border = 'single' },
     })
-
-    -- Set diagnostic signs in the sign column (gutter)
-    for type, icon in pairs({ Error = ' ', Warn = ' ', Hint = '󰠠 ', Info = ' ' }) do
-      local hl = 'DiagnosticSign' .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+    -- Toggle inline diagnostic
+    local function inline_toggle()
+      isTextOn = not isTextOn
+      vim.diagnostic.config({
+        virtual_text = isTextOn,
+      })
+    end
+    -- Toggle diagnostic style
+    local diagnostic_toggle = function()
+      if isTextOn == true then
+        vim.diagnostic.config({
+          virtual_lines = { current_line = true },
+        })
+      else
+        vim.diagnostic.config({
+          virtual_lines = false,
+        })
+      end
+      vim.diagnostic.config({ virtual_text = not isTextOn })
+      isTextOn = not isTextOn
     end
 
     -- Centralized on_attach function for setting up buffer-local key mappings
     local on_attach = function(ev)
+      -- Enable inlay hints by default
+      if vim.lsp.inlay_hint and vim.lsp.inlay_hint.enable then
+        vim.lsp.inlay_hint.enable(true)
+      end
+
       local opts = { buffer = ev.buf, silent = true }
       local mappings = {
         -- stylua: ignore start
         { mode = 'n', lhs = 'K', rhs = function() vim.lsp.buf.hover({ border = 'single' }) end, desc = 'Documentation for Cursor' },
-        { mode = 'n', lhs = 'gR', rhs = ':Telescope lsp_references<CR>', desc = 'Show LSP references' },
-        { mode = 'n', lhs = 'gD', rhs = vim.lsp.buf.declaration, desc = 'Go to declaration' },
-        { mode = 'n', lhs = 'gd', rhs = ':Telescope lsp_definitions<CR>', desc = 'Show LSP definitions' },
-        { mode = 'n', lhs = 'gi', rhs = ':Telescope lsp_implementations<CR>', desc = 'Show LSP implementations' },
-        { mode = 'n', lhs = 'gt', rhs = ':Telescope lsp_type_definitions<CR>', desc = 'Show LSP type definitions' },
+
+        { mode = 'n', lhs = 'gi', rhs = ':Telescope lsp_implementations<CR>', desc = 'LSP implementations' },
+        { mode = 'n', lhs = 'gr', rhs = ':Telescope lsp_references<CR>', desc = 'LSP references' },
+        { mode = 'n', lhs = 'gt', rhs = ':Telescope lsp_type_definitions<CR>', desc = 'LSP type definitions' },
+        { mode = 'n', lhs = 'gd', rhs = ':Telescope lsp_definitions<CR>', desc = 'LSP definitions' },
+        { mode = 'n', lhs = 'gD', rhs = vim.lsp.buf.declaration, desc = 'Go to Declaration' },
 
         { mode = 'n', lhs = '<leader>fs', rhs = ':Telescope lsp_document_symbols<CR>', desc = '[f]ind buffer [s]ymbols' },
         { mode = 'n', lhs = '<leader>fS', rhs = ':Telescope lsp_workspace_symbols<CR>', desc = '[f]ind workspace [s]ymbols' },
         { mode = 'n', lhs = '<leader>fi', rhs = ':Telescope lsp_incoming_calls<CR>', desc = 'Incoming Calls' },
         { mode = 'n', lhs = '<leader>fo', rhs = ':Telescope lsp_outgoing_calls<CR>', desc = 'Outgoing Calls' },
 
-        { mode = { 'n', 'v' }, lhs = '<leader>ca', rhs = vim.lsp.buf.code_action, desc = 'See available code actions' },
-        { mode = 'n', lhs = '<leader>rn', rhs = vim.lsp.buf.rename, desc = 'Smart rename' },
-        { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = 'Show buffer diagnostics' },
-        { mode = 'n', lhs = '<leader>d', rhs = vim.diagnostic.open_float, desc = 'Show line diagnostics' },
-        { mode = 'n', lhs = '[d', rhs = function() vim.diagnostic.jump({ count = -1 }) end, desc = 'Go to previous diagnostic', },
-        { mode = 'n', lhs = ']d', rhs = function() vim.diagnostic.jump({ count = 1 }) end, desc = 'Go to next diagnostic', },
+        { mode = 'n', lhs = '<leader>d', rhs = vim.diagnostic.open_float, desc = 'Line Diagnostics' },
+        { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = 'Buffer Diagnostics' },
+        { mode = 'n', lhs = '<leader>rn', rhs = vim.lsp.buf.rename, desc = 'Smart Rename' },
         { mode = 'n', lhs = '<leader>rs', rhs = ':LspRestart<CR>', desc = 'Restart LSP' },
+        { mode = 'n', lhs = '[d', rhs = function() vim.diagnostic.jump({ count = -1 }) end, desc = 'Go to prev diagnostic' },
+        { mode = 'n', lhs = ']d', rhs = function() vim.diagnostic.jump({ count = 1 }) end, desc = 'Go to next diagnostic' },
+        { mode = 'n', lhs = '<leader>td', rhs = inline_toggle, desc = '[t]oggle inline [d]iagnostic' },
         -- stylua: ignore end
+        { mode = 'n', lhs = '<leader>ts', rhs = diagnostic_toggle, desc = '[t]oggle diagnostic [s]tyle' },
+        {
+          mode = 'n',
+          lhs = '<leader>ti',
+          rhs = function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+          end,
+          desc = '[t]oggle [i]nlay-hint',
+        },
       }
 
       for _, map in ipairs(mappings) do
@@ -58,50 +87,14 @@ return {
       end
     end
 
-    -- Highlight word under cursor
-    vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
-      callback = function(event)
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if
-          client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
-        then
-          local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.document_highlight,
-          })
-
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.clear_references,
-          })
-
-          vim.api.nvim_create_autocmd('LspDetach', {
-            group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
-            callback = function(event2)
-              vim.lsp.buf.clear_references()
-              vim.api.nvim_clear_autocmds({
-                group = 'lsp-highlight',
-                buffer = event2.buf,
-              })
-            end,
-          })
-        end
-      end,
-    })
-
     -- Enhance LSP capabilities for autocompletion
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-    capabilities = {
+    local capabilities = vim.tbl_deep_extend('force', cmp_nvim_lsp.default_capabilities(), {
       textDocument = {
         completion = {
           editsNearCursor = true,
         },
       },
-    }
+    })
 
     -- fix warning: multiple different client offset_encodings detected for buffer (c, cpp file)
     local capabilities_utf_16 = vim.tbl_deep_extend('force', {}, capabilities, {
@@ -126,7 +119,7 @@ return {
           init_options = {
             config = vim.fn.expand('~/.config/nvim/typos/typos.toml'),
             ---@type 'Error' | 'Warning' | 'Hint' | 'Info'
-            diagnosticSeverity = 'Info',
+            diagnosticSeverity = 'Hint',
           },
         })
       end,
@@ -145,13 +138,6 @@ return {
           },
         })
       end,
-      ['emmet_ls'] = function()
-        lspconfig.emmet_ls.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-          filetypes = { 'html', 'css', 'javascriptreact' },
-        })
-      end,
       ['clangd'] = function()
         lspconfig.clangd.setup({
           on_attach = on_attach,
@@ -162,12 +148,19 @@ return {
       ['ruff'] = function()
         lspconfig.ruff.setup({
           on_attach = function(client)
-            -- Disable hover/completion from ruff
+            -- Disable hover/completion from ruff to avoid duplication with pyright
             client.server_capabilities.hoverProvider = false
             client.server_capabilities.completionProvider = false
           end,
           capabilities = capabilities,
           filetypes = { 'python' },
+        })
+      end,
+      ['emmet_ls'] = function()
+        lspconfig.emmet_ls.setup({
+          on_attach = on_attach,
+          capabilities = capabilities,
+          filetypes = { 'html', 'css', 'javascriptreact' },
         })
       end,
     })
