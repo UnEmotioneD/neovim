@@ -127,11 +127,6 @@ map('n', '<leader>vi', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
 end, { desc = '[i]nlay hints toggle' })
 
--- live-server
-map('n', '<leader>lo', ':LiveServerStart<CR>', { desc = '[l]ive server [o]pen' })
-map('n', '<leader>lc', ':LiveServerStop<CR>', { desc = '[l]ive server [c]lose' })
-map('n', '<leader>lt', ':LiveServerToggle<CR>', { desc = '[l]ive server [t]oggle' })
-
 -- mason
 map('n', '<leader>M', ':Mason<CR>', { desc = '[M]ason', silent = true })
 
