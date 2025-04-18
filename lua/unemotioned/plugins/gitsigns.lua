@@ -8,8 +8,8 @@ return {
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
 
-      local function map(mode, keys, func, desc)
-        vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = desc })
+      local function map(mode, lhs, rhs, desc)
+        vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
       end
 
       -- Navigation

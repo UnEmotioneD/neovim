@@ -11,23 +11,23 @@ return {
     local mason_lspconfig = require('mason-lspconfig')
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
-    local isTextOn = true
+    local isText = true
     -- Global diagnostic configuration
     vim.diagnostic.config({
-      virtual_text = isTextOn,
+      virtual_text = isText,
       severity_sort = true,
       float = { border = 'single' },
     })
     -- Toggle inline diagnostic
     local function inline_toggle()
-      isTextOn = not isTextOn
+      isText = not isText
       vim.diagnostic.config({
-        virtual_text = isTextOn,
+        virtual_text = isText,
       })
     end
     -- Toggle diagnostic style
     local diagnostic_toggle = function()
-      if isTextOn == true then
+      if isText == true then
         vim.diagnostic.config({
           virtual_lines = { current_line = true },
         })
@@ -36,8 +36,8 @@ return {
           virtual_lines = false,
         })
       end
-      vim.diagnostic.config({ virtual_text = not isTextOn })
-      isTextOn = not isTextOn
+      vim.diagnostic.config({ virtual_text = not isText })
+      isText = not isText
     end
 
     -- Centralized on_attach function for setting up buffer-local key mappings
