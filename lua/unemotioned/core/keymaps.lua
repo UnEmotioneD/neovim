@@ -51,12 +51,6 @@ map('n', '<leader>sh', '<C-w>s', { desc = '[s]plit [h]orizontally' })
 map('n', '<leader>se', '<C-w>=', { desc = '[s]plits into [e]qual size' })
 map('n', '<leader>sx', '<C-w>x', { desc = '[s]plits [s]wap sides' })
 
-map('n', '<leader>nh', function()
-  vim.fn.setreg('/', '')
-  vim.cmd('noh')
-  vim.cmd('echo "Search register cleared"')
-end, { desc = '[n]o [h]ighlight' })
-
 ----------------------
 --- Plugin Keymaps ---
 ----------------------
@@ -70,13 +64,12 @@ map('n', '<leader>wp', ':SessionPurgeOrphaned<CR>', { desc = 'Session [p]urge' }
 -- conform
 map({ 'n', 'v' }, '<leader>p', function()
   require('conform').format()
-  vim.cmd('echo "File formatted"')
-end, { desc = 'Format(in range)' })
+end, { desc = 'Format' })
 
-map('n', '<leader>cc', function()
+map('n', '<leader>cl', function()
   vim.fn.system('rm ~/.local/state/nvim/conform.log')
   vim.cmd('echo "Conform log removed"')
-end, { desc = '[c]onform log [c]lear' })
+end, { desc = '[c]onform [l]og clear' })
 
 map('n', '<leader>ci', ':ConformInfo<CR>', { desc = '[c]onform [i]nfo' })
 
@@ -166,11 +159,7 @@ map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
 -- quicker
 map('n', '<leader>qq', function()
   require('quicker').toggle()
-end, { desc = '[q]uickfix list toggle' })
-
-map('n', '<leader>ql', function()
-  require('quicker').toggle({ loclist = true })
-end, { desc = '[q]uickfix [l]ocalist' })
+end, { desc = 'Quicker' })
 
 -- quicker
 map('n', '<leader>qq', function()
@@ -222,7 +211,7 @@ map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(
     require('telescope.themes').get_dropdown({ previewer = false })
   )
-end, { desc = '[/] Fuzzy search buffer' })
+end, { desc = 'Fuzzy search buffer' })
 
 map('n', '<leader>fn', function()
   require('telescope.builtin').find_files({
@@ -252,10 +241,12 @@ map('n', '<leader>xq', ':Trouble quickfix toggle<CR>', { desc = 'Open trouble [q
 map('n', '<leader>xw', ':Trouble diagnostics toggle<CR>', { desc = 'Open trouble [w]orkspace diagnostics' })
 
 -- undotree
-map('n', '<leader>u', ":lua require('undotree').toggle()<CR>", { desc = '[u]ndo-tree toggle' })
+map('n', '<leader>u', function()
+  require('undotree').toggle()
+end, { desc = 'Undotree' })
 
 -- zen-mode
-map('n', '<leader>zz', ':ZenMode<CR>', { desc = '[z]en [z]en', silent = true })
+map('n', '<leader>z', ':ZenMode<CR>', { desc = 'Zen-mode', silent = true })
 
 ----------------------
 --- Disable Keymaps --
