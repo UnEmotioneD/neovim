@@ -23,6 +23,7 @@ return {
       { '<leader>d', group = '[D]elete' },
       { '<leader>e', group = '[E]xplorer' },
       { '<leader>f', group = '[F]ind' },
+      { '<leader>fc', group = '[C]alls' },
       { '<leader>g', group = '[G]it' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>l', group = '[L]ive-server' },

@@ -59,8 +59,8 @@ return {
 
         { mode = 'n', lhs = '<leader>fs', rhs = ':Telescope lsp_document_symbols<CR>', desc = '[f]ind buffer [s]ymbols' },
         { mode = 'n', lhs = '<leader>fS', rhs = ':Telescope lsp_workspace_symbols<CR>', desc = '[f]ind workspace [s]ymbols' },
-        { mode = 'n', lhs = '<leader>fi', rhs = ':Telescope lsp_incoming_calls<CR>', desc = '[i]ncoming calls' },
-        { mode = 'n', lhs = '<leader>fo', rhs = ':Telescope lsp_outgoing_calls<CR>', desc = '[o]utgoing calls' },
+        { mode = 'n', lhs = '<leader>fci', rhs = ':Telescope lsp_incoming_calls<CR>', desc = '[f]ind [c]alls [i]ncoming' },
+        { mode = 'n', lhs = '<leader>fco', rhs = ':Telescope lsp_outgoing_calls<CR>', desc = '[f]ind [c]alls [o]utgoing' },
 
         { mode = 'n', lhs = '<leader>d', rhs = vim.diagnostic.open_float, desc = 'Line Diagnostics' },
         { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = 'Buffer Diagnostics' },
