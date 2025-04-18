@@ -1,5 +1,9 @@
 return {
   'folke/flash.nvim',
   event = 'VeryLazy',
-  opts = {},
+  opts = {
+    search = {
+      mode = 'fuzzy',
+    },
+  },
 }
