@@ -258,15 +258,14 @@ map('n', '<leader>z', ':ZenMode<CR>', { desc = 'Zen-mode', silent = true })
 --- Disable Keymaps --
 ----------------------
 
-map({ 'n', 'x' }, 'Q', '<Nop>', { noremap = true }) -- Ex mode (old command interface)
-map('n', 'q:', '<Nop>', { noremap = true }) -- Command-line window
+map({ 'n', 'x' }, 'Q', '<Nop>') -- Ex mode (old command interface)
+map('n', 'q:', '<Nop>') -- Command-line window
 
 -- Disable default nvim keymap since it is done by lsp with telescope
-map('n', 'gO', '<Nop>', { noremap = true }) -- symbol
-map({ 'n', 'x' }, 'gra', '<Nop>', { noremap = true }) -- code action
-map('n', 'gri', '<Nop>', { noremap = true }) -- implementation
-map('n', 'grr', '<Nop>', { noremap = true }) -- reference
-map('n', 'grn', '<Nop>', { noremap = true }) -- rename
+map('n', 'gO', '<Nop>') -- symbol
+map('n', 'gri', '<Nop>') -- implementation
+map('n', 'grr', '<Nop>') -- reference
+map('n', 'grn', '<Nop>') -- rename
 
 -- Completely delete keymaps to not show it from telescoe keymaps
 local del = vim.keymap.del
@@ -275,8 +274,6 @@ del('n', 'Q')
 del('x', 'Q')
 del('n', 'q:')
 del('n', 'gO')
-del('n', 'gra')
-del('x', 'gra')
 del('n', 'gri')
 del('n', 'grr')
 del('n', 'grn')
