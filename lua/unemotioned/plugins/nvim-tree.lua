@@ -22,13 +22,13 @@ return {
       },
     },
     git = {
-      enable = false,
+      enable = true,
     },
     diagnostics = {
-      enable = false,
+      enable = true,
     },
     modified = {
-      enable = false,
+      enable = true,
     },
     filters = {
       enable = true,
