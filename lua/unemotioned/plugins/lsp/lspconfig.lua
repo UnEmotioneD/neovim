@@ -59,8 +59,8 @@ return {
 
         { mode = 'n', lhs = '<leader>fs', rhs = ':Telescope lsp_document_symbols<CR>', desc = '[f]ind buffer [s]ymbols' },
         { mode = 'n', lhs = '<leader>fS', rhs = ':Telescope lsp_workspace_symbols<CR>', desc = '[f]ind workspace [s]ymbols' },
-        { mode = 'n', lhs = '<leader>fi', rhs = ':Telescope lsp_incoming_calls<CR>', desc = 'Incoming Calls' },
-        { mode = 'n', lhs = '<leader>fo', rhs = ':Telescope lsp_outgoing_calls<CR>', desc = 'Outgoing Calls' },
+        { mode = 'n', lhs = '<leader>fi', rhs = ':Telescope lsp_incoming_calls<CR>', desc = '[i]ncoming calls' },
+        { mode = 'n', lhs = '<leader>fo', rhs = ':Telescope lsp_outgoing_calls<CR>', desc = '[o]utgoing calls' },
 
         { mode = 'n', lhs = '<leader>d', rhs = vim.diagnostic.open_float, desc = 'Line Diagnostics' },
         { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = 'Buffer Diagnostics' },
@@ -73,11 +73,11 @@ return {
         { mode = 'n', lhs = '<leader>ts', rhs = diagnostic_toggle, desc = '[t]oggle diagnostic [s]tyle' },
         {
           mode = 'n',
-          lhs = '<leader>ti',
+          lhs = '<leader>th',
           rhs = function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
           end,
-          desc = '[t]oggle [i]nlay-hint',
+          desc = '[t]oggle inlay-[h]int',
         },
       }
 
