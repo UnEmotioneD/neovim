@@ -163,18 +163,9 @@ map('n', '<leader>er', ':NvimTreeRefresh<CR>', { desc = '[e]xplorer [r]efresh' }
 map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
 
 -- quicker
-map('n', '<leader>qq', function()
+map('n', '<leader>q', function()
   require('quicker').toggle()
-end, { desc = 'Quicker' })
-
--- quicker
-map('n', '<leader>qq', function()
-  require('quicker').toggle()
-end, { desc = '[q]uickfix list toggle' })
-
-map('n', '<leader>ql', function()
-  require('quicker').toggle({ loclist = true })
-end, { desc = '[q]uickfix [l]ocalist' })
+end, { desc = 'Quick fix list' })
 
 -- snacks.picker
 map('n', '<leader>gb', function()

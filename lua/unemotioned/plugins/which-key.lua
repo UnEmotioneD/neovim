@@ -27,6 +27,7 @@ return {
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>l', group = '[L]ive-server' },
       { '<leader>m', group = '[M]arkdown' },
+      { '<leader>n', group = '[N]o' },
       { '<leader>s', group = '[S]plit' },
       { '<leader>t', group = '[T]oggle' },
       { '<leader>v', group = '[V]irtual' },
