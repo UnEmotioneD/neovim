@@ -61,6 +61,11 @@ map('n', '<leader>ws', ':SessionSave<CR>', { desc = 'Session [r]estore' })
 map('n', '<leader>wf', ':SessionSearch<CR>', { desc = 'Session [f]ind' })
 map('n', '<leader>wp', ':SessionPurgeOrphaned<CR>', { desc = 'Session [p]urge' })
 
+-- barbecue
+map('n', '<leader>b', function()
+  require('barbecue.ui').toggle()
+end, { desc = 'Barbecue' })
+
 -- conform
 map({ 'n', 'v' }, '<leader>p', function()
   require('conform').format()
