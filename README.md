@@ -33,9 +33,9 @@
 
 ## 참고한 유튜브 영상
 
-- [드림코딩](https://www.youtube.com/watch?v=cY0JxzENBJg&t=39s&pp=ygUNdmltIOyCrOyaqeuylQ%3D%3D) - Vim-motion 사용법
-- [Josean Martinez](https://www.youtube.com/watch?v=6pAG3BHurdM&pp=ygULam9zZWFuIG52aW0%3D) - 현재 리포의 베이스가 된 영상
-- [TJ DeVries](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&pp=ygUHdGogbnZpbQ%3D%3D) - KickStart.nvim 설명
+- [드림코딩](https://shorturl.at/y3zkW) - Vim-motion 사용법
+- [Josean Martinez](https://shorturl.at/DN2eR) - 현재 리포의 베이스가 된 영상
+- [TJ DeVries](https://shorturl.at/YCiZV) - KickStart.nvim 설명
 
 ## 설치 전 작업
 
@@ -48,7 +48,7 @@
 
 - 패키지 매니저로 설치 했을때 최신 버젼이 아닐 수 있음
 
-<details><summary>확장하기</summary>
+<details> <summary>확장하기</summary>
 
 #### 설치
 
@@ -432,7 +432,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 - `nvim` 명령어로 시작했을 때 커스텀한 화면을 보여줌
 
-- [`patorjk.com`](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=netblock)에서 `header`에 보여줄 ASCII Art를 바꿀 수 있음
+- [`patorjk.com`](https://shorturl.at/Oz909)에서 `header`에 보여줄 ASCII Art를 바꿀 수 있음
 
 - `button`에서 보여주는 키를 `Alpha` 창에서 입력하면 원래 키맵과 다르게 기능을 실행할 수있다
 
