@@ -14,6 +14,9 @@ opt.termguicolors = true
 opt.background = 'dark'
 opt.fillchars:append({ eob = ' ' })
 
+-- Performance
+opt.updatetime = 200
+
 -- Tabs & Indentation
 local indent = 2
 opt.tabstop = indent
@@ -58,7 +61,7 @@ opt.spellsuggest = 'best'
 -- opt.spellfile = vim.fn.stdpath('config') .. '/spell/en.utf-8.add'
 
 -- Session Options
-vim.o.sessionoptions = table.concat({
+opt.sessionoptions = table.concat({
   'blank',
   'buffers',
   'curdir',

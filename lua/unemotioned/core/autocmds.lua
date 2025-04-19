@@ -16,9 +16,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- Performance
-vim.o.updatetime = 200
-
 -- Highlight word under cursor
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
