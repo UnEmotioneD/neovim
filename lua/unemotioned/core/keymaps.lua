@@ -187,7 +187,7 @@ end, { desc = '[g]it [l]og' })
 
 map('n', '<leader>gL', function()
   require('snacks').picker.git_log_line()
-end, { desc = '[g]it log [l]ine' })
+end, { desc = '[g]it log [L]ine' })
 
 map('n', '<leader>gs', function()
   require('snacks').picker.git_status()
@@ -195,7 +195,7 @@ end, { desc = '[g]it [s]tatus' })
 
 map('n', '<leader>gS', function()
   require('snacks').picker.git_stash()
-end, { desc = '[g]it [s]tash' })
+end, { desc = '[g]it [S]tash' })
 
 map('n', '<leader>fI', function()
   require('snacks').picker.icons()
