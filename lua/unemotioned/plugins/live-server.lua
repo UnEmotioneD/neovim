@@ -1,10 +1,8 @@
 return {
   'barrett-ruth/live-server.nvim',
-  ft = 'html',
-  cmd = {
-    'LiveServerStart',
-    'LiveServerStop',
-  },
+  event = 'FileType html',
   build = 'pnpm add -g live-server',
-  config = true,
+  config = function()
+    require('live-server').setup({})
+  end,
 }

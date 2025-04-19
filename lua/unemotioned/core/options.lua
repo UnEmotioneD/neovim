@@ -55,20 +55,6 @@ opt.spelllang = { 'en', 'cjk' }
 opt.spellsuggest = 'best'
 -- opt.spellfile = vim.fn.stdpath('config') .. '/spell/en.utf-8.add'
 
--- Session Options
-opt.sessionoptions = table.concat({
-  'blank',
-  'buffers',
-  'curdir',
-  'folds',
-  'help',
-  'tabpages',
-  'winsize',
-  'winpos',
-  'terminal',
-  'localoptions',
-}, ',')
-
 -- disable netrw from nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

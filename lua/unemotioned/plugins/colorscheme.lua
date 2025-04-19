@@ -31,6 +31,7 @@ local cat = {
 
 local dark = {
   'navarasu/onedark.nvim',
+  lazy = false,
   priority = 1000,
   config = function()
     local onedark = require('onedark')
@@ -72,6 +73,7 @@ local gruv = {
 
 local rose = {
   'rose-pine/neovim',
+  lazy = false,
   priority = 1000,
   config = function()
     require('rose-pine').setup({
