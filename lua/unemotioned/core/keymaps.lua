@@ -178,7 +178,7 @@ end, { desc = '[g]it [d]iff (Hunks)' })
 
 map('n', '<leader>gf', function()
   require('snacks').picker.git_log_file()
-end, { desc = '[g]it [l]og [f]iles' })
+end, { desc = '[g]it log [f]iles' })
 
 map('n', '<leader>gl', function()
   require('snacks').picker.git_log()
