@@ -26,11 +26,6 @@ opt.expandtab = true
 opt.autoindent = true
 opt.startofline = true -- 'gg' to (0, 0)
 
--- nosplit is default
---  when doing :%s/ command it will show the matches in split window
----@type 'nosplit' | 'split' | ''
-opt.inccommand = 'split'
-
 -- Search
 opt.ignorecase = true
 opt.smartcase = true
