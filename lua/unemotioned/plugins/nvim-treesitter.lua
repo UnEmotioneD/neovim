@@ -1,18 +1,10 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  event = {
-    'BufReadPre',
-    'BufNewFile',
-  },
   build = ':TSUpdate',
   config = function()
     require('nvim-treesitter.configs').setup({
-      highlight = {
-        enable = true,
-      },
-      indent = {
-        enable = true,
-      },
+      highlight = { enable = true },
+      indent = { enable = true },
       ensure_installed = {
         'bash',
         'c',
@@ -22,6 +14,7 @@ return {
         'git_config',
         'html',
         'hyprlang',
+        'java',
         'javascript',
         'json',
         'jsonc',

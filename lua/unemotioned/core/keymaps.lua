@@ -152,6 +152,7 @@ map('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[e]xplorer toggle' })
 map('n', '<leader>ef', function()
   local view = require('nvim-tree.view')
   if view.is_visible() then
+    vim.cmd('NvimTreeCollapse')
     view.close()
   end
   vim.cmd('NvimTreeFindFile')
