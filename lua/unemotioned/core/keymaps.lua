@@ -64,7 +64,7 @@ map('n', '<leader>wp', ':SessionPurgeOrphaned<CR>', { desc = 'Session [p]urge' }
 -- barbecue
 map('n', '<leader>b', function()
   require('barbecue.ui').toggle()
-end, { desc = 'Barbecue' })
+end, { desc = '[b]arbecue' })
 
 -- conform
 map({ 'n', 'v' }, '<leader>p', function()
@@ -166,7 +166,7 @@ map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
 -- quicker
 map('n', '<leader>q', function()
   require('quicker').toggle()
-end, { desc = 'Quick fix list' })
+end, { desc = '[q]uicker' })
 
 -- snacks.picker
 map('n', '<leader>gb', function()
@@ -241,10 +241,10 @@ map('n', '<leader>xw', ':Trouble diagnostics toggle<CR>', { desc = 'Open trouble
 -- undotree
 map('n', '<leader>u', function()
   require('undotree').toggle()
-end, { desc = 'Undotree' })
+end, { desc = '[u]ndotree' })
 
 -- zen-mode
-map('n', '<leader>z', ':ZenMode<CR>', { desc = 'Zen-mode', silent = true })
+map('n', '<leader>z', ':ZenMode<CR>', { desc = '[z]en-mode', silent = true })
 
 ----------------------
 --- Disable Keymaps --

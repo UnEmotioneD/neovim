@@ -19,7 +19,7 @@ return {
       on_attach = function(bufnr)
         vim.keymap.set('n', '[a', ':AerialPrev<CR>', { desc = 'Aerial prev', buffer = bufnr })
         vim.keymap.set('n', ']a', ':AerialNext<CR>', { desc = 'Aerial next', buffer = bufnr })
-        vim.keymap.set('n', '<leader>a', ':AerialToggle!<CR>', { desc = 'Aerial', buffer = bufnr })
+        vim.keymap.set('n', '<leader>a', ':AerialToggle!<CR>', { desc = '[a]erial', buffer = bufnr })
       end,
     })
   end,
