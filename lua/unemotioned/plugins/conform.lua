@@ -3,6 +3,8 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { 'stylua' },
+      c = { 'clang-format' },
+      cpp = { 'clang-format' },
       html = { 'prettierd' },
       css = { 'prettierd' },
       javascript = { 'prettierd' },
@@ -11,10 +13,9 @@ return {
       typescriptreact = { 'prettierd' },
       markdown = { 'prettierd' },
       json = { 'prettierd' },
+      jsonc = { 'prettierd' },
       yaml = { 'prettierd' },
       toml = { 'taplo' },
-      c = { 'clang-format' },
-      cpp = { 'clang-format' },
     },
     default_format_opts = {
       async = false,
@@ -23,8 +24,9 @@ return {
       timeout_ms = 1000,
     },
     format_on_save = {
-      lsp_format = 'fallback',
+      async = false,
       timeout_ms = 1000,
+      lsp_fallback = true,
     },
   },
 }
