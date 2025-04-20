@@ -165,7 +165,12 @@ map('n', '-', ':Oil<CR>', { desc = 'Open parent directory', silent = true })
 
 -- quicker
 map('n', '<leader>q', function()
-  require('quicker').toggle()
+  if vim.tbl_isempty(vim.fn.getqflist()) then
+    vim.notify('Quickfix list empty', vim.log.levels.INFO)
+    return
+  else
+    require('quicker').toggle()
+  end
 end, { desc = '[q]uicker' })
 
 -- snacks.picker
