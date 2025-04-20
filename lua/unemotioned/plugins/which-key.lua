@@ -37,7 +37,7 @@ return {
     },
 
     win = {
-      ---@type string 'single' | 'double' | 'solid' | 'shadow' | 'rounded' | 'none'
+      ---@type string 'single' | 'double' | 'rounded' | 'none'
       border = 'single',
     },
   },
