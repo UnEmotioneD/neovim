@@ -50,11 +50,6 @@ opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 
--- Spelling
-opt.spelllang = { 'en', 'cjk' }
-opt.spellsuggest = 'best'
--- opt.spellfile = vim.fn.stdpath('config') .. '/spell/en.utf-8.add'
-
 -- disable netrw from nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

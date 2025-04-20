@@ -17,15 +17,15 @@ return {
       severity_sort = true,
       float = { border = 'single' },
     })
-    -- Toggle inline diagnostic
-    local function inline_toggle()
+
+    local toggle_diagnostics_inline = function()
       isText = not isText
       vim.diagnostic.config({
         virtual_text = isText,
       })
     end
-    -- Toggle diagnostic style
-    local diagnostic_toggle = function()
+
+    local toggle_diagnostics_style = function()
       if isText == true then
         vim.diagnostic.config({
           virtual_lines = { current_line = true },
@@ -41,11 +41,6 @@ return {
 
     -- Centralized on_attach function for setting up buffer-local key mappings
     local on_attach = function(ev)
-      -- Enable inlay hints by default
-      if vim.lsp.inlay_hint and vim.lsp.inlay_hint.enable then
-        vim.lsp.inlay_hint.enable(true)
-      end
-
       local opts = { buffer = ev.buf, silent = true }
       local mappings = {
         -- stylua: ignore start
@@ -62,17 +57,17 @@ return {
         { mode = 'n', lhs = '<leader>fci', rhs = ':Telescope lsp_incoming_calls<CR>', desc = '[f]ind [c]alls [i]ncoming' },
         { mode = 'n', lhs = '<leader>fco', rhs = ':Telescope lsp_outgoing_calls<CR>', desc = '[f]ind [c]alls [o]utgoing' },
 
-        { mode = 'n', lhs = '<leader>rn', rhs = vim.lsp.buf.rename, desc = 'Smart [r]e[n]ame' },
-        { mode = 'n', lhs = '<leader>rs', rhs = ':LspRestart<CR>', desc = 'LSP [r]e[s]tart' },
+        { mode = 'n', lhs = '<leader>rn', rhs = vim.lsp.buf.rename, desc = 'Smart re[n]ame' },
+        { mode = 'n', lhs = '<leader>rs', rhs = ':LspRestart<CR>', desc = 'LSP re[s]tart' },
+
         { mode = 'n', lhs = '[d', rhs = function() vim.diagnostic.jump({ count = -1 }) end, desc = 'Go to prev diagnostic' },
         { mode = 'n', lhs = ']d', rhs = function() vim.diagnostic.jump({ count = 1 }) end, desc = 'Go to next diagnostic' },
-        -- stylua: ignore end
-        { mode = 'n', lhs = '<leader>dl', rhs = vim.diagnostic.open_float, desc = '[d]iagnostic [l]ine' },
+        { mode = 'n', lhs = '<leader>dl', rhs = vim.diagnostic.open_float, desc = '[d]iagnostics [l]ine' },
         { mode = 'n', lhs = '<leader>db', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = '[d]iagnostics [b]uffer' },
-        { mode = 'n', lhs = '<leader>di', rhs = inline_toggle, desc = '[i]nline-diagnostics toggle' },
-        { mode = 'n', lhs = '<leader>ds', rhs = diagnostic_toggle, desc = '[d]iagnostic [s]tyle toggle' },
+        { mode = 'n', lhs = '<leader>di', rhs = toggle_diagnostics_inline, desc = 'toggle [i]nline-diagnostics' },
+        { mode = 'n', lhs = '<leader>ds', rhs = toggle_diagnostics_style, desc = 'toggle [d]iagnostics [s]tyle' },
+        -- stylua: ignore end
       }
-
       for _, map in ipairs(mappings) do
         vim.keymap.set(map.mode, map.lhs, map.rhs, vim.tbl_extend('force', opts, { desc = map.desc }))
       end
@@ -86,7 +81,6 @@ return {
         },
       },
     })
-
     -- fix warning: multiple different client offset_encodings detected for buffer (c, cpp file)
     local capabilities_utf_16 = vim.tbl_deep_extend('force', {}, capabilities, {
       offsetEncoding = { 'utf-16' },
