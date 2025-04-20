@@ -8,16 +8,8 @@ local map = vim.keymap.set -- for conciseness
 
 map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
 
-map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down and center' })
-map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up and center' })
-
 map('n', 'H', ':bp<CR>', { desc = 'Buffer Previous' })
 map('n', 'L', ':bn<CR>', { desc = 'Buffer Next' })
-
-map('n', 'J', 'mzJ`z:delm z<CR>', { desc = 'Join lines without moving cursor' })
-
-map('x', 'J', ":move '>+1<CR>gv=gv", { desc = 'Move Block Down' })
-map('x', 'K', ":move '<-2<CR>gv=gv", { desc = 'Move Block Up' })
 
 map('v', 'p', '"_dP', { desc = 'Paste over selection without overriding reg' })
 
@@ -25,7 +17,10 @@ map('n', 'Y', 'y$', { desc = 'Yank to End of Line' })
 
 map('n', 'x', '"_x', { desc = 'Delete char without yanking' })
 
-map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear hlsearch', silent = true })
+map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down and center' })
+map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up and center' })
+
+map('n', '<Esc>', ':noh<CR>', { desc = 'Clear hlsearch', silent = true })
 
 -- 리눅스에서 '입력' 모드 일때 Esc를 누르면 IM(Input Method)를 영어로 전환
 --  키보드가 한글 일때는 '일반' 모드에서 움직일 수 없기 때문에 유용
@@ -36,15 +31,6 @@ if vim.uv.os_uname().sysname == 'Linux' then
     return '<Esc>'
   end, { expr = true })
 end
-
-map('n', 'gco', 'o<Esc>Vcx<Esc>:normal gcc<CR>fxa<BS>', { desc = 'Add Comment Below' })
-map('n', 'gcO', 'O<Esc>Vcx<Esc>:normal gcc<CR>fxa<BS>', { desc = 'Add Comment Above' })
-
-map('n', '<leader>ch', ':checkhealth<CR>', { desc = '[c]heck [h]ealth ' })
-
-map('n', '<leader>tc', ':setlocal spell! spell?<CR>', { desc = '[t]oggle [c]heck spell' })
-
-map('n', '<leader>dm', ':delm!<CR>', { desc = '[d]elete all [m]arks' })
 
 map('n', '<leader>sv', '<C-w>v', { desc = '[s]plit [v]ertically' })
 map('n', '<leader>sh', '<C-w>s', { desc = '[s]plit [h]orizontally' })
@@ -109,28 +95,6 @@ map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })
 
 -- lazygit
 map('n', '<leader>hg', ':LazyGit<CR>', { desc = 'Lazy[g]it' })
-
--- nvim-lspconfig
-local isTextOn = true
-map('n', '<leader>vt', function()
-  if isTextOn == true then
-    vim.diagnostic.config({
-      virtual_lines = { current_line = true },
-    })
-    vim.cmd('echo "Line diagnostics on"')
-  else
-    vim.diagnostic.config({
-      virtual_lines = false,
-    })
-    vim.cmd('echo "Text diagnostics on"')
-  end
-  vim.diagnostic.config({ virtual_text = not isTextOn })
-  isTextOn = not isTextOn
-end, { desc = '[v]irtual diagnostic [t]oggle' })
-
-map('n', '<leader>vi', function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
-end, { desc = '[i]nlay hints toggle' })
 
 -- mason
 map('n', '<leader>M', ':Mason<CR>', { desc = '[M]ason', silent = true })

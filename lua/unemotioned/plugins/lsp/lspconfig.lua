@@ -62,23 +62,15 @@ return {
         { mode = 'n', lhs = '<leader>fci', rhs = ':Telescope lsp_incoming_calls<CR>', desc = '[f]ind [c]alls [i]ncoming' },
         { mode = 'n', lhs = '<leader>fco', rhs = ':Telescope lsp_outgoing_calls<CR>', desc = '[f]ind [c]alls [o]utgoing' },
 
-        { mode = 'n', lhs = '<leader>d', rhs = vim.diagnostic.open_float, desc = '[d]iagnostic lien' },
-        { mode = 'n', lhs = '<leader>D', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = '[D]iagnostics buffer' },
         { mode = 'n', lhs = '<leader>rn', rhs = vim.lsp.buf.rename, desc = 'Smart [r]e[n]ame' },
         { mode = 'n', lhs = '<leader>rs', rhs = ':LspRestart<CR>', desc = 'LSP [r]e[s]tart' },
         { mode = 'n', lhs = '[d', rhs = function() vim.diagnostic.jump({ count = -1 }) end, desc = 'Go to prev diagnostic' },
         { mode = 'n', lhs = ']d', rhs = function() vim.diagnostic.jump({ count = 1 }) end, desc = 'Go to next diagnostic' },
-        { mode = 'n', lhs = '<leader>td', rhs = inline_toggle, desc = '[t]oggle inline [d]iagnostic' },
         -- stylua: ignore end
-        { mode = 'n', lhs = '<leader>ts', rhs = diagnostic_toggle, desc = '[t]oggle diagnostic [s]tyle' },
-        {
-          mode = 'n',
-          lhs = '<leader>th',
-          rhs = function()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
-          end,
-          desc = '[t]oggle inlay-[h]int',
-        },
+        { mode = 'n', lhs = '<leader>dl', rhs = vim.diagnostic.open_float, desc = '[d]iagnostic [l]ine' },
+        { mode = 'n', lhs = '<leader>db', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = '[d]iagnostics [b]uffer' },
+        { mode = 'n', lhs = '<leader>di', rhs = inline_toggle, desc = '[i]nline-diagnostics toggle' },
+        { mode = 'n', lhs = '<leader>ds', rhs = diagnostic_toggle, desc = '[d]iagnostic [s]tyle toggle' },
       }
 
       for _, map in ipairs(mappings) do
