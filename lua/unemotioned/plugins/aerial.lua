@@ -22,5 +22,25 @@ return {
         vim.keymap.set('n', '<leader>a', ':AerialToggle!<CR>', { desc = '[a]erial', buffer = bufnr })
       end,
     })
+
+    require('telescope').setup({
+      extensions = {
+        aerial = {
+          col1_width = 4,
+          col2_width = 30,
+          -- How to format the symbols
+          format_symbol = function(symbol_path, filetype)
+            if filetype == 'json' or filetype == 'yaml' then
+              return table.concat(symbol_path, '.')
+            else
+              return symbol_path[#symbol_path]
+            end
+          end,
+          ---@type string 'symbols' | 'lines'
+          show_columns = 'both',
+        },
+      },
+    })
+    require('telescope').load_extension('aerial')
   end,
 }

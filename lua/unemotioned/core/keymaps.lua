@@ -225,7 +225,7 @@ end, { desc = '[f]ind [n]eovim files' })
 
 map('n', '<leader>fk', ':Telescope keymaps<CR>', { desc = '[f]ind [k]keymaps' })
 
-map('n', '<leader>ft', ':TodoTelescope<CR>', { desc = '[f]ind [t]odos' })
+map('n', '<leader>fa', ':Telescope aerial<CR>', { desc = '[f]ind [a]erial' })
 
 -- todo-comments
 map('n', '[t', function()
@@ -235,6 +235,8 @@ end, { desc = 'Previous todo comment' })
 map('n', ']t', function()
   require('todo-comments').jump_next()
 end, { desc = 'Next todo comment' })
+
+map('n', '<leader>ft', ':TodoTelescope<CR>', { desc = '[f]ind [t]odos' })
 
 -- trouble
 map('n', '<leader>xd', ':Trouble diagnostics toggle filter.buf=0<CR>', { desc = 'Open trouble [d]ocument diagnostics' })
