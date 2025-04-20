@@ -223,6 +223,8 @@ map('n', '<leader>fn', function()
   })
 end, { desc = '[f]ind [n]eovim files' })
 
+map('n', '<leader>fC', ':Telescope colorscheme enable_preview=true<CR>', { desc = '[f]ind [C]olorscheme' })
+
 map('n', '<leader>fk', ':Telescope keymaps<CR>', { desc = '[f]ind [k]keymaps' })
 
 map('n', '<leader>fa', ':Telescope aerial<CR>', { desc = '[f]ind [a]erial' })
