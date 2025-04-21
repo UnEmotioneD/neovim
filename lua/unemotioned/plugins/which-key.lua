@@ -16,6 +16,7 @@ return {
         Esc = '<ESC>',
         BS = '<BS>',
         Space = '<SPACE>',
+        Tba = '<TAB>',
       },
     },
     spec = {
@@ -33,7 +34,7 @@ return {
       { '<leader>s', group = '[S]plit' },
       { '<leader>w', group = 'Session' },
       { '<leader>x', group = 'Trouble' },
-      { '<leader><Space>', group = 'Harpoon' },
+      { '<Tab>', group = 'Harpoon' },
     },
 
     win = {
