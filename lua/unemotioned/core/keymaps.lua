@@ -78,13 +78,13 @@ map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
 -- haproon ---
 -- stylua: ignore start
-map('n', '<leader><leader>h', function() require('harpoon'):list():add() vim.cmd('echo "File harpooned"') end, { desc = '[f]ile' })
-map('n', '<leader><leader>e', function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, { desc = '[e]dit' })
+map('n', '<leader><leader>h', function() require('harpoon'):list():add() vim.cmd('echo "File harpooned"') end, { desc = '[h]arpoon file' })
+map('n', '<leader><leader>e', function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, { desc = '[h]arpoon [e]dit' })
 
-map('n', '<C-7>', function() require('harpoon'):list():select(1) end, {desc = 'Harpoon to 1'})
-map('n', '<C-8>', function() require('harpoon'):list():select(2) end, {desc = 'Harpoon to 2'})
-map('n', '<C-9>', function() require('harpoon'):list():select(3) end, {desc = 'Harpoon to 3'})
-map('n', '<C-0>', function() require('harpoon'):list():select(4) end, {desc = 'Harpoon to 4'})
+map('n', '<leader><leader>j', function() require('harpoon'):list():select(1) end, {desc = 'Harpoon to 1'})
+map('n', '<leader><leader>k', function() require('harpoon'):list():select(2) end, {desc = 'Harpoon to 2'})
+map('n', '<leader><leader>l', function() require('harpoon'):list():select(3) end, {desc = 'Harpoon to 3'})
+map('n', '<leader><leader>;', function() require('harpoon'):list():select(4) end, {desc = 'Harpoon to 4'})
 
 map('n', '<C-S-n>', function() require('harpoon'):list():next() end, { desc = 'next on harpoon list' })
 map('n', '<C-S-p>', function() require('harpoon'):list():prev() end, { desc = 'prev on harpoon list' })
