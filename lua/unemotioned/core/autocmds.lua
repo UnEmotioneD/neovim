@@ -98,9 +98,9 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Python print macro to register papa
-local pythopnPrintMacro = vim.api.nvim_create_augroup('PythopnPrintMacro', { clear = true })
+local pythonPrintMacro = vim.api.nvim_create_augroup('PythopnPrintMacro', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
-  group = pythopnPrintMacro,
+  group = pythonPrintMacro,
   pattern = { 'python' },
   callback = function()
     local macro = "yoprint(f'" .. esc .. 'pa {' .. esc .. "pa}')" .. esc
