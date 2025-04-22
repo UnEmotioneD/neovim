@@ -626,7 +626,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
 #### nvim-colorizer
 
-- [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
+- [catgoose/nvim-colorizer.lua](https://github.com/catgoose/nvim-colorizer.lua)
 
 - 소스 코드에서 색상을 보여줌
 
