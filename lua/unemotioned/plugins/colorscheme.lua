@@ -104,4 +104,63 @@ local tokyo = {
   end,
 }
 
-return tokyo
+local vague = {
+  'vague2k/vague.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('vague').setup({
+      transparent = false,
+      -- 'none' | 'default' | 'bold' | 'italic'
+      style = {
+        boolean = 'none',
+        number = 'none',
+        float = 'none',
+        error = 'none',
+        comments = 'none',
+        conditionals = 'none',
+        functions = 'none',
+        headings = 'none',
+        operators = 'none',
+        strings = 'none',
+        variables = 'none',
+
+        keywords = 'none',
+        keyword_return = 'none',
+        keywords_loop = 'none',
+        keywords_label = 'none',
+        keywords_exception = 'none',
+
+        builtin_constants = 'none',
+        builtin_functions = 'none',
+        builtin_types = 'none',
+        builtin_variables = 'none',
+      },
+      plugins = {
+        cmp = {
+          match = 'none',
+          match_fuzzy = 'none',
+        },
+        dashboard = {
+          footer = 'none',
+        },
+        lsp = {
+          diagnostic_error = 'none',
+          diagnostic_hint = 'none',
+          diagnostic_info = 'none',
+          diagnostic_warn = 'none',
+        },
+        neotest = {
+          focused = 'none',
+          adapter_name = 'none',
+        },
+        telescope = {
+          match = 'none',
+        },
+      },
+    })
+    vim.cmd.colorscheme('vague')
+  end,
+}
+
+return vague
