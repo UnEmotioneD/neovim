@@ -1,5 +1,6 @@
 local cat = {
   'catppuccin/nvim',
+  name = 'catppuccin',
   lazy = false,
   priority = 1000,
   config = function()
@@ -72,6 +73,7 @@ local gruv = {
 
 local rose = {
   'rose-pine/neovim',
+  name = 'rose-pine',
   lazy = false,
   priority = 1000,
   config = function()
