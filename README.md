@@ -476,6 +476,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
   - [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim)
   - [Rose-pine](https://github.com/rose-pine/neovim)
   - [Tokyonight](https://github.com/folke/tokyonight.nvim)
+  - [vague2k/vague.nvim](https://github.com/vague2k/vague.nvim)
 
 - 각각의 테마들은 local 변수에 `table`로 선언되어있고 파일 마지막 줄에 `return`의 값을 바꾸고 다실 실행하면 설치가 된다
 
