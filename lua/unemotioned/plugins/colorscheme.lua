@@ -33,42 +33,41 @@ local dark = {
   'navarasu/onedark.nvim',
   lazy = false,
   priority = 1000,
-  config = function()
-    local onedark = require('onedark')
-    onedark.setup({
-      ---@type 'dark' | 'darker' | 'cool' | 'deep' | 'warm' | 'warmer' | 'light'
-      style = 'dark',
-      transparent = false,
-      term_colors = true,
-      ending_tildes = false,
-      cmp_itemkind_reverse = false,
-
-      toggle_style_key = '<leader>tt',
-      toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' },
-
-      -- italic, bold, underline, none
-      code_style = {
-        comments = 'none',
-        keywords = 'none',
-        functions = 'none',
-        strings = 'none',
-        variables = 'none',
-      },
-    })
-    onedark.load()
+  init = function()
+    require('onedark').load()
   end,
+  opts = {
+    ---@type 'dark' | 'darker' | 'cool' | 'deep' | 'warm' | 'warmer' | 'light'
+    style = 'deep',
+    transparent = false,
+    term_colors = true,
+    ending_tildes = false,
+    cmp_itemkind_reverse = false,
+
+    toggle_style_key = '<leader>tt',
+    toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' },
+
+    -- italic, bold, underline, none
+    code_style = {
+      comments = 'none',
+      keywords = 'none',
+      functions = 'none',
+      strings = 'none',
+      variables = 'none',
+    },
+  },
 }
 
 local gruv = {
   'ellisonleao/gruvbox.nvim',
   lazy = false,
   priority = 1000,
-  config = function()
-    require('gruvbox').setup({
-      transparent_mode = false,
-    })
+  init = function()
     vim.cmd.colorscheme('gruvbox')
   end,
+  opts = {
+    transparent_mode = false,
+  },
 }
 
 local rose = {
@@ -78,7 +77,7 @@ local rose = {
   config = function()
     require('rose-pine').setup({
       ---@type 'main' | 'moon' | 'dawn'
-      variant = 'moon',
+      variant = 'main',
       styles = {
         transparency = false,
       },
@@ -91,76 +90,69 @@ local tokyo = {
   'folke/tokyonight.nvim',
   lazy = false,
   priority = 1000,
-  config = function()
-    require('tokyonight').setup({
-      ---@type 'moon' | 'storm' | 'night' | 'day'
-      style = 'night',
-      transparent = false,
-    })
+  init = function()
     vim.cmd.colorscheme('tokyonight')
 
     vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#7f849c' })
     vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#7f849c' })
   end,
+  opts = {
+    ---@type 'moon' | 'storm' | 'night' | 'day'
+    style = 'night',
+    transparent = false,
+  },
 }
 
 local vague = {
   'vague2k/vague.nvim',
   lazy = false,
   priority = 1000,
-  config = function()
-    require('vague').setup({
-      transparent = false,
-      -- 'none' | 'default' | 'bold' | 'italic'
-      style = {
-        boolean = 'none',
-        number = 'none',
-        float = 'none',
-        error = 'none',
-        comments = 'none',
-        conditionals = 'none',
-        functions = 'none',
-        headings = 'none',
-        operators = 'none',
-        strings = 'none',
-        variables = 'none',
-
-        keywords = 'none',
-        keyword_return = 'none',
-        keywords_loop = 'none',
-        keywords_label = 'none',
-        keywords_exception = 'none',
-
-        builtin_constants = 'none',
-        builtin_functions = 'none',
-        builtin_types = 'none',
-        builtin_variables = 'none',
-      },
-      plugins = {
-        cmp = {
-          match = 'none',
-          match_fuzzy = 'none',
-        },
-        dashboard = {
-          footer = 'none',
-        },
-        lsp = {
-          diagnostic_error = 'none',
-          diagnostic_hint = 'none',
-          diagnostic_info = 'none',
-          diagnostic_warn = 'none',
-        },
-        neotest = {
-          focused = 'none',
-          adapter_name = 'none',
-        },
-        telescope = {
-          match = 'none',
-        },
-      },
-    })
+  init = function()
     vim.cmd.colorscheme('vague')
   end,
+  opts = {
+    transparent = false,
+    -- 'none' | 'default' | 'bold' | 'italic'
+    style = {
+      boolean = 'none',
+      number = 'none',
+      float = 'none',
+      error = 'none',
+      comments = 'none',
+      conditionals = 'none',
+      functions = 'none',
+      headings = 'none',
+      operators = 'none',
+      strings = 'none',
+      variables = 'none',
+
+      keywords = 'none',
+      keyword_return = 'none',
+      keywords_loop = 'none',
+      keywords_label = 'none',
+      keywords_exception = 'none',
+
+      builtin_constants = 'none',
+      builtin_functions = 'none',
+      builtin_types = 'none',
+      builtin_variables = 'none',
+    },
+    plugins = {
+      cmp = {
+        match = 'none',
+        match_fuzzy = 'none',
+      },
+      lsp = {
+        diagnostic_hint = 'none',
+        diagnostic_info = 'none',
+        diagnostic_warn = 'none',
+        diagnostic_error = 'none',
+      },
+      telescope = {
+        match = 'none',
+      },
+    },
+  },
 }
 
-return vague
+return tokyo
