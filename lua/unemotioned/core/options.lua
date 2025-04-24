@@ -9,6 +9,7 @@ opt.number = true
 opt.signcolumn = 'yes'
 opt.wrap = false
 opt.cursorline = true
+-- opt.cursorcolumn = true
 opt.scrolloff = 5
 opt.termguicolors = true
 opt.background = 'dark'
