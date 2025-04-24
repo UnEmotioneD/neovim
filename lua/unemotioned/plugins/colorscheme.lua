@@ -1,10 +1,11 @@
 return {
-  'folke/tokyonight.nvim',
+  'catppuccin/nvim',
+  name = 'catppuccin',
   lazy = false,
   priority = 1000,
   dependencies = {
-    { 'catppuccin/nvim', name = 'catppuccin' },
     'ellisonleao/gruvbox.nvim',
+    'folke/tokyonight.nvim',
     'navarasu/onedark.nvim',
     { 'rose-pine/neovim', name = 'rose-pine' },
     'vague2k/vague.nvim',
