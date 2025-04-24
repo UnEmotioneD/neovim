@@ -13,6 +13,7 @@ opt.scrolloff = 5
 opt.termguicolors = true
 opt.background = 'dark'
 opt.fillchars:append({ eob = ' ' })
+-- opt.guicursor = '' -- uncomment this to only use block cursor
 
 -- Performance
 opt.updatetime = 200
