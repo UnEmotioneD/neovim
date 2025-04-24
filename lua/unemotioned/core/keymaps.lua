@@ -76,20 +76,6 @@ end, { desc = 'Remote Flash' })
 -- gitsings
 map('n', '<leader>hc', ':q1<CR>', { desc = 'Diff [c]lose' })
 
--- haproon ---
--- stylua: ignore start
-map('n', '<Tab>h', function() require('harpoon'):list():add() vim.cmd('echo "File harpooned"') end, { desc = '[h]arpoon file' })
-map('n', '<Tab>e', function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, { desc = '[h]arpoon [e]dit' })
-
-map('n', '<Tab>j', function() require('harpoon'):list():select(1) end, {desc = 'Harpoon to 1'})
-map('n', '<Tab>k', function() require('harpoon'):list():select(2) end, {desc = 'Harpoon to 2'})
-map('n', '<Tab>l', function() require('harpoon'):list():select(3) end, {desc = 'Harpoon to 3'})
-map('n', '<Tab>;', function() require('harpoon'):list():select(4) end, {desc = 'Harpoon to 4'})
-
-map('n', '<Tab>n', function() require('harpoon'):list():next() end, { desc = 'next on harpoon list' })
-map('n', '<Tab>p', function() require('harpoon'):list():prev() end, { desc = 'prev on harpoon list' })
--- stylua: ignore end
-
 -- lazy
 map('n', '<leader>L', ':Lazy<CR>', { desc = '[L]azy', silent = true })
 
