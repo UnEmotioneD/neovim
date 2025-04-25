@@ -38,6 +38,7 @@ return {
       map('n', '<leader>hw', gitsigns.toggle_word_diff, 'toggle [w]ord diff')
 
       map({ 'o', 'x' }, 'ih', gitsigns.select_hunk, 'select [h]unk')
+      -- stylua: ignore end
     end,
   },
 }
