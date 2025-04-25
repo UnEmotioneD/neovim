@@ -5,9 +5,9 @@ return {
   priority = 1000,
   dependencies = {
     'ellisonleao/gruvbox.nvim',
-    'folke/tokyonight.nvim',
     'navarasu/onedark.nvim',
     { 'rose-pine/neovim', name = 'rose-pine' },
+    'folke/tokyonight.nvim',
     'vague2k/vague.nvim',
   },
   config = function()
@@ -17,11 +17,6 @@ return {
     })
 
     require('gruvbox').setup()
-
-    require('tokyonight').setup({
-      ---@type 'moon'|'storm'|'night'|'day'
-      style = 'night',
-    })
 
     require('onedark').setup({
       ---@type 'dark'|'darker'|'cool'|'deep'|'warm'|'warmer'
@@ -33,9 +28,14 @@ return {
       variant = 'moon',
     })
 
+    require('tokyonight').setup({
+      ---@type 'moon'|'storm'|'night'|'day'
+      style = 'night',
+    })
+
     require('vague').setup()
 
-    -- catppuccin, gruvbox, tokyonight, onedark, rose-pine, vague
+    -- catppuccin, gruvbox, onedark, rose-pine, tokyonight, vague
     vim.cmd.colorscheme('tokyonight')
 
     -- Change line number colors for better visibility (from vscode catppuccin-mocha)
