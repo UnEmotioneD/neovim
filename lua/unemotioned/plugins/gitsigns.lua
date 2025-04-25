@@ -2,49 +2,42 @@ return {
   'lewis6991/gitsigns.nvim',
   opts = {
     on_attach = function(bufnr)
-      local gs = package.loaded.gitsigns
+      local gitsigns = package.loaded.gitsigns
 
-      local function map(mode, lhs, rhs, desc)
-        vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+      local function map(mode, lhs, rhs, opts)
+        vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = opts })
       end
 
-      -- Navigation
-      map('n', '[h', gs.prev_hunk, 'Previous [h]unk')
-      map('n', ']h', gs.next_hunk, 'Next [h]unk')
+      -- stylua: ignore start
+      map('n', '[h', gitsigns.prev_hunk, 'prev [h]unk')
+      map('n', ']h', gitsigns.next_hunk, 'next [h]unk')
 
-      -- Actions
-      map('n', '<leader>hs', gs.stage_hunk, '[s]tage hunk')
-      map('n', '<leader>hr', gs.reset_hunk, '[r]eset hunk')
+      map('n', '<leader>hs', gitsigns.stage_hunk, '[s]tage hunk')
+      map('n', '<leader>hr', gitsigns.reset_hunk, '[r]eset hunk')
 
-      map('v', '<leader>hs', function()
-        gs.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-      end, '[s]tage selected hunk')
+      map('v', '<leader>hs', function() gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end, '[s]tage selected')
+      map('v', '<leader>hr', function() gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end, '[r]eset selected')
 
-      map('v', '<leader>hr', function()
-        gs.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-      end, '[r]eset selected hunk')
+      map('n', '<leader>hS', gitsigns.stage_buffer, '[S]tage buffer')
+      map('n', '<leader>hR', gitsigns.reset_buffer, '[R]eset buffer')
+      map('n', '<leader>hu', gitsigns.undo_stage_hunk, '[u]ndo last stage')
 
-      map('n', '<leader>hS', gs.stage_buffer, '[S]tage buffer')
-      map('n', '<leader>hR', gs.reset_buffer, '[R]eset buffer')
-      map('n', '<leader>hu', gs.undo_stage_hunk, '[u]ndo stage hunk')
+      map('n', '<leader>hp', gitsigns.preview_hunk, '[p]review hunk')
 
-      map('n', '<leader>hp', gs.preview_hunk, '[p]review hunk')
+      map('n', '<leader>hb', function() gitsigns.blame_line({ full = true }) end, 'toggle [b]lame (pop-up)')
+      map('n', '<leader>hB', gitsigns.toggle_current_line_blame, 'toggle [B]lame (in-line)')
 
-      map('n', '<leader>hb', function()
-        gs.blame_line({ full = true })
-      end, '[b]lame line (detailed)')
+      map('n', '<leader>hd', gitsigns.diffthis, '[d]iff this file')
+      map('n', '<leader>hD', function() gitsigns.diffthis('~') end, '[D]iff against last commit')
+      map('n', '<leader>hc', ':q1<CR>', 'Close diff window')
 
-      map('n', '<leader>hB', gs.toggle_current_line_blame, 'Toggle line [B]lame')
+      map('n', '<leader>hq', gitsigns.setqflist, 'buffer diffs to [q]flist')
+      map('n', '<leader>hQ', function() gitsigns.setqflist('all') end, 'workspace diffs to [Q]flist')
 
-      map('n', '<leader>hd', gs.diffthis, '[d]iff this file')
-      map('n', '<leader>hD', function()
-        gs.diffthis('~')
-      end, '[D]iff against last commit')
+      map('n', '<leader>ht', gitsigns.toggle_deleted, '[t]oggle deleted hunks')
+      map('n', '<leader>hw', gitsigns.toggle_word_diff, 'toggle [w]ord diff')
 
-      map('n', '<leader>ht', gs.toggle_deleted, '[t]oggle deleted hunks')
-
-      -- Text object (use 'ih' after 'c', 'd', 'y')
-      map({ 'o', 'x' }, 'ih', gs.select_hunk, 'Select [h]unk')
+      map({ 'o', 'x' }, 'ih', gitsigns.select_hunk, 'select [h]unk')
     end,
   },
 }
