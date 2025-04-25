@@ -158,26 +158,36 @@ end, { desc = '[f]ind [I]cons' })
 
 -- telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>', { desc = '[f]ind [f]iles' })
-map('n', '<leader>fw', ':Telescope live_grep<CR>', { desc = '[f]ind [w]ords' })
+map('n', '<leader>fn', function()
+  require('telescope.builtin').find_files({
+    cwd = vim.fn.stdpath('config'),
+    prompt_title = 'Nvim Config Files',
+  })
+end, { desc = '[f]ind [n]vim config files' })
 map('n', '<leader>fc', ':Telescope grep_string<CR>', { desc = '[f]ind string under [c]ursor' })
+map('n', '<leader>fw', ':Telescope live_grep<CR>', { desc = '[f]ind [w]ords' })
+
+map('n', '<leader>fC', ':Telescope colorscheme enable_preview=true<CR>', { desc = '[f]ind [C]olorscheme' })
+map('n', '<leader>fk', ':Telescope keymaps<CR>', { desc = '[f]ind [k]keymaps' })
 map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(
     require('telescope.themes').get_dropdown({ previewer = false })
   )
 end, { desc = 'Fuzzy search buffer' })
+map('n', '<leader>fr', ':Telescope resume<CR>', { desc = 'Telescope [r]esume' })
 
-map('n', '<leader>fn', function()
-  require('telescope.builtin').find_files({
-    cwd = vim.fn.stdpath('config'),
-    prompt_title = 'Neovim Settings',
-  })
-end, { desc = '[f]ind [n]eovim files' })
+map('n', '<leader>gC', ':Telescope git_commits<CR>', { desc = '[g]it every [C]ommits' })
+map('n', '<leader>gc', ':Telescope git_bcommits<CR>', { desc = '[g]it current buffer [c]ommits' })
+map('n', '<leader>gl', ':Telescope git_bcommits_range<CR>', { desc = '[g]it current [l]ine commits' })
+map('n', '<leader>gb', ':Telescope git_branches<CR>', { desc = '[g]it [b]ranches' })
+map('n', '<leader>gs', ':Telescope git_status<CR>', { desc = '[g]it [s]tatus' })
 
-map('n', '<leader>fC', ':Telescope colorscheme enable_preview=true<CR>', { desc = '[f]ind [C]olorscheme (preview)' })
+map('n', '<leader>ft', ':Telescope treesitter<CR>', { desc = '[f]ind [t]reesitter' })
 
-map('n', '<leader>fk', ':Telescope keymaps<CR>', { desc = '[f]ind [k]keymaps' })
-
-map('n', '<leader>fa', ':Telescope aerial<CR>', { desc = '[f]ind [a]erial' })
+-- Telescope-symbols
+map('n', '<leader>fe', function()
+  require('telescope.builtin').symbols({ sources = { 'emoji', 'gitmoji', 'kaomoji', 'latex', 'math' } })
+end, { desc = '[f]ind [e]moji' })
 
 -- todo-comments
 map('n', '[t', function()

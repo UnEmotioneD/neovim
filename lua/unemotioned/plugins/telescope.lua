@@ -3,6 +3,7 @@ return {
   dependencies = {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-telescope/telescope-ui-select.nvim',
+    'nvim-telescope/telescope-symbols.nvim',
   },
   config = function()
     local telescope = require('telescope')
