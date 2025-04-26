@@ -16,7 +16,6 @@ return {
         'ts_ls',
         'emmet_ls',
         'pyright', -- python LSP
-        'ruff', -- python linter, formatter
         'clangd',
         'taplo', -- toml LSP
         'marksman', -- markdown LSP
@@ -31,6 +30,9 @@ return {
         'eslint_d',
         'cpplint',
         'clang-format',
+        'pylint',
+        'isort', -- python import sorter
+        'black', -- python formatter
         'markdownlint',
       },
     })

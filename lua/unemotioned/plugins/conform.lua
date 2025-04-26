@@ -6,6 +6,7 @@ return {
       lua = { 'stylua' },
       c = { 'clang-format' },
       cpp = { 'clang-format' },
+      python = { 'isort', 'black' },
       html = { 'prettierd' },
       css = { 'prettierd' },
       javascript = { 'prettierd' },
@@ -19,13 +20,13 @@ return {
       toml = { 'taplo' },
     },
     default_format_opts = {
-      timeout_ms = 1000,
+      timeout_ms = 3000,
       async = false, -- change not recommend
       quiet = false, -- change not recommend
       lsp_format = 'fallback',
     },
     format_on_save = {
-      timeout_ms = 1000,
+      timeout_ms = 3000,
       async = false, -- change not recommend
       quiet = false, -- change not recommend
       lsp_format = 'fallback',

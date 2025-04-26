@@ -10,7 +10,7 @@ return {
       typescriptreact = { 'eslint_d' },
       c = { 'cpplint' },
       cpp = { 'cpplint' },
-      python = { 'ruff' },
+      python = { 'pylint' },
       markdown = { 'markdownlint' },
     }
 
