@@ -99,14 +99,6 @@ map('n', 'N', hlslens_key('N'), { desc = 'Prev hlsearch', noremap = true, silent
 
 -- nvim-tree
 map('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[e]xplorer toggle' })
-map('n', '<leader>ef', function()
-  local view = require('nvim-tree.view')
-  if view.is_visible() then
-    vim.cmd('NvimTreeCollapse')
-    view.close()
-  end
-  vim.cmd('NvimTreeFindFile')
-end, { desc = '[e]xplorer current [f]ile' })
 map('n', '<leader>ec', ':NvimTreeCollapse<CR>', { desc = '[e]explorer [c]ollapse' })
 map('n', '<leader>er', ':NvimTreeRefresh<CR>', { desc = '[e]xplorer [r]efresh' })
 
