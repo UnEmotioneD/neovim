@@ -333,7 +333,9 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - Python
 
   - pyright (LSP)
-  - ruff (LSP, linter, formatter)
+  - pylint
+  - isort (import sorter)
+  - black (formatter)
 
 - Markdown
 
