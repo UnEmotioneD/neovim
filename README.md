@@ -394,7 +394,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [marks](#marks)
 - [maximizer](#maximizer)
 - [mini](#mini)
-- [no-neck-pain](#no-neck-pain)
 - [nvim-autoparis](#nvim-autoparis)
 - [nvim-cmp](#nvim-cmp)
 - [nvim-colorizer](#nvim-colorizer)
@@ -604,12 +603,6 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
 
 - Nvim에서 보여줄 아이콘 제공
-
-#### no-neck-pain
-
-- [shortcuts/no-neck-pain.nvim](https://github.com/shortcuts/no-neck-pain.nvim)
-
-- 화면 중앙 정렬 기능 제공
 
 #### nvim-autoparis
 

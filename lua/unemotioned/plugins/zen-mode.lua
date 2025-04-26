@@ -3,8 +3,7 @@ return {
   opts = {
     window = { width = 90 },
     plugins = {
-      gitsigns = { enabled = false },
-      tmux = { enabled = false },
+      options = { laststatus = 3 },
     },
     on_open = function(win)
       if vim.bo.filetype == 'lua' then
