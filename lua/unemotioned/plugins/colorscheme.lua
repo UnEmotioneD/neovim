@@ -31,15 +31,19 @@ return {
     require('tokyonight').setup({
       ---@type 'moon'|'storm'|'night'|'day'
       style = 'night',
+
+      on_highlights = function(highlights)
+        -- Some colors to be more visible
+        highlights.Comment.fg = '#7f849c'
+        highlights.DiagnosticUnnecessary.fg = '#7f849c'
+        highlights.LineNrAbove.fg = '#7f849c'
+        highlights.LineNrBelow.fg = '#7f849c'
+      end,
     })
 
     require('vague').setup()
 
     -- catppuccin, gruvbox, onedark, rose-pine, tokyonight, vague
     vim.cmd.colorscheme('tokyonight')
-
-    -- Change line number colors for better visibility (from vscode catppuccin-mocha)
-    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#7f849c' })
-    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#7f849c' })
   end,
 }
