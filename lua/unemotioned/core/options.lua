@@ -18,7 +18,6 @@ opt.fillchars:append({ eob = ' ' })
 
 -- Performance
 opt.updatetime = 200
-opt.laststatus = 3 -- enable statusline always
 
 -- Tabs & Indentation
 local indent = 2

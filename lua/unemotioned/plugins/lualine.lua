@@ -1,6 +1,9 @@
 return {
   'nvim-lualine/lualine.nvim',
   opts = {
+    opptions = {
+      globalstatus = true,
+    },
     extensions = {
       'aerial',
       'lazy',
