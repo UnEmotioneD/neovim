@@ -11,9 +11,8 @@ return {
       css = true,
       css_fn = false,
       ---@type 'background' | 'foreground' | 'virtualtext'
-      mode = 'virtualtext',
+      mode = 'background',
       virtualtext_inline = 'before',
     },
   },
 }
-
