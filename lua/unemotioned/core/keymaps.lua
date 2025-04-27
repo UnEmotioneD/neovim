@@ -1,21 +1,21 @@
-vim.g.mapleader = ' ' -- leader key to SPACE
+vim.g.mapleader = ' ' -- <leader> == 스페이스 키
 
-local map = vim.keymap.set -- for conciseness
+local map = vim.keymap.set -- 더 간결하게 ...
 
 -----------------------
 --- General Keymaps ---
 -----------------------
 
-map('n', ';', ':', { desc = 'Command mode w/ semi-colon' })
+map('n', ';', ':', { desc = 'command mode with semi-colon' })
 
-map('n', 'H', ':bp<CR>', { desc = 'Buffer Previous' })
-map('n', 'L', ':bn<CR>', { desc = 'Buffer Next' })
+map('v', 'p', '"_dP', { desc = 'Paste without overwriting register' })
 
-map('v', 'p', '"_dP', { desc = 'Paste over selection without overriding reg' })
-
-map('n', 'Y', 'y$', { desc = 'Yank to End of Line' })
+map('n', 'Y', 'y$', { desc = 'Yank to EOL' })
 
 map('n', 'x', '"_x', { desc = 'Delete char without yanking' })
+
+map('n', 'H', ':bp<CR>', { desc = 'Previous buffer' })
+map('n', 'L', ':bn<CR>', { desc = 'Next buffer' })
 
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up and center' })
