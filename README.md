@@ -475,13 +475,17 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 
   - [Catppuccin](https://github.com/catppuccin/nvim)
   - [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim)
+  - [Onedark](https://github.com/navarasu/onedark.nvim)
   - [Rose-pine](https://github.com/rose-pine/neovim)
   - [Tokyonight](https://github.com/folke/tokyonight.nvim)
   - [vague2k/vague.nvim](https://github.com/vague2k/vague.nvim)
 
-- 각각의 테마들은 local 변수에 `table`로 선언되어있고 파일 마지막 줄에 `return`의 값을 바꾸고 다실 실행하면 설치가 된다
+- 각각의 테마들은 catppuccin의 dependencies 로 되어있고 파일 아래의 theme
+  변수를 변경 할 수 있다
 
 - 각 테마들은 `flavor`, `variant`, `style`의 값을 변경하여서 다른 버전으로 사용할 수 있다
+
+- SPC f C 키를 사용해서 다른 테마를 미리볼 수 있다
 
 #### comment
 
