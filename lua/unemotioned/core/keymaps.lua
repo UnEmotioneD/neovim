@@ -20,6 +20,16 @@ map('n', 'x', '"_x', { desc = 'Delete char without yanking' })
 map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down and center' })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up and center' })
 
+-- stylua: ignore
+map( 'n', 'J', ":let p=getpos('.')<BAR>join<BAR>call setpos('.', p)<CR>",
+  { desc = 'Join lines (keep cursor position)', silent = true })
+
+map('v', 'J', ":move '>+1<CR>gv=gv", { desc = 'Move line down and reindent', silent = true })
+map('v', 'K', ":move '<-2<CR>gv=gv", { desc = 'Move line up and reindent', silent = true })
+
+map('v', '<', '<gv', { desc = 'Outdent (keep selected)', silent = true })
+map('v', '>', '>gv', { desc = 'Indent (keep selected)', silent = true })
+
 map('n', '<Esc>', ':noh<CR>', { desc = 'Clear hlsearch', silent = true })
 
 -- 리눅스에서 '입력' 모드 일때 Esc를 누르면 IM(Input Method)를 영어로 전환
