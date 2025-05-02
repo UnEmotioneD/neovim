@@ -14,7 +14,6 @@ return {
     -- Global diagnostic configuration
     vim.diagnostic.config({
       virtual_text = isText,
-      severity_sort = true,
       float = { border = 'single' },
     })
 
