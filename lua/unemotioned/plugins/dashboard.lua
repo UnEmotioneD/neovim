@@ -27,5 +27,4 @@ return {
       winbar = true,
     },
   },
-  enabled = false,
 }
