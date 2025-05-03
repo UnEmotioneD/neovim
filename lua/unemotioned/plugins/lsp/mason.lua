@@ -26,13 +26,13 @@ return {
     require('mason-tool-installer').setup({
       ensure_installed = {
         'stylua',
-        'prettierd',
+        'prettierd', -- prettier in daemeon as server
         'eslint_d',
         'cpplint',
         'clang-format',
         'pylint',
         'isort', -- python import sorter
-        'black', -- python formatter
+        'blue', -- python formatter (use single quote by default)
         'markdownlint',
       },
     })

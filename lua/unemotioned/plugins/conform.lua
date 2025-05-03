@@ -6,7 +6,7 @@ return {
       lua = { 'stylua' },
       c = { 'clang-format' },
       cpp = { 'clang-format' },
-      python = { 'isort', 'black' },
+      python = { 'isort', 'blue' },
       html = { 'prettierd' },
       css = { 'prettierd' },
       javascript = { 'prettierd' },
