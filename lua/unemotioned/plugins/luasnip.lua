@@ -2,12 +2,14 @@ return {
   'L3MON4D3/LuaSnip',
   build = 'make install_jsregexp',
   config = function()
-    require('luasnip.loaders.from_lua').lazy_load({
-      paths = { '~/.config/nvim/snippets' },
-    })
-
     local luasnip = require('luasnip')
     local cmp = require('cmp')
+
+    luasnip.config.set_config({
+      history = true,
+      updateevents = 'TextChanged,TextChangedI',
+      enable_autosnippets = true,
+    })
 
     cmp.setup({
       mapping = {
@@ -27,6 +29,10 @@ return {
           end
         end, { 'i', 's' }),
       },
+    })
+
+    require('luasnip.loaders.from_lua').lazy_load({
+      paths = { '~/.config/nvim/snippets' },
     })
   end,
 }
