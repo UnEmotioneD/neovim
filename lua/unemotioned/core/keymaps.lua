@@ -6,8 +6,6 @@ local map = vim.keymap.set -- 더 간결하게 ...
 --- General Keymaps ---
 -----------------------
 
-map('n', ';', ':', { desc = 'command mode with semi-colon' })
-
 map('v', 'p', '"_dP', { desc = 'Paste without overwriting register' })
 
 map('n', 'Y', 'y$', { desc = 'Yank to EOL' })
