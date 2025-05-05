@@ -14,7 +14,8 @@ opt.scrolloff = 5
 opt.termguicolors = true
 opt.background = 'dark'
 opt.fillchars:append({ eob = ' ' })
--- opt.guicursor = '' -- uncomment this to only use block cursor
+-- opt.guicursor = ''                                          -- use block cursor only
+-- opt.guicursor = 'i:block-blinkwait0-blinkon500-blinkoff500' -- blinking cursor in insert mode
 
 -- Performance
 opt.updatetime = 200
