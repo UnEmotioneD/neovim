@@ -2,9 +2,6 @@ return {
   'folke/flash.nvim',
   event = 'VeryLazy',
   opts = {
-    search = {
-      incremental = true,
-    },
     jump = {
       register = true, -- Can navigate with n and N
       nohlsearch = true, -- Clear highlight after jump
