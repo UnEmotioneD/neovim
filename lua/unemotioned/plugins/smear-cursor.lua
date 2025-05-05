@@ -11,4 +11,6 @@ return {
     -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
     smear_insert_mode = false,
   },
+  -- Enable if not kitty
+  enabled = vim.env.TERM ~= 'xterm-kitty',
 }
