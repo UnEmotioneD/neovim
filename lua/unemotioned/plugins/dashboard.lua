@@ -24,7 +24,6 @@ return {
     hide = {
       statusline = false,
       tabline = true,
-      winbar = true,
     },
   },
 }
