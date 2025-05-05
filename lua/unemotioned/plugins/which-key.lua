@@ -11,6 +11,10 @@ return {
         suggestions = 4,
       },
     },
+    keys = {
+      scroll_down = '<C-f>',
+      scroll_up = '<C-b>',
+    },
     icons = {
       keys = {
         Esc = '<ESC>',
