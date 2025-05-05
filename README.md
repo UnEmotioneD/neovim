@@ -409,6 +409,7 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - [nvim-web-devicons](#nvim-web-devicons)
 - [oil](#oil)
 - [plenary](#plenary)
+- [quick-scope](#quick-scope)
 - [quicker](#quicker)
 - [render-markdown](#render-markdown)
 - [smear-cursor](#smear-cursor)
@@ -700,6 +701,14 @@ alias evim="NVIM_APPNAME=unemotioned nvim"
 - Neovim 플러그인을 개발하는데 필수적인 function들을 제공하는 라이브러리
 
 **[⬆ 플러그인 목록](#contents)**
+
+#### quick-scope
+
+- [unblevable/quick-scope](https://github.com/unblevable/quick-scope)
+
+- f, F, t, T 를 이용해서 한번에 이동할 수 있는 문자를 하이라이트
+  - 위에 있는 키를 이용해서 이동한후 ";"를 이용해서 왼쪽으로 "," 를 이용해서
+    오른쪽으로 이동 할 수 있다
 
 #### quicker
 
