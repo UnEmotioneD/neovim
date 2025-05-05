@@ -1,6 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
+  dependencies = 'windwp/nvim-ts-autotag',
   config = function()
     require('nvim-treesitter.configs').setup({
       highlight = { enable = true },
@@ -50,6 +51,12 @@ return {
           ['.*/hypr/.*%.conf'] = 'hyprlang',
         },
       }),
+    })
+
+    require('nvim-ts-autotag').setup({
+      opts = {
+        enable_close_on_slash = true,
+      },
     })
   end,
 }
