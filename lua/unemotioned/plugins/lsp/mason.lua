@@ -20,7 +20,6 @@ return {
         'taplo', -- toml LSP
         'marksman', -- markdown LSP
       },
-      automatic_installation = true,
     })
 
     require('mason-tool-installer').setup({
