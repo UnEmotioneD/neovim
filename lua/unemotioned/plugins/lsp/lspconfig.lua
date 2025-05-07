@@ -6,35 +6,34 @@ return {
     { 'antosha417/nvim-lsp-file-operations', config = true },
   },
   config = function()
-    local lspconfig = require('lspconfig')
-    local mason_lspconfig = require('mason-lspconfig')
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
-
+    local diagnostic = vim.diagnostic.config
     local isText = true
+
     -- Global diagnostic configuration
-    vim.diagnostic.config({
+    diagnostic({
       virtual_text = isText,
       float = { border = 'single' },
     })
 
-    local toggle_diagnostics_inline = function()
+    local function toggle_inline_diagnostics()
       isText = not isText
-      vim.diagnostic.config({
+      diagnostic({
         virtual_text = isText,
       })
     end
 
-    local toggle_diagnostics_style = function()
+    local function toggle_diagnostics_style()
       if isText == true then
-        vim.diagnostic.config({
+        diagnostic({
           virtual_lines = { current_line = true },
         })
       else
-        vim.diagnostic.config({
+        diagnostic({
           virtual_lines = false,
         })
       end
-      vim.diagnostic.config({ virtual_text = not isText })
+      diagnostic({ virtual_text = not isText })
       isText = not isText
     end
 
@@ -63,7 +62,7 @@ return {
         { mode = 'n', lhs = ']d', rhs = function() vim.diagnostic.jump({ count = 1 }) end, desc = 'Go to next diagnostic' },
         { mode = 'n', lhs = '<leader>dl', rhs = vim.diagnostic.open_float, desc = '[d]iagnostics [l]ine' },
         { mode = 'n', lhs = '<leader>db', rhs = ':Telescope diagnostics bufnr=0<CR>', desc = '[d]iagnostics [b]uffer' },
-        { mode = 'n', lhs = '<leader>di', rhs = toggle_diagnostics_inline, desc = 'toggle [i]nline-diagnostics' },
+        { mode = 'n', lhs = '<leader>di', rhs = toggle_inline_diagnostics, desc = 'toggle [i]nline-diagnostics' },
         { mode = 'n', lhs = '<leader>ds', rhs = toggle_diagnostics_style, desc = 'toggle [d]iagnostics [s]tyle' },
         -- stylua: ignore end
       }
