@@ -80,73 +80,51 @@ return {
         },
       },
     })
-    -- fix warning: multiple different client offset_encodings detected for buffer (c, cpp file)
+    -- Fix encoding issues: multiple different client offset_encodings detected for buffer (c, cpp file)
     local capabilities_utf_16 = vim.tbl_deep_extend('force', {}, capabilities, {
       offsetEncoding = { 'utf-16' },
     })
 
-    -- Set up Mason LSP config handlers with centralized on_attach and capabilities
-    mason_lspconfig.setup_handlers({
-      -- Default handler for all servers
-      function(server_name)
-        lspconfig[server_name].setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-        })
-      end,
-      -- Server-specific configurations:
-      ['typos_lsp'] = function()
-        lspconfig.typos_lsp.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-          cmd_env = { RUST_LOG = 'error' },
-          init_options = {
-            config = vim.fn.expand('~/.config/nvim/typos/typos.toml'),
-            ---@type 'Error' | 'Warning' | 'Hint' | 'Info'
-            diagnosticSeverity = 'Hint',
+    -- Use native vim.lsp.config API to configure servers
+    local lsp = vim.lsp.config
+    lsp('typos_lsp', {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      cmd_env = { RUST_LOG = 'error' },
+      init_options = {
+        config = vim.fn.expand('~/.config/nvim/typos/typos.toml'),
+        diagnosticSeverity = 'Hint',
+      },
+    })
+    lsp('lua_ls', {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' },
+            disable = { 'missing-fields' },
           },
-        })
+          completion = { callSnippet = 'Replace' },
+        },
+      },
+    })
+    lsp('clangd', {
+      on_attach = on_attach,
+      capabilities = capabilities_utf_16,
+      filetypes = { 'c', 'cpp' },
+    })
+    lsp('ruff', {
+      on_attach = function(client)
+        client.server_capabilities.hoverProvider = false
+        client.server_capabilities.completionProvider = false
       end,
-      ['lua_ls'] = function()
-        lspconfig.lua_ls.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              diagnostics = {
-                globals = { 'vim' },
-                disable = { 'missing-fields' },
-              },
-              completion = { callSnippet = 'Replace' },
-            },
-          },
-        })
-      end,
-      ['clangd'] = function()
-        lspconfig.clangd.setup({
-          on_attach = on_attach,
-          capabilities = capabilities_utf_16,
-          filetypes = { 'c', 'cpp' },
-        })
-      end,
-      ['ruff'] = function()
-        lspconfig.ruff.setup({
-          on_attach = function(client)
-            -- Disable hover/completion from ruff to avoid duplication with pyright
-            client.server_capabilities.hoverProvider = false
-            client.server_capabilities.completionProvider = false
-          end,
-          capabilities = capabilities,
-          filetypes = { 'python' },
-        })
-      end,
-      ['emmet_ls'] = function()
-        lspconfig.emmet_ls.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-          filetypes = { 'html', 'css', 'javascriptreact' },
-        })
-      end,
+      filetypes = { 'python' },
+    })
+    lsp('emmet_ls', {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      filetypes = { 'html', 'css', 'javascriptreact' },
     })
   end,
 }
