@@ -2,6 +2,15 @@ return {
   'unblevable/quick-scope',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
-    vim.keymap.set('n', '<leader>tq', ':QuickScopeToggle<CR>', { desc = 'Toggle quick-scope' })
+    vim.g.qs_filetype_blacklist = {
+      'NvimTree',
+      'alpha',
+      'harpoon',
+      'lazy',
+      'mason',
+      'oil',
+      'qf',
+      'trouble',
+    }
   end,
 }

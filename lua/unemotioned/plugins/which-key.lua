@@ -36,6 +36,7 @@ return {
       { '<leader>n', group = '[N]eck' },
       { '<leader>r', group = '[R]e' },
       { '<leader>s', group = '[S]plit' },
+      { '<leader>t', group = 'Toggle', mode = { 'n', 'v' } },
       { '<leader>w', group = 'Session' },
       { '<leader>x', group = 'Trouble' },
       { '<Tab>', group = 'Harpoon' },

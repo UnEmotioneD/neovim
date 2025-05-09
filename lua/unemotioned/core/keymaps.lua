@@ -123,6 +123,9 @@ map('n', '<leader>q', function()
   end
 end, { desc = '[q]uicker' })
 
+-- quick-scope
+map({ 'n', 'x' }, '<leader>tq', ':QuickScopeToggle<CR>', { desc = 'Quick-scope toggle' })
+
 -- snacks.picker
 map('n', '<leader>gb', function()
   require('snacks').picker.git_branches()
