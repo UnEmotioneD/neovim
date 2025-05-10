@@ -4,7 +4,7 @@ return {
   opts = {
     lazy_load = false,
     user_default_options = {
-      names = false,
+      names = true,
       names_opts = {
         strip_digits = true,
       },
@@ -15,4 +15,12 @@ return {
       virtualtext_inline = 'before',
     },
   },
+  config = function()
+    require('colorizer').setup({
+      -- filetypes to not enable on
+      '!lazy',
+      '!mason',
+      '!vim',
+    })
+  end,
 }
