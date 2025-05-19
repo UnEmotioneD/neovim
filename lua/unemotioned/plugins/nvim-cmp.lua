@@ -29,6 +29,7 @@ return {
         documentation = cmp.config.window.bordered({ border = 'single' }),
       },
       mapping = cmp.mapping.preset.insert({
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- select first suggestion if none selected
         ['<C-k>'] = cmp.mapping.select_prev_item(), -- previous suggestion
         ['<C-j>'] = cmp.mapping.select_next_item(), -- next suggestion
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
